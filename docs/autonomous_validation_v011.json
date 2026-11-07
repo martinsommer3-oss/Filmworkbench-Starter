@@ -1,0 +1,64 @@
+{
+  "scope": "Agent assessment/acceptance and final assembly on newly generated existing test takes; not a fresh autonomous render run.",
+  "recipe": "K1",
+  "accepted_stages": 4,
+  "frames": 685,
+  "duration_s": 28.541667,
+  "final_sha256": "c487e8f1026a0f7b4c18bfd1fb403ea1286626636246365a249a3276975ecc21",
+  "decode_passed": true,
+  "assessments": [
+    {
+      "job": "01_K1/K1_A1_S1",
+      "video_sha256": "76089f0fa7dfef9106a7a74fb2dfef8348a7f954185fdae98a7fa8975b7f0ded",
+      "assessment_sha256": "863f65b598d4b80350d1a7b5c2499e0fee7ef765df3950eeadc95b0d4fcf42d3",
+      "warnings": [
+        "This review reuses newly rendered technical test takes; it is not a fresh autonomous planning-to-render run.",
+        "Frames were sampled; no full perceptual playback or listening review.",
+        "CPU Whisper and frame analysis are existing local review tools, not bundled in the public release.",
+        "Cut timing and small visual state differences remain.",
+        "Possible extra word in the first clip; slow ending in the continuation."
+      ]
+    },
+    {
+      "job": "01_K1/K1_A1_S2",
+      "video_sha256": "b1b365bd5b475142a0933e72f760ae57b2b8380581326fae592f3b9f42a96f86",
+      "assessment_sha256": "c94f91bd8dbb2b02c613a7aa4dd00d84fd39bc3a30c5b20ebf1ebc726a8d06b9",
+      "warnings": [
+        "This review reuses newly rendered technical test takes; it is not a fresh autonomous planning-to-render run.",
+        "Frames were sampled; no full perceptual playback or listening review.",
+        "CPU Whisper and frame analysis are existing local review tools, not bundled in the public release.",
+        "Cut timing and small visual state differences remain.",
+        "Possible extra word in the first clip; slow ending in the continuation."
+      ]
+    },
+    {
+      "job": "01_K1/K1_A2_R1_S1",
+      "video_sha256": "260c7d728702c35b2c3f57fbb16550dbf3b36e977697fd224e72268def8da587",
+      "assessment_sha256": "2904b61bcbfb88edf75eff9766fac48f3e63447807f2abc7ed61fa9dea780477",
+      "warnings": [
+        "This review reuses newly rendered technical test takes; it is not a fresh autonomous planning-to-render run.",
+        "Frames were sampled; no full perceptual playback or listening review.",
+        "CPU Whisper and frame analysis are existing local review tools, not bundled in the public release.",
+        "Cut timing and small visual state differences remain.",
+        "Possible extra word in the first clip; slow ending in the continuation."
+      ]
+    },
+    {
+      "job": "01_K1/K1_S2_REF05_S2",
+      "video_sha256": "c13580346727a5e18f76aa135ece202ce26ad1ee5590fcd7ee3068a12034b546",
+      "assessment_sha256": "0e6dd02cb8e20c1be7d39f384ba4b9ddcedb9238779cd4a999c24f4d65f21bd7",
+      "warnings": [
+        "This review reuses newly rendered technical test takes; it is not a fresh autonomous planning-to-render run.",
+        "Frames were sampled; no full perceptual playback or listening review.",
+        "CPU Whisper and frame analysis are existing local review tools, not bundled in the public release.",
+        "Cut timing and small visual state differences remain.",
+        "Possible extra word in the first clip; slow ending in the continuation."
+      ]
+    }
+  ],
+  "limitations": [
+    "No full listening or perceptual motion approval",
+    "Additional CPU review tools were available locally; not bundled",
+    "Pacing, timing and possible wording defects disclosed"
+  ]
+}

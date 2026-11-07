@@ -18,3 +18,5 @@ Also thanks to [u/xyzdist's degradation discussion](https://www.reddit.com/r/Sta
 The runnable first-clip graph uses only ComfyUI, H3 Motion Context and LBH's upscaler. Historical case graphs retain their original node references. The local timeline helper was replaced in the runnable starter so it does not depend on a newer local timeline package. See [installation and exact revisions](DEPENDENCIES.md).
 
 Own code/docs: [MIT](../LICENSE). Models, external software, provider skills and generated media keep their respective terms. See [media notes](MEDIA.md). No endorsement by these authors is implied.
+
+The full film.py chain runner additionally uses the public geiru_context_suite keystone. It adapts the archived stage joins to stock AV concatenation without distributing upstream node code.

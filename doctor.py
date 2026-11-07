@@ -81,19 +81,21 @@ def compare(graphs, info):
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--online',action='store_true',help='Read /object_info from a local ComfyUI server')
-    p.add_argument('--all',action='store_true',help='Check every archival case graph, not only the runnable starter')
+    p.add_argument('--all',action='store_true',help='Check every case using the public stage-join adapter, not only the starter')
     p.add_argument('--server',default='http://127.0.0.1:8188')
     p.add_argument('--model-map',type=Path,help='Explicit loader-relative model paths')
     p.add_argument('--report',type=Path,help='Write this report locally; it contains no machine paths or environment variables')
     args=p.parse_args()
     base=local_server(args.server)
     example,graphs=runner.prepare('preflight')
-    if args.all: graphs={f.name:runner.load(f) for f in (ROOT/'graphs').glob('*.api.json')}
+    if args.all:
+        from film import adapt_stage_joins
+        graphs={f.name:adapt_stage_joins(runner.load(f)) for f in (ROOT/'graphs').glob('*.api.json')}
     runner.apply_model_map(graphs,runner.read_model_map(args.model_map))
     assets=runner.load(ROOT/'assets/manifest.json')
     broken=[relative for relative,item in assets.items() if not runner.confined(ROOT,relative).is_file() or runner.digest(runner.confined(ROOT,relative))!=item['sha256']]
     requirements=sorted({str(v) for g in graphs.values() for n in g.values() for k,v in n['inputs'].items() if k in MODEL_FIELDS})
-    report={'scope':'all archival graphs' if args.all else 'standalone dialogue starter',
+    report={'scope':'all case graphs with public stage-join adaptation' if args.all else 'standalone dialogue starter',
             'python_supported':sys.version_info >= (3,11),'ffmpeg_on_path':bool(shutil.which('ffmpeg')),
             'reference_files_checked':len(assets),'bad_references':broken,'graphs_checked':len(graphs),
             'required_models':requirements,'backend':'not checked (use --online)', 'issues':[],

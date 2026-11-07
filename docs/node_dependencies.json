@@ -120,7 +120,7 @@
     {
       "class_type": "LTXVConcatAVLatent",
       "project": "https://github.com/Comfy-Org/ComfyUI",
-      "scope": "portable dialogue starter replaces historical H3StageLatent"
+      "scope": "portable dialogue and complete recipe runner replace mask-free historical H3StageLatent joins"
     }
   ]
 }

@@ -1,0 +1,14 @@
+{
+  "tests": 43,
+  "tested_code_zip_sha256": "6f48900f67bbeace2a015eed9a1678edcd99ca981b1290847a12fb930ec29647",
+  "runtime_hashes": {
+    "doctor.py": "a8900ca61d1400839bafb6252b3ed633bb53145abee876abc3c20def692948af",
+    "film.py": "da7c152625f6d3944233f4fa4ac04680401af75b17128057a090394ba5079498",
+    "render_example.py": "8f044fff8aa232b148d618d5888d56f360e0ff706a043592ceb06dcf4457eabf",
+    "setup_models.py": "58115108e56ca532f6e2d05e885636c58304e26c428dea884ecd059f5eabe9f7",
+    "test_film.py": "c086a0d78000e0a4d1859faec9095e8fa794e6e385b624cd7ddf31b06f78d5ad",
+    "test_setup.py": "35d629195a0b17aad5fcc1e9f7bbae06b38ac3262922cce9cd4031b40db1226b",
+    "test_starter.py": "94e50af41fb2412ea0ffaa4e43bdf9e8557d95dcd1fefe3b204e8e696dd42343"
+  },
+  "note": "Documentation/evidence added after this test; runtime files must retain these exact hashes."
+}

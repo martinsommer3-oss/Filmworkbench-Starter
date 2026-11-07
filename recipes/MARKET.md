@@ -33,7 +33,7 @@ Hybrid b25–49 INT8; S1 864×480, eight steps, first clip DMAD and continuation
 
 Render G1 S1, then G2/G3/G4 S1 using the preceding accepted state. Render G1 S2, then G2/G3/G4 S2 using each clip's S1 latent and the preceding S2 context where wired. Keep stages and resolutions distinct. The dependency map in [graph inventory](../graphs/inventory.json) identifies producers and unresolved inputs. Runtime latents are not model weights and are not included in this small package; regenerate them through the recorded predecessors. Replace `${COMFY_ROOT}` with your local backend root and stage the bound reference assets in ComfyUI input. Use a new output prefix throughout each rerun.
 
-These archival API graphs are inspectable source evidence, not a tested one-click chain runner. The starter runner currently covers the standalone dialogue example only.
+The archived graphs remain source evidence. `film.py` translates and executes their complete dependency chain with own inputs and guided approvals; see [guided filmmaking](../docs/GUIDED_FILM.md).
 
 ## What remains imperfect
 

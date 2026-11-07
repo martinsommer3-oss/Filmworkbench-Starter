@@ -12,7 +12,7 @@ H3 Hybrid b25–49 INT8; S1 864×480, eight steps; learned latent upscale and tw
 
 Recorded S1/S2 render times total about 34 minutes on the RTX 5090. The pipeline took about 45 minutes including checks and assembly; image preparation and later repairs are excluded. The chosen v3b edit uses an aligned clean-plate repair for a short unwanted logo artifact on the instrument. It is not an untouched one-prompt output.
 
-This page supplies the actual four image references and production breakdown. The complete Fantasy replay and clean-plate editor are not packaged in the starter. The runnable example is the first K1 dialogue clip; the 44 archival graphs cover the eight scene recipes and marketplace.
+This page supplies the actual four image references and production breakdown. The complete Fantasy replay and clean-plate editor are not packaged in the starter. The eight scene recipes and marketplace are executable through film.py; Fantasy itself remains a separate showcase.
 
 ## Input references
 

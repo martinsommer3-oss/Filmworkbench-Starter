@@ -13,5 +13,10 @@
     "project": "LBH Upscaler",
     "revision": "40316cf008b2fd8663263270669eb4da23f89d2c",
     "tracked_source_clean": true
+  },
+  {
+    "project": "geiru_context_suite",
+    "revision": "c3c493ec2cfc32ccde933f81647982ee0f9546b2",
+    "verification": "Public clown_keyframe.py fetched from pinned commit; normalized text matches installed source."
   }
 ]

@@ -2,7 +2,7 @@
 
 [Back to video and overview](../README.md)
 
-These are copies of the archived production records. The public starter adaptation is under `examples/dialogue/`. They are ComfyUI API graphs, not editor canvas layouts. Predecessor latents must be regenerated; they are not bundled.
+These are copies of the archived production records. The minimal starter is under `examples/dialogue/`; `film.py` adapts these archived graphs for complete guided recipe execution. They are ComfyUI API graphs, not editor canvas layouts. Predecessor latents must be regenerated; they are not bundled.
 
 - [K8_FOLLOW_S1.api.json](K8_FOLLOW_S1.api.json)
 - [K8_FOLLOW_S1.bindings.json](K8_FOLLOW_S1.bindings.json)

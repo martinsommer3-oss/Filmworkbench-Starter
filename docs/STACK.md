@@ -8,8 +8,9 @@
 | Study prompts, references and settings | This repository; no rendering setup |
 | Rerender the first dialogue clip | Python 3.11+, FFmpeg, a working local ComfyUI GPU backend, two public custom-node packs and the six exact starter weights below |
 | Make new reference images | GPT Image through a supported client/service, or your own local Krea 2 setup; not needed for the supplied starter |
-| Rebuild a full historical chain | The recorded predecessor latents must be generated in order; additional historical nodes and assembly decisions may be needed; no full-chain runner is shipped |
-| Run the full guided/autonomous film director | Not included in v0.1 |
+| Render any complete recipe with own inputs | `film.py`, all seven weights and the three public custom-node packs; see [guided film](GUIDED_FILM.md) |
+| Make a guided film | Included via film.py and chat approvals |
+| Delegate a bounded autonomous film | The active tool-capable agent follows [the review loop](AUTONOMOUS_FILM.md), with suitable media-inspection tools and an agreed retry budget |
 
 The runnable example uses **H3 Hybrid fl2va/ref2va b25–49 INT8**, not the standalone Ref2VA checkpoint. `MiniMaxH3ReferenceToVideo` is the conditioning node; seeing that node in the graph does not mean a different base checkpoint was loaded.
 
@@ -35,11 +36,13 @@ The upscaler operates on the saved S1 video latent with temporal chunking enable
 
 The runnable starter needs **ComfyUI plus two custom-node projects**: NikoDemon80's H3 Motion Context and LBH-123-AI's H3 latent upscaler. Exact revisions and installation commands are in [DEPENDENCIES.md](DEPENDENCIES.md). There is no private custom node required by the starter.
 
-For continuation, the broader recipes feed the preceding accepted AV latent into Motion Context and trim the repeated context frames. Some historical graphs also use a front keystone from roycho87's context pack. Those joins preserve motion context; they do not provide permanent world-state memory. Historical graphs still mention OBVPM's stage helper; the tested standalone S2 graph replaces it with stock `LTXVConcatAVLatent`.
+For continuation, the broader recipes feed the preceding accepted AV latent into Motion Context and trim the repeated context frames. Some historical graphs also use a front keystone from roycho87's context pack. Those joins preserve motion context; they do not provide permanent world-state memory. Historical graphs still mention OBVPM's stage helper; film.py adapts every required mask-free S2 join to stock `LTXVConcatAVLatent` at execution.
 
 ## Memory and alternatives
 
 The verified configuration was Windows, RTX 5090 with **32 GB VRAM**, and **128 GB system RAM**. The six weights occupy 52.6 GB on disk, which is not a VRAM requirement. Lower VRAM/RAM configurations have not been validated for this release.
+
+A local chat model sharing this GPU also needs its own memory configuration. The package does not install an LLM server or change its VRAM allocation. Use the client's available offload/unload controls so the renderer has enough memory, and keep one video producer at a time.
 
 Do not silently swap in a different checkpoint or quantization. Offloading, smaller/shorter clips or other quantizations are possible experiments, but this release has no tested low-memory preset to recommend. They may change speed, conditioning, output quality or node compatibility. Start with the doctor and the exact model manifest; document any alternative as a separate configuration.
 
@@ -47,7 +50,7 @@ Do not silently swap in a different checkpoint or quantization. Offloading, smal
 
 We use GPT Image through Codex's **`$imagegen`** skill when the client exposes built-in image generation. With an eligible signed-in plan, built-in generations use the plan's usage allowance; availability and limits depend on the client/account. API-key workflows use API billing instead. A skill by itself does not provide model access. See the official [image-generation instructions](https://learn.chatgpt.com/docs/image-generation) and [usage/pricing guide](https://learn.chatgpt.com/docs/pricing).
 
-You can also create references in ChatGPT or another supported online service and save the resulting files into your project. The [OpenAI image API](https://developers.openai.com/api/docs/guides/image-generation) is a separate programmatic route. Krea 2 is the local image fallback used in the wider project; its generator/model installation is not part of this first-clip starter. No paid image call is made by the supplied tools.
+You can also create references in ChatGPT or another supported online service and save the resulting files into your project. The [OpenAI image API](https://developers.openai.com/api/docs/guides/image-generation) is a separate programmatic route. Krea 2 is the local image fallback used in the wider project; its generator/model installation is separate from this video-recipe package. No paid image call is made by the supplied tools.
 
 All starter references are already included. For a new sequence, use a consistent set of cast and location references and review the opposite views and changed object states before rendering.
 

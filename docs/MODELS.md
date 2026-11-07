@@ -17,7 +17,7 @@ python setup_models.py --comfy-root "C:/AI/ComfyUI" --verify
 
 The first helper call only prints a plan. `--download` invokes `hf download` for each exact file and revision, checks size and SHA-256, then copies it into the proper model category. It refuses to overwrite a differing existing file. An interrupted target copy is kept for inspection and will fail the next hash check; move it aside before retrying. Downloads remain under `ComfyUI/.filmworkbench-downloads/` unless `--cache` selects another directory. No authentication credentials are read by this helper; Hugging Face's own CLI handles any account/access requirements. Do not put tokens in this repository.
 
-Add `--all` to include Turbo-8 for continuation cases. It is not needed for the first dialogue clip. Downloading it does not turn the historical chains into an automated replay system.
+Add `--all` to include Turbo-8 for continuation cases. It is not needed for the first dialogue clip. Use `--all` for the complete film.py recipe set; it includes the continuation LoRA.
 
 ## Files and destinations
 
@@ -63,6 +63,6 @@ Pass `--model-map model-map.json` to `setup_models.py`, `doctor.py` and `render_
 
 ## New reference images
 
-The starter includes every reference image it needs. No GPT Image API key, paid image service or Krea 2 download is needed for the first run. For new scenes we recommend GPT Image through `$imagegen` in a supported Codex client, ChatGPT or another supported service (see [access options](STACK.md)); Krea 2 is the local fallback. Image generation is not installed or invoked by this small starter. The larger image-generation integration and its own exact Krea model/node setup are outside v0.1's runnable scope.
+All eight recipes and MARKET include their required reference images. No GPT Image API key, paid image service or Krea 2 download is needed to try those supplied cases. For new scenes we recommend GPT Image through `$imagegen` in a supported Codex client, ChatGPT or another supported service (see [access options](STACK.md)); an already configured local Krea 2 is the fallback. The agent uses the available image service, then supplies its saved files to the video runner. This package does not install the image generator or bundle a Krea model/node setup.
 
 Source-file pages and published hashes were checked on 7 November 2026. Bulk downloading all weights from a clean internet-connected machine was not tested in the release-building environment; its outbound Python network access was blocked. The download helper has failure-path tests, and local full-file verification is recorded separately in VALIDATION.md.

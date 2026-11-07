@@ -1,8 +1,8 @@
 {
   "name": "Filmworkbench Starter",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "repository": "https://github.com/martinsommer3-oss/Filmworkbench-Starter",
-  "release": "https://github.com/martinsommer3-oss/Filmworkbench-Starter/releases/tag/v0.1.0",
+  "release": "https://github.com/martinsommer3-oss/Filmworkbench-Starter/releases/tag/v0.1.1",
   "human_entrypoint": "README.md",
   "agent_entrypoint": "AGENTS.md",
   "technical_overview": "docs/STACK.md",
@@ -14,9 +14,12 @@
   "capabilities": {
     "offline_inspection": true,
     "first_dialogue_S1_S2_runner": true,
-    "full_chain_replay": false,
+    "full_chain_replay": true,
     "image_generation_included": false,
-    "full_film_director_included": false
+    "guided_film": true,
+    "own_reference_images": true,
+    "bounded_agent_director": true,
+    "private_specialist_critics_included": false
   },
   "starter": {
     "entrypoint": "render_example.py",
@@ -32,7 +35,10 @@
     "model_plan": "python setup_models.py --comfy-root YOUR_COMFY_ROOT",
     "model_download": "python setup_models.py --comfy-root YOUR_COMFY_ROOT --download",
     "model_verify": "python setup_models.py --comfy-root YOUR_COMFY_ROOT --verify",
-    "render": "python render_example.py --run --comfy-root YOUR_COMFY_ROOT"
+    "render": "python render_example.py --run --comfy-root YOUR_COMFY_ROOT",
+    "create_film": "python film.py init projects/my-film --recipes K2 K3",
+    "check_film": "python film.py check projects/my-film --online",
+    "next_stage": "python film.py next projects/my-film --comfy-root YOUR_COMFY_ROOT"
   },
   "verification": "docs/VALIDATION.md",
   "hardware_tested": {
@@ -42,5 +48,9 @@
     "OS": "Windows",
     "fresh_backend_installation_tested": false,
     "lower_memory_tested": false
-  }
+  },
+  "guided_entrypoint": "docs/GUIDED_FILM.md",
+  "autonomous_entrypoint": "docs/AUTONOMOUS_FILM.md",
+  "gate_selection": "docs/GATES.md",
+  "editing_notes": "docs/EDIT_NOTES.md"
 }

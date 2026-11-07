@@ -2,7 +2,7 @@
 
 [Back to video and overview](../README.md)
 
-These are copies of the archived production records. The public starter adaptation is under `examples/dialogue/`. They are ComfyUI API graphs, not editor canvas layouts. Predecessor latents must be regenerated; they are not bundled.
+These are copies of the archived production records. Fantasy is a showcase with production references; its complete replay and clean-plate repair are not included. film.py executes the eight scene recipes and MARKET. They are ComfyUI API graphs, not editor canvas layouts. Predecessor latents must be regenerated; they are not bundled.
 
 The full Fantasy render graphs are not included in this starter. The overview, selected final film and actual image references are provided; see the recipe for the documented production path.
 

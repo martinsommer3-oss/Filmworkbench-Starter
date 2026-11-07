@@ -1,6 +1,6 @@
 # Install the public node dependencies
 
-The runnable dialogue starter uses three public projects. The historical case graphs in `graphs/` retain their original dependencies; they are not all portable replay programs.
+The minimal dialogue starter uses ComfyUI and two custom-node projects. The full film.py recipe runner additionally requires the public geiru_context_suite keystone node. Archived graphs remain unchanged; film.py translates their stage joins and file bindings for portable execution.
 
 | Project | Revision used for the starter check | Purpose |
 | --- | --- | --- |
@@ -40,3 +40,14 @@ In `examples/dialogue/S2.api.json`, node 22 now uses stock `LTXVConcatAVLatent`:
 - MiniMax H3 and the checkpoint contributors linked in [model sources](model_sources.json).
 
 These projects and weights retain their own terms. Filmworkbench's MIT license covers its own code and documentation only. The author's personal H3 authorization does not transfer to other users. Review the model/provider terms for your intended use.
+
+## Complete recipe runner: one additional public node pack
+
+```console
+git clone https://github.com/roycho87/geiru_context_suite.git ComfyUI/custom_nodes/geiru_context_suite
+git -C ComfyUI/custom_nodes/geiru_context_suite checkout --detach c3c493ec2cfc32ccde933f81647982ee0f9546b2
+```
+
+Use the upstream installation instructions and the backend's Python for any listed requirements. Restart ComfyUI and run `film.py check YOUR_PROJECT --online`. H3ClownKeyframe is the registered node name even though the repository is named geiru_context_suite. The public pinned keystone source was fetched and compared to the installed test implementation: normalized source text matches. No upstream node source is copied into this release.
+
+film.py adapts all selected S2 H3StageLatent joins, not only the minimal dialogue example. It checks that each source is a mask-free Motion Context file loader and connects its separated S1 audio with the upscaled video. Other arbitrary stage graphs are not converted. Install Turbo-8 too (`setup_models.py --all`) for continuation recipes.

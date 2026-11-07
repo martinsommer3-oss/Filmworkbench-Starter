@@ -15,4 +15,4 @@ Open a case for its input/workflow overview and deeper render data, or download 
 | [MARKET — Marketplace — arrival, purchase, orbit, departure](MARKET/README.md) | [Download MP4](https://github.com/martinsommer3-oss/Filmworkbench-Starter/releases/download/v0.1.0/Filmworkbench_MARKET_S2.mp4) · 49.7s | [<img src="MARKET/overview.png" width="220" alt="MARKET workflow overview">](MARKET/overview.png) |
 | [FANTASY — The Last Light — six-clip Fantasy film](FANTASY/README.md) | [Download MP4](https://github.com/martinsommer3-oss/Filmworkbench-Starter/releases/download/v0.1.0/Filmworkbench_FANTASY_S2.mp4) · 78.8s | [<img src="FANTASY/overview.png" width="220" alt="FANTASY workflow overview">](FANTASY/overview.png) |
 
-[Try the runnable dialogue starter](../docs/QUICKSTART.md). The other cases are worked production examples, not automated full-chain replay programs.
+[Run complete recipes with own images and chat approvals](../docs/GUIDED_FILM.md). All eight cases and MARKET have executable chains; FANTASY is a showcase with references, not an additional replay recipe.

@@ -7,3 +7,5 @@ media/*.mp4
 .venv/
 
 examples/*/*.mp4
+
+projects/
