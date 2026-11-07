@@ -1,0 +1,325 @@
+{
+  "1": {
+    "class_type": "UNETLoader",
+    "inputs": {
+      "unet_name": "minimax_h3_hybrid_fl2va_ref2va_b25-49-int8.safetensors",
+      "weight_dtype": "default"
+    }
+  },
+  "2": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "clip_name": "qwen3vl_32b_minimax_h3_int8_convrot.safetensors",
+      "type": "minimax",
+      "device": "default"
+    }
+  },
+  "3": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "minimax_h3_video_vae_int8_convrot.safetensors"
+    }
+  },
+  "4": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "minimax_h3_audio_vae_fp32.safetensors"
+    }
+  },
+  "5": {
+    "class_type": "LoraLoaderModelOnly",
+    "inputs": {
+      "model": [
+        "1",
+        0
+      ],
+      "strength_model": 1.0,
+      "lora_name": "minimax_h3_DMAD_4step_full_lora_avg_rank_39_bf16.safetensors"
+    }
+  },
+  "7": {
+    "class_type": "ModelAttentionBackend",
+    "inputs": {
+      "model": [
+        "5",
+        0
+      ],
+      "attention": "comfy kitchen attention"
+    }
+  },
+  "8": {
+    "class_type": "BlockSparseAttention",
+    "inputs": {
+      "model": [
+        "7",
+        0
+      ],
+      "selection": "sla",
+      "selection.keep_percent": 10.0,
+      "start_percent": 0.2,
+      "end_percent": 1.0,
+      "dense_blocks": "",
+      "min_tokens": 12288,
+      "extra_tokens": 256,
+      "sink_conditioning": "exact_kv_and_rows",
+      "verbose": false
+    }
+  },
+  "11": {
+    "class_type": "RandomNoise",
+    "inputs": {
+      "noise_seed": 1402
+    }
+  },
+  "12": {
+    "class_type": "KSamplerSelect",
+    "inputs": {
+      "sampler_name": "er_sde"
+    }
+  },
+  "13": {
+    "class_type": "BasicScheduler",
+    "inputs": {
+      "model": [
+        "8",
+        0
+      ],
+      "scheduler": "beta",
+      "steps": 8,
+      "denoise": 1.0
+    }
+  },
+  "14": {
+    "class_type": "BasicGuider",
+    "inputs": {
+      "model": [
+        "8",
+        0
+      ],
+      "conditioning": [
+        "ag1",
+        0
+      ]
+    }
+  },
+  "15": {
+    "class_type": "SamplerCustomAdvanced",
+    "inputs": {
+      "noise": [
+        "11",
+        0
+      ],
+      "guider": [
+        "14",
+        0
+      ],
+      "sampler": [
+        "12",
+        0
+      ],
+      "sigmas": [
+        "13",
+        0
+      ],
+      "latent_image": [
+        "40",
+        1
+      ]
+    }
+  },
+  "40": {
+    "class_type": "MiniMaxH3ReferenceToVideo",
+    "inputs": {
+      "clip": [
+        "2",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ],
+      "audio_vae": [
+        "4",
+        0
+      ],
+      "prompt": "subject_definitions:\n<Subject 1> is the auburn-haired woman in mustard cardigan and jeans from <Picture 2> and <Picture 3>, standing on SCREEN LEFT. Her German voice matches the timbre, pitch and accent of <Audio 1>, the supplied female voice reference.\n<Subject 2> is the silver-haired man with short grey beard in navy coveralls from <Picture 4> and <Picture 5>, standing on SCREEN RIGHT. His German voice is calm, low and slightly rough.\n<Subject 3> is the exact living room in Picture 1, single teapot on wooden table, sofa and bookshelf left, fireplace and sunburst mirror right, front window and white door behind.\nsummary: Inside the house, the man answers a question about a mysterious light and the woman suggests investigating.\nretention_analysis: Keep both people on their established sides and preserve all room objects.\ndetailed_description: [Shot 1] Wide two-shot. The man on the right looks toward the woman on the left and answers <d>[German] Ja. Es war kurz nach Sonnenuntergang.</d> His lips close. She listens with closed lips, then says <d>[German] Es kam von der alten Werkstatt. Wir sollten morgen nachsehen.</d> Her lips match her words, he listens silently. She gives a small open-hand gesture toward the window without moving her feet.\nAt 00:10.000 [Shot 2] Cut to a medium two-shot from the same main camera side: woman left, man right, table and teapot visible between them, same room. Both look at each other thoughtfully after the exchange. Nobody touches the teapot. There are exactly two people throughout.\noverall_soundscape: Quiet room tone and clear German dialogue; slight clothing rustle with her gesture.\nnon_diegetic_music: N/A",
+      "width": 864,
+      "height": 480,
+      "length": 345,
+      "ref_image_size": "match",
+      "ref_images.ref_image_0": [
+        "night_ref0",
+        0
+      ],
+      "ref_images.ref_image_1": [
+        "night_ref1",
+        0
+      ],
+      "ref_images.ref_image_2": [
+        "night_ref2",
+        0
+      ],
+      "ref_images.ref_image_3": [
+        "night_ref3",
+        0
+      ],
+      "ref_images.ref_image_4": [
+        "night_ref4",
+        0
+      ],
+      "ref_audios.ref_audio_0": [
+        "night_audio",
+        0
+      ]
+    }
+  },
+  "s1_dek": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "15",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ]
+    }
+  },
+  "s1_vid": {
+    "class_type": "CreateVideo",
+    "inputs": {
+      "images": [
+        "s1_tr",
+        0
+      ],
+      "audio": [
+        "s1_tr",
+        1
+      ],
+      "fps": 24,
+      "bit_depth": 8,
+      "color_space": "sRGB",
+      "codec": "none"
+    }
+  },
+  "s1_save": {
+    "class_type": "SaveVideo",
+    "inputs": {
+      "video": [
+        "s1_vid",
+        0
+      ],
+      "filename_prefix": "wbv2_nacht_20261105/K4_INT_AUDIO/S1/s1_save",
+      "format": "mp4",
+      "format.codec": "h264",
+      "format.codec.encoding": "re-encode",
+      "format.codec.encoding.crf": 17,
+      "codec": "auto"
+    }
+  },
+  "lat_s1": {
+    "class_type": "MiniMaxH3MotionContextSaveLatent",
+    "inputs": {
+      "latent": [
+        "15",
+        0
+      ],
+      "filename_prefix": "wbv2_nacht_20261105/K4_INT_AUDIO/S1/lat_s1/clip",
+      "clip_index": 1
+    }
+  },
+  "sl1": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "assets/64dc39479791b8e6.png"
+    }
+  },
+  "ag1": {
+    "class_type": "MiniMaxH3AddGuide",
+    "inputs": {
+      "positive": [
+        "40",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ],
+      "latent": [
+        "40",
+        1
+      ],
+      "image": [
+        "sl1",
+        0
+      ],
+      "frame_idx": 0
+    }
+  },
+  "s1_ton": {
+    "class_type": "VAEDecodeAudio",
+    "inputs": {
+      "samples": [
+        "15",
+        0
+      ],
+      "vae": [
+        "4",
+        0
+      ]
+    }
+  },
+  "s1_tr": {
+    "class_type": "MiniMaxH3MotionContextTrim",
+    "inputs": {
+      "images": [
+        "s1_dek",
+        0
+      ],
+      "audio": [
+        "s1_ton",
+        0
+      ],
+      "trim_frames": 0,
+      "fps": 24.0,
+      "match_tail": true
+    }
+  },
+  "night_ref0": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "assets/64dc39479791b8e6.png"
+    }
+  },
+  "night_ref1": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "assets/6ce24873b64e2972.png"
+    }
+  },
+  "night_ref2": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "assets/c3f127d96fa5d08f.png"
+    }
+  },
+  "night_ref3": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "assets/31aeda1c0fb8c728.png"
+    }
+  },
+  "night_ref4": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "assets/7789e47f653cf45c.png"
+    }
+  },
+  "night_audio": {
+    "class_type": "LoadAudio",
+    "inputs": {
+      "audio": "assets/1a75cd2e591a68ec.wav"
+    }
+  }
+}

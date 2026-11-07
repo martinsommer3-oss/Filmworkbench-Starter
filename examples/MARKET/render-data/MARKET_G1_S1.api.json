@@ -1,0 +1,373 @@
+{
+  "1": {
+    "class_type": "UNETLoader",
+    "inputs": {
+      "unet_name": "minimax_h3_hybrid_fl2va_ref2va_b25-49-int8.safetensors",
+      "weight_dtype": "default"
+    }
+  },
+  "2": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "clip_name": "qwen3vl_32b_minimax_h3_int8_convrot.safetensors",
+      "type": "minimax",
+      "device": "default"
+    }
+  },
+  "3": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "minimax_h3_video_vae_int8_convrot.safetensors"
+    }
+  },
+  "4": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "minimax_h3_audio_vae_fp32.safetensors"
+    }
+  },
+  "5": {
+    "class_type": "LoraLoaderModelOnly",
+    "inputs": {
+      "model": [
+        "1",
+        0
+      ],
+      "strength_model": 1.0,
+      "lora_name": "minimax_h3_DMAD_4step_full_lora_avg_rank_39_bf16.safetensors"
+    }
+  },
+  "7": {
+    "class_type": "ModelAttentionBackend",
+    "inputs": {
+      "model": [
+        "5",
+        0
+      ],
+      "attention": "comfy kitchen attention"
+    }
+  },
+  "8": {
+    "class_type": "BlockSparseAttention",
+    "inputs": {
+      "model": [
+        "7",
+        0
+      ],
+      "selection": "sla",
+      "selection.keep_percent": 10.0,
+      "start_percent": 0.2,
+      "end_percent": 1.0,
+      "dense_blocks": "",
+      "min_tokens": 12288,
+      "extra_tokens": 256,
+      "sink_conditioning": "exact_kv_and_rows",
+      "verbose": false
+    }
+  },
+  "11": {
+    "class_type": "RandomNoise",
+    "inputs": {
+      "noise_seed": 71101
+    }
+  },
+  "12": {
+    "class_type": "KSamplerSelect",
+    "inputs": {
+      "sampler_name": "er_sde"
+    }
+  },
+  "13": {
+    "class_type": "BasicScheduler",
+    "inputs": {
+      "model": [
+        "8",
+        0
+      ],
+      "scheduler": "beta",
+      "steps": 8,
+      "denoise": 1.0
+    }
+  },
+  "14": {
+    "class_type": "BasicGuider",
+    "inputs": {
+      "model": [
+        "8",
+        0
+      ],
+      "conditioning": [
+        "ag1",
+        0
+      ]
+    }
+  },
+  "15": {
+    "class_type": "SamplerCustomAdvanced",
+    "inputs": {
+      "noise": [
+        "11",
+        0
+      ],
+      "guider": [
+        "14",
+        0
+      ],
+      "sampler": [
+        "12",
+        0
+      ],
+      "sigmas": [
+        "13",
+        0
+      ],
+      "latent_image": [
+        "40",
+        1
+      ]
+    }
+  },
+  "40": {
+    "class_type": "MiniMaxH3ReferenceToVideo",
+    "inputs": {
+      "clip": [
+        "2",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ],
+      "audio_vae": [
+        "4",
+        0
+      ],
+      "prompt": "subject_definitions:\n<Subject 1> is the fictional buyer Lena, a woman with dark curly hair, navy coat, cream scarf, grey jeans and brown boots, shown in <Picture 1> and <Picture 2>; only her person and outfit are taken from these pictures.\n<Subject 2> is the fictional stallholder Henrik, an older white-bearded man wearing a grey flat cap, dark green sweater over a light blue shirt, brown trousers and dark shoes, shown in <Picture 3> and <Picture 4>; only his person and outfit are taken from these pictures.\n<Subject 3> is the compact cobbled market square shown from the south in <Picture 5> and from the north looking south in <Picture 6>. Its cream clock hall stands north, teal apple stall northeast, red brick wall and blue doorway west, circular fountain west of center, yellow stall and tree east, ball-topped gateposts and wooden handcart south.\n<Subject 4> is a woman in a mustard coat carrying a wicker basket at the west side of the fountain, a burgundy-jacketed man seated on the west bench, and a lilac-cardigan woman browsing at the yellow stall.\nThe supplied opening guide image is the first frame of [Shot 1].\n\nsummary:\n[keyframe completion + reference generation] One continuous descending camera shot follows <Subject 1> walking from the southern entrance across the market square to <Subject 2> at the teal produce counter.\n\nretention_analysis:\n<Subject 1> (appears throughout): fully_preserved - her face, dark curls, navy coat, cream scarf, jeans and boots stay consistent.\n<Subject 2> (appears throughout): fully_preserved - his older face, white beard, grey cap and green sweater stay consistent; he remains behind the teal counter.\n<Subject 3> (appears throughout): fully_preserved - the same architecture, stall positions, fountain, blue doorway, tree, entrance and overcast daylight stay fixed.\n<Subject 4> (appears throughout): fully_preserved - the three shoppers keep their clothes and their respective fountain, bench and yellow-stall zones.\nThe single red apple rests on the small ivory cloth at the center of the teal counter. A separate basket of green apples stays at the right end. Lena's hands are empty.\n\ndetailed_description:\nThe target video uses a photorealistic live-action cinematic style with a clean digital image, soft overcast daylight, natural skin texture and no film grain.\n[Shot 1] The shot begins from the supplied opening guide, a high oblique wide view from above the southern entrance of <Subject 3>. <Subject 1> stands just inside the two southern gateposts facing the teal stall; <Subject 2> stands behind that counter beneath its canopy. <Subject 4> occupy their established places. <Subject 1> starts walking naturally along the unobstructed cobbled path east of the fountain directly toward the center of the teal counter. The camera smoothly cranes down and tracks forward behind and slightly to her left at walking speed, continuously revealing a ground-level medium-wide three-quarter view of the buyer and the stallholder at the counter. The cream clock hall remains behind the stallholder, the stone fountain and blue doorway remain to their west, and the yellow stall remains to their east. Lena reaches the counter and looks at Henrik. Henrik turns his attention to her with a welcoming small nod. Her empty hands stay low beside her coat, clear of the counter. The red apple remains resting on its ivory cloth between them; both people and the counter surface are clearly visible as the camera arrives at normal eye level. The mustard-coated shopper shifts her basket by the fountain, the seated man reads, and the lilac shopper browses at the yellow stall. One uninterrupted real-time take with continuous physical camera movement.\n\noverall_soundscape:\nLena's footsteps on cobblestones, a light rustle of her coat as she walks, the small fountain's splashes when the camera passes it. Nobody speaks; the local footsteps and fountain sounds continue.\n\nnon_diegetic_music:\nN/A\n\n",
+      "width": 864,
+      "height": 480,
+      "length": 277,
+      "ref_image_size": "match",
+      "ref_images.ref_image_0": [
+        "ref0",
+        0
+      ],
+      "ref_images.ref_image_1": [
+        "ref1",
+        0
+      ],
+      "ref_images.ref_image_2": [
+        "ref2",
+        0
+      ],
+      "ref_images.ref_image_3": [
+        "ref3",
+        0
+      ],
+      "ref_images.ref_image_4": [
+        "ref4",
+        0
+      ],
+      "ref_images.ref_image_5": [
+        "ref5",
+        0
+      ]
+    }
+  },
+  "s1_dek": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "15",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ]
+    }
+  },
+  "s1_vid": {
+    "class_type": "CreateVideo",
+    "inputs": {
+      "images": [
+        "s1_tr",
+        0
+      ],
+      "audio": [
+        "s1_tr",
+        1
+      ],
+      "fps": 24,
+      "bit_depth": 8,
+      "color_space": "sRGB",
+      "codec": "none"
+    }
+  },
+  "s1_save": {
+    "class_type": "SaveVideo",
+    "inputs": {
+      "video": [
+        "s1_vid",
+        0
+      ],
+      "filename_prefix": "marktplatz0711/market_pilot_g01_S1",
+      "format": "mp4",
+      "format.codec": "h264",
+      "format.codec.encoding": "re-encode",
+      "format.codec.encoding.crf": 17,
+      "codec": "auto"
+    }
+  },
+  "lat_s1": {
+    "class_type": "MiniMaxH3MotionContextSaveLatent",
+    "inputs": {
+      "latent": [
+        "15",
+        0
+      ],
+      "filename_prefix": "h3_context/marktplatz0711/market_pilot_g01_s1/clip",
+      "clip_index": 1
+    }
+  },
+  "sl1": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "assets/465f09b34f16d000.png"
+    }
+  },
+  "ag1": {
+    "class_type": "MiniMaxH3AddGuide",
+    "inputs": {
+      "positive": [
+        "40",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ],
+      "latent": [
+        "40",
+        1
+      ],
+      "image": [
+        "sl1",
+        0
+      ],
+      "frame_idx": 0
+    }
+  },
+  "s1_ton": {
+    "class_type": "VAEDecodeAudio",
+    "inputs": {
+      "samples": [
+        "15",
+        0
+      ],
+      "vae": [
+        "4",
+        0
+      ]
+    }
+  },
+  "s1_tr": {
+    "class_type": "MiniMaxH3MotionContextTrim",
+    "inputs": {
+      "images": [
+        "s1_dek",
+        0
+      ],
+      "audio": [
+        "s1_ton",
+        0
+      ],
+      "trim_frames": 0,
+      "fps": 24.0,
+      "match_tail": true
+    }
+  },
+  "s1_raw_trim": {
+    "class_type": "MiniMaxH3MotionContextTrim",
+    "inputs": {
+      "images": [
+        "s1_dek",
+        0
+      ],
+      "audio": [
+        "s1_ton",
+        0
+      ],
+      "trim_frames": 0,
+      "fps": 24.0,
+      "match_tail": true
+    }
+  },
+  "s1_raw_video": {
+    "class_type": "CreateVideo",
+    "inputs": {
+      "images": [
+        "s1_raw_trim",
+        0
+      ],
+      "audio": [
+        "s1_raw_trim",
+        1
+      ],
+      "fps": 24,
+      "bit_depth": 8,
+      "color_space": "sRGB",
+      "codec": "none"
+    }
+  },
+  "s1_raw_save": {
+    "class_type": "SaveVideo",
+    "inputs": {
+      "video": [
+        "s1_raw_video",
+        0
+      ],
+      "filename_prefix": "marktplatz0711/market_pilot_g01_S1_RAW",
+      "format": "mp4",
+      "format.codec": "h264",
+      "format.codec.encoding": "re-encode",
+      "format.codec.encoding.crf": 17,
+      "codec": "auto"
+    }
+  },
+  "ref0": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "assets/19f5d8d99bf8cd89.png"
+    }
+  },
+  "ref1": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "assets/e7a3594f523322da.png"
+    }
+  },
+  "ref2": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "assets/782ed79bb020fa1b.png"
+    }
+  },
+  "ref3": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "assets/04b6b1dccd9b71f6.png"
+    }
+  },
+  "ref4": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "assets/1583209595066d64.png"
+    }
+  },
+  "ref5": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "assets/678956be7ebca5ec.png"
+    }
+  }
+}

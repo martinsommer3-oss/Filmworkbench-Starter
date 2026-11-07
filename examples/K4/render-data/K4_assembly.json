@@ -1,0 +1,63 @@
+{
+  "name": "K4_VIEW",
+  "stage": "S2",
+  "frames": 729,
+  "duration": 30.375,
+  "parts": [
+    {
+      "id": "K4_EXT"
+    },
+    {
+      "id": "K4_INT_AUDIO"
+    },
+    {
+      "id": "K4_FRESH"
+    }
+  ],
+  "audio_policy": "S1 original audio for every H3 segment; raw S2 audio separately available",
+  "closing_credit": {
+    "text": "MiniMax H3",
+    "start_s": 29.375,
+    "duration_s": 1,
+    "method": "small lower-centre overlay; no added frames or audio changes"
+  },
+  "media_sha256": "f65e082013f0360d0072f2bcf3434158bd9394e31fb387f6a667af43666e7b88",
+  "source_renders": [
+    {
+      "take": "K4_EXT",
+      "stage": "S2",
+      "sha256": "d11c522cffbdd8972bae11481895df9cb2c062c012742eb29670649a5cd2f485"
+    },
+    {
+      "take": "K4_EXT",
+      "stage": "S1",
+      "sha256": "2b1ba6ec9b9659b5e85d25901e5483e44664bcd2050440f5112aef35ce6c94b2"
+    },
+    {
+      "take": "K4_INT_AUDIO",
+      "stage": "S2",
+      "sha256": "b5ae978549285d54ad4c05b04e28ee183202cbbcf7615d749a9ecdba6062121c"
+    },
+    {
+      "take": "K4_INT_AUDIO",
+      "stage": "S1",
+      "sha256": "97a69e80e671b81f2f7c7cbd38a829d4b48073e5c11741b100cecf63fd5c7470"
+    },
+    {
+      "take": "K4_FRESH",
+      "stage": "S2",
+      "sha256": "32ce4335e1dc955175bca282d095cd04b8696cc489e1b024c0dca7222cffeb9c"
+    },
+    {
+      "take": "K4_FRESH",
+      "stage": "S1",
+      "sha256": "f00bcec7d0a16883bc99b2ddbefcb9a6246b55e3c16365b4d9ad48b1170376da"
+    }
+  ],
+  "prelap": {
+    "start_s": 6.3100000000000005,
+    "end_s": 7.75,
+    "asset": "assets/968750c7dad12fb3.wav",
+    "sha256": "968750c7dad12fb3a0dc8c7eeb5cb6f28a72355c642ada86df6a3798f8851165"
+  }
+}

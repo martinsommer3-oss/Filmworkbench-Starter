@@ -1,0 +1,163 @@
+{
+  "case": "MARKET",
+  "files": [
+    {
+      "file": "MARKET_G1_S1.api.json",
+      "sha256": "6f954140866e1d46f96c42fcbb399df2d82e4dbbd71f275580eb3a5fc6eb2a5b",
+      "canonical": "graphs/MARKET_G1_S1.api.json"
+    },
+    {
+      "file": "MARKET_G1_S1.bindings.json",
+      "sha256": "598882ca5154057458cbf959ededa4bc276a45b31b1b3e5434c1f3665a43856f",
+      "canonical": "graphs/MARKET_G1_S1.bindings.json"
+    },
+    {
+      "file": "MARKET_G1_S2.api.json",
+      "sha256": "804777bdb7248ac397d22260bd7572591ba78aa61069a0b43e82f67a7d6f71fe",
+      "canonical": "graphs/MARKET_G1_S2.api.json"
+    },
+    {
+      "file": "MARKET_G1_S2.bindings.json",
+      "sha256": "1f49b95dcda7bf820bed4e1fae3438dc82428f88259fd6a6f07120fe7163f714",
+      "canonical": "graphs/MARKET_G1_S2.bindings.json"
+    },
+    {
+      "file": "MARKET_G2_S1.api.json",
+      "sha256": "da9e89e1669380c93a830876f50990a8e13dd77bc3ec9242518d983deb52c281",
+      "canonical": "graphs/MARKET_G2_S1.api.json"
+    },
+    {
+      "file": "MARKET_G2_S1.bindings.json",
+      "sha256": "d0b1da5b789a13bc7e5fe5501571d38db636194f94577a5821650885d65398d8",
+      "canonical": "graphs/MARKET_G2_S1.bindings.json"
+    },
+    {
+      "file": "MARKET_G2_S2.api.json",
+      "sha256": "e7a10c4cd00056861abf7f57d4744d8eb892dd93c41efc3e0c6869d4f9aa5aa2",
+      "canonical": "graphs/MARKET_G2_S2.api.json"
+    },
+    {
+      "file": "MARKET_G2_S2.bindings.json",
+      "sha256": "d0b1da5b789a13bc7e5fe5501571d38db636194f94577a5821650885d65398d8",
+      "canonical": "graphs/MARKET_G2_S2.bindings.json"
+    },
+    {
+      "file": "MARKET_G3_S1.api.json",
+      "sha256": "2400b94737f77ea17d0657c0227ee7087dbdee4d8e37f6393e6867dac45241c9",
+      "canonical": "graphs/MARKET_G3_S1.api.json"
+    },
+    {
+      "file": "MARKET_G3_S1.bindings.json",
+      "sha256": "59a25fc562a4f82cc22a80ce1674384d71d9e7040c46b8d7e1a138f924d38d78",
+      "canonical": "graphs/MARKET_G3_S1.bindings.json"
+    },
+    {
+      "file": "MARKET_G3_S2.api.json",
+      "sha256": "c4cc3ce994d4ef77d50c80b2792945b79d122d0170a537f3ea046540540d7229",
+      "canonical": "graphs/MARKET_G3_S2.api.json"
+    },
+    {
+      "file": "MARKET_G3_S2.bindings.json",
+      "sha256": "59a25fc562a4f82cc22a80ce1674384d71d9e7040c46b8d7e1a138f924d38d78",
+      "canonical": "graphs/MARKET_G3_S2.bindings.json"
+    },
+    {
+      "file": "MARKET_G4_S1.api.json",
+      "sha256": "e6638e3b63db0d4be1c0e4d997ff1ff41412a76b188db523caa83bd88fdea784",
+      "canonical": "graphs/MARKET_G4_S1.api.json"
+    },
+    {
+      "file": "MARKET_G4_S1.bindings.json",
+      "sha256": "59a25fc562a4f82cc22a80ce1674384d71d9e7040c46b8d7e1a138f924d38d78",
+      "canonical": "graphs/MARKET_G4_S1.bindings.json"
+    },
+    {
+      "file": "MARKET_G4_S2.api.json",
+      "sha256": "9ec6c3344f09086a9ca00d48abd325f11ed3aa3dece73ee14504a32f93c6c656",
+      "canonical": "graphs/MARKET_G4_S2.api.json"
+    },
+    {
+      "file": "MARKET_G4_S2.bindings.json",
+      "sha256": "59a25fc562a4f82cc22a80ce1674384d71d9e7040c46b8d7e1a138f924d38d78",
+      "canonical": "graphs/MARKET_G4_S2.bindings.json"
+    },
+    {
+      "file": "MARKET_G1_S1.render.json",
+      "sha256": "7ba8da9df46a0184f7f090899fdd9deb5abc0d61f805dc3cc80df9e7bd7cd7d7",
+      "canonical": "recipes/MARKET_G1_S1.render.json"
+    },
+    {
+      "file": "MARKET_G1_S2.render.json",
+      "sha256": "41bf6e3785b1dad55372dc673c7a2adec35f98d5feb373e54fe3ed0fdd53720a",
+      "canonical": "recipes/MARKET_G1_S2.render.json"
+    },
+    {
+      "file": "MARKET_G2_S1.render.json",
+      "sha256": "630c42f90a81b9b293cdb19fcd609ea5e7673c59529f24fa81dbdfc117726a91",
+      "canonical": "recipes/MARKET_G2_S1.render.json"
+    },
+    {
+      "file": "MARKET_G2_S2.render.json",
+      "sha256": "b3e6a71b603e1b9398473f6513111fadc04eaf40f3828bed3a4ae04371c7f919",
+      "canonical": "recipes/MARKET_G2_S2.render.json"
+    },
+    {
+      "file": "MARKET_G3_S1.render.json",
+      "sha256": "fe8e9d5cf29a5ece187cab1cf638747bcef53e4fc5fd0efc48705fce0c870243",
+      "canonical": "recipes/MARKET_G3_S1.render.json"
+    },
+    {
+      "file": "MARKET_G3_S2.render.json",
+      "sha256": "bb952136398985f0a2474d65e7a5f98bf18ad13a5f5154a30e4c2b882d05f7c7",
+      "canonical": "recipes/MARKET_G3_S2.render.json"
+    },
+    {
+      "file": "MARKET_G4_S1.render.json",
+      "sha256": "4468bddabbbdc7e963d65cafdb7a9b285d8e710e9bace734520ac05d7485191b",
+      "canonical": "recipes/MARKET_G4_S1.render.json"
+    },
+    {
+      "file": "MARKET_G4_S2.render.json",
+      "sha256": "61411be65e9066d6fde5672ddd70dedf5f188eee81010e8aa935aa26e2c6ff3b",
+      "canonical": "recipes/MARKET_G4_S2.render.json"
+    }
+  ],
+  "references": [
+    {
+      "file": "../../../assets/465f09b34f16d000.png",
+      "sha256": "465f09b34f16d000f7af8af38f2c3bda65767d74bb00d61e76f10dc4e7bc4762"
+    },
+    {
+      "file": "../../../assets/19f5d8d99bf8cd89.png",
+      "sha256": "19f5d8d99bf8cd898ccf238739c543bb84a84f41c9684fe5952f6a74a788873c"
+    },
+    {
+      "file": "../../../assets/e7a3594f523322da.png",
+      "sha256": "e7a3594f523322da39bbc943955e83b6a1685dc9b520ca1d15eef4321f628c7c"
+    },
+    {
+      "file": "../../../assets/782ed79bb020fa1b.png",
+      "sha256": "782ed79bb020fa1b2847eb1c690ed54e3a0f1a47fad9f13cefca8404652ebcf5"
+    },
+    {
+      "file": "../../../assets/04b6b1dccd9b71f6.png",
+      "sha256": "04b6b1dccd9b71f6ebbe876364e831a3d000215b69266f3f758bb1ec340836ce"
+    },
+    {
+      "file": "../../../assets/1583209595066d64.png",
+      "sha256": "1583209595066d64652e65e798a8b9cd49266426cb53a09ed10944944c3fe42c"
+    },
+    {
+      "file": "../../../assets/678956be7ebca5ec.png",
+      "sha256": "678956be7ebca5ecc539d5b5e027070033090e136ba281457ef3c17f7e5ded38"
+    },
+    {
+      "file": "../../../assets/c14f8a977daf0097.png",
+      "sha256": "c14f8a977daf0097be38bb7207babf863a4c0ebe8a310f013e9033ae4f483ec9"
+    },
+    {
+      "file": "../../../assets/556490c4374a1dbd.png",
+      "sha256": "556490c4374a1dbd2dc29cc12b4fb41588068124ec976dc16cbd526542023d7a"
+    }
+  ]
+}

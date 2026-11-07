@@ -1,0 +1,184 @@
+{
+  "assets/64dc39479791b8e6.png": {
+    "sha256": "64dc39479791b8e621a5ce8f489fb199f52a506ba220e8938a3adbe394752d9f",
+    "bytes": 2514561
+  },
+  "assets/6ce24873b64e2972.png": {
+    "sha256": "6ce24873b64e297276482108233fe890d416658680a34d6960d6b8c09a8b45cc",
+    "bytes": 2625280
+  },
+  "assets/c3f127d96fa5d08f.png": {
+    "sha256": "c3f127d96fa5d08f01c4f1655e5d349c5e917c446b7a3ef21f6272f35f421ab5",
+    "bytes": 2004575
+  },
+  "assets/31aeda1c0fb8c728.png": {
+    "sha256": "31aeda1c0fb8c728e91c4da6a0e2ade0fb389ee8b9a6c0e41ee87b86958d0960",
+    "bytes": 2700098
+  },
+  "assets/7789e47f653cf45c.png": {
+    "sha256": "7789e47f653cf45cf26d8b2e8db7b4521b934deb168f8c8c33bcdf993499d926",
+    "bytes": 2089150
+  },
+  "assets/df6f5be105bd416f.png": {
+    "sha256": "df6f5be105bd416f7f806934866f3d7937c43be61d04a99d300cff9051799151",
+    "bytes": 2369931
+  },
+  "assets/cc24d1af5efc2a2f.png": {
+    "sha256": "cc24d1af5efc2a2ffece382ea910ea93389955ee62f818fb8cba30e9faac7f6f",
+    "bytes": 2372069
+  },
+  "assets/c079abf9e0f4cf14.png": {
+    "sha256": "c079abf9e0f4cf142076dac59c6730ed62a23a287562aeadff40af5f42ef4a19",
+    "bytes": 2326291
+  },
+  "assets/36018c2eded5a826.png": {
+    "sha256": "36018c2eded5a826ab0d2995967f8d094f4f2a3829703a1ee5664bbd426768cb",
+    "bytes": 3020536
+  },
+  "assets/76c9b86e1d9d435a.png": {
+    "sha256": "76c9b86e1d9d435abeb918385cc80a75b61377cff2ebdfd7e1fe1a64493b31ff",
+    "bytes": 2155354
+  },
+  "assets/1f1bc8581ef0576c.png": {
+    "sha256": "1f1bc8581ef0576cf0549af01e47755068e3a9e6d7f482846ce2955cd2c75371",
+    "bytes": 1875152
+  },
+  "assets/d80e22e2a9300e51.png": {
+    "sha256": "d80e22e2a9300e5163fa3a333be86cb25791940948cdb90516c4d24d0c95559e",
+    "bytes": 1994175
+  },
+  "assets/2489c3017c52f6bf.png": {
+    "sha256": "2489c3017c52f6bfecd1f2b7e41b59e58ee62470be5de7740e605f83dbde752f",
+    "bytes": 2369759
+  },
+  "assets/27c3ba0ee9ddeb9b.png": {
+    "sha256": "27c3ba0ee9ddeb9b8dff122a70a8d0a1b575cf083f6f2068debbfeee0c3c61c2",
+    "bytes": 3128581
+  },
+  "assets/30c1629196aad86b.png": {
+    "sha256": "30c1629196aad86b69e5960e20887868b7c27d6bd65a49063e53cd4d44e518b8",
+    "bytes": 2904858
+  },
+  "assets/faa7ef4972de8c45.png": {
+    "sha256": "faa7ef4972de8c45f6bcc16d084337b4e605c4c3a117227799a9b9cec9e9ac1d",
+    "bytes": 2550558
+  },
+  "assets/8d85d4275d8b1070.png": {
+    "sha256": "8d85d4275d8b1070f2bb74f091c940d691ca1fc5dd003cb4f2f2599321d83a2e",
+    "bytes": 2512533
+  },
+  "assets/cdf0f9c23220e4b7.png": {
+    "sha256": "cdf0f9c23220e4b7538a769d15297b538efd6d62b285217f552a30e945ed6711",
+    "bytes": 2720909
+  },
+  "assets/465f09b34f16d000.png": {
+    "sha256": "465f09b34f16d000f7af8af38f2c3bda65767d74bb00d61e76f10dc4e7bc4762",
+    "bytes": 3625093,
+    "role": "marketplace reference",
+    "audio_origin": null
+  },
+  "assets/19f5d8d99bf8cd89.png": {
+    "sha256": "19f5d8d99bf8cd898ccf238739c543bb84a84f41c9684fe5952f6a74a788873c",
+    "bytes": 1618153,
+    "role": "marketplace reference",
+    "audio_origin": null
+  },
+  "assets/e7a3594f523322da.png": {
+    "sha256": "e7a3594f523322da39bbc943955e83b6a1685dc9b520ca1d15eef4321f628c7c",
+    "bytes": 1902642,
+    "role": "marketplace reference",
+    "audio_origin": null
+  },
+  "assets/782ed79bb020fa1b.png": {
+    "sha256": "782ed79bb020fa1b2847eb1c690ed54e3a0f1a47fad9f13cefca8404652ebcf5",
+    "bytes": 1725615,
+    "role": "marketplace reference",
+    "audio_origin": null
+  },
+  "assets/04b6b1dccd9b71f6.png": {
+    "sha256": "04b6b1dccd9b71f6ebbe876364e831a3d000215b69266f3f758bb1ec340836ce",
+    "bytes": 1979333,
+    "role": "marketplace reference",
+    "audio_origin": null
+  },
+  "assets/1583209595066d64.png": {
+    "sha256": "1583209595066d64652e65e798a8b9cd49266426cb53a09ed10944944c3fe42c",
+    "bytes": 3598175,
+    "role": "marketplace reference",
+    "audio_origin": null
+  },
+  "assets/678956be7ebca5ec.png": {
+    "sha256": "678956be7ebca5ecc539d5b5e027070033090e136ba281457ef3c17f7e5ded38",
+    "bytes": 3212111,
+    "role": "marketplace reference",
+    "audio_origin": null
+  },
+  "assets/7daef4885790a407.wav": {
+    "sha256": "7daef4885790a407d2edfb28fd3695d779233e252584706920c5f54a0fe7f6e4",
+    "bytes": 237678,
+    "role": "marketplace reference",
+    "audio_origin": "synthetic; owner confirmed redistribution 2026-11-07"
+  },
+  "assets/ad7c4beffc59fecf.wav": {
+    "sha256": "ad7c4beffc59fecf3ef0112a4235115376deb92bce1b771f9c4bf2c4d8487045",
+    "bytes": 187278,
+    "role": "marketplace reference",
+    "audio_origin": "synthetic; owner confirmed redistribution 2026-11-07"
+  },
+  "assets/c14f8a977daf0097.png": {
+    "sha256": "c14f8a977daf0097be38bb7207babf863a4c0ebe8a310f013e9033ae4f483ec9",
+    "bytes": 3386216,
+    "role": "marketplace reference",
+    "audio_origin": null
+  },
+  "assets/556490c4374a1dbd.png": {
+    "sha256": "556490c4374a1dbd2dc29cc12b4fb41588068124ec976dc16cbd526542023d7a",
+    "bytes": 3374095,
+    "role": "marketplace reference",
+    "audio_origin": null
+  },
+  "assets/1a75cd2e591a68ec.wav": {
+    "sha256": "1a75cd2e591a68ec56c1dbc2cf76ddc7a35be747fb819efa923ee22c33fe824e",
+    "bytes": 169004,
+    "role": "K4 synthetic Qwen dialogue conditioning"
+  },
+  "assets/968750c7dad12fb3.wav": {
+    "sha256": "968750c7dad12fb3a0dc8c7eeb5cb6f28a72355c642ada86df6a3798f8851165",
+    "bytes": 69164,
+    "role": "K4 synthetic Qwen audio prelap"
+  },
+  "assets/d522df31db129182.png": {
+    "sha256": "d522df31db12918298f4fe2bc9f6622a6a0774bb26d2b3d00cfbee7fad097575",
+    "bytes": 2383413,
+    "role": "Opening composition (Krea 2)",
+    "source_sha256": "a8e0949c3f2b7d57d1962cd7aaaf803f033086da71bdbf93dd9e4e4221531f81",
+    "removed_metadata_chunks": [
+      "tEXt"
+    ],
+    "pixels_unchanged": true
+  },
+  "assets/b40e4f088eac42a3.png": {
+    "sha256": "b40e4f088eac42a322e245795f776238e2aa2a1e4b1f62f986406a56517d7288",
+    "bytes": 943165,
+    "role": "Elya character sheet",
+    "source_sha256": "b40e4f088eac42a322e245795f776238e2aa2a1e4b1f62f986406a56517d7288",
+    "removed_metadata_chunks": [],
+    "pixels_unchanged": true
+  },
+  "assets/93365b42e4bdfb9a.png": {
+    "sha256": "93365b42e4bdfb9afc058f5c0e96dece12604b0ae09003223e7cfd89863cc65c",
+    "bytes": 1016026,
+    "role": "Orin character sheet",
+    "source_sha256": "93365b42e4bdfb9afc058f5c0e96dece12604b0ae09003223e7cfd89863cc65c",
+    "removed_metadata_chunks": [],
+    "pixels_unchanged": true
+  },
+  "assets/2ab0e2557490cb2b.png": {
+    "sha256": "2ab0e2557490cb2bff723d6d0de4765eb0d5a48b2d306a5e38e7c14305b88bc8",
+    "bytes": 3249262,
+    "role": "World reference (GPT Image)",
+    "source_sha256": "2ab0e2557490cb2bff723d6d0de4765eb0d5a48b2d306a5e38e7c14305b88bc8",
+    "removed_metadata_chunks": [],
+    "pixels_unchanged": true
+  }
+}

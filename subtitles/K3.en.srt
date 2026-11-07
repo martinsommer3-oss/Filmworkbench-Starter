@@ -1,0 +1,15 @@
+1
+00:00:07,790 --> 00:00:09,910
+I'll check the workshop.
+
+2
+00:00:13,915 --> 00:00:15,775
+Everything's fine here.
+
+3
+00:00:20,255 --> 00:00:22,815
+Everything's fine in the workshop.
+
+4
+00:00:24,875 --> 00:00:28,035
+Good. Let's have our tea, then.

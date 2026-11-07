@@ -1,0 +1,42 @@
+{
+  "date": "2026-11-07",
+  "test": "freshly extracted source ZIP, isolated standard-library Python, existing local ComfyUI backend",
+  "source_zip_sha256": "157199051abb795a6328f31dd676319f113d9f63d2564491f0e816c830a450d1",
+  "runtime_hashes": {
+    "render_example.py": "8f044fff8aa232b148d618d5888d56f360e0ff706a043592ceb06dcf4457eabf",
+    "doctor.py": "5b72dd098a98bcc91c13b13e9e1d445a234a2151a0bb1a280be677de483302da",
+    "examples/dialogue/example.json": "a7269a4229d5c070ba922fb7e93704b246ad772802ae7c690c2c9e3c476940dd",
+    "examples/dialogue/S1.api.json": "ddde6c268e95a0f968d363ae8be74ddc2caefcd07cc661ba77cc791946910e4f",
+    "examples/dialogue/S2.api.json": "5321a8cf2bf8ee612d85fdd41bfe309e1af77e2cc8246ff26386c6be45bf4548"
+  },
+  "S1_wall_seconds": 72.52871420001611,
+  "S2_wall_seconds": 184.02859229999012,
+  "output_sha256": "486847538b55953da20cdf967e5f3681d912503404f01f81492c36c3d67641f9",
+  "output_bytes": 14433520,
+  "streams": [
+    {
+      "codec_name": "h264",
+      "codec_type": "video",
+      "width": 1952,
+      "height": 1088,
+      "r_frame_rate": "24/1",
+      "duration": "14.375000",
+      "nb_read_frames": "345"
+    },
+    {
+      "codec_name": "aac",
+      "codec_type": "audio",
+      "sample_rate": "32000",
+      "channels": 2,
+      "r_frame_rate": "0/0",
+      "duration": "14.375000",
+      "nb_read_frames": "450"
+    }
+  ],
+  "video_packets_equal_S2": true,
+  "audio_packets_equal_S1": true,
+  "full_decode": "passed",
+  "fresh_GPU_installation": false,
+  "hardware": "RTX 5090 32 GB VRAM; 128 GB system RAM",
+  "timing_scope": "Existing backend, not a cold-start benchmark; includes polling. Weight verification ran concurrently for part of the test."
+}

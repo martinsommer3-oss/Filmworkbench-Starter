@@ -1,0 +1,22 @@
+[
+  {
+    "role": "Opening composition (Krea 2)",
+    "asset": "assets/d522df31db129182.png",
+    "sha256": "d522df31db12918298f4fe2bc9f6622a6a0774bb26d2b3d00cfbee7fad097575"
+  },
+  {
+    "role": "Elya character sheet",
+    "asset": "assets/b40e4f088eac42a3.png",
+    "sha256": "b40e4f088eac42a322e245795f776238e2aa2a1e4b1f62f986406a56517d7288"
+  },
+  {
+    "role": "Orin character sheet",
+    "asset": "assets/93365b42e4bdfb9a.png",
+    "sha256": "93365b42e4bdfb9afc058f5c0e96dece12604b0ae09003223e7cfd89863cc65c"
+  },
+  {
+    "role": "World reference (GPT Image)",
+    "asset": "assets/2ab0e2557490cb2b.png",
+    "sha256": "2ab0e2557490cb2bff723d6d0de4765eb0d5a48b2d306a5e38e7c14305b88bc8"
+  }
+]

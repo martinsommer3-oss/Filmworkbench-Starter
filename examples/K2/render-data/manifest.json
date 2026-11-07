@@ -1,0 +1,76 @@
+{
+  "case": "K2",
+  "files": [
+    {
+      "file": "K1_A1_S1.api.json",
+      "sha256": "a88e98fe7c02ff98c5aebb840cc8a70b55b689edbdb7f8e1febd54362704da3a",
+      "canonical": "graphs/K1_A1_S1.api.json"
+    },
+    {
+      "file": "K1_A1_S1.bindings.json",
+      "sha256": "1314dd7b2015a5f8d8a5e49d68eb9b5c8083ec333dc6f53272b0bae63738f8d5",
+      "canonical": "graphs/K1_A1_S1.bindings.json"
+    },
+    {
+      "file": "K1_A1_S2.api.json",
+      "sha256": "e5a5035292e85fcd245f056c99585d78ba4e18ae3b43be2cc6c70abc0595b97a",
+      "canonical": "graphs/K1_A1_S2.api.json"
+    },
+    {
+      "file": "K1_A1_S2.bindings.json",
+      "sha256": "54bdd4297457e49ed6ca5096de9bca85269e94418e526f41367b54f15f6b20b2",
+      "canonical": "graphs/K1_A1_S2.bindings.json"
+    },
+    {
+      "file": "K2_B2_S1.api.json",
+      "sha256": "2499fcb4fc30f97e10719566ae3a09a269788b228604ebf05dcfa7ec40e70ff9",
+      "canonical": "graphs/K2_B2_S1.api.json"
+    },
+    {
+      "file": "K2_B2_S1.bindings.json",
+      "sha256": "99563953533b27573bea1776b88140d7c4a1b98379623592876e57701bae0de3",
+      "canonical": "graphs/K2_B2_S1.bindings.json"
+    },
+    {
+      "file": "K2_B2_S2.api.json",
+      "sha256": "63f9968004c7e55bd625acd903f4addf16dd97c02afad8dc0b4f487e97f1b802",
+      "canonical": "graphs/K2_B2_S2.api.json"
+    },
+    {
+      "file": "K2_B2_S2.bindings.json",
+      "sha256": "99563953533b27573bea1776b88140d7c4a1b98379623592876e57701bae0de3",
+      "canonical": "graphs/K2_B2_S2.bindings.json"
+    },
+    {
+      "file": "K2_assembly.json",
+      "sha256": "39186a648548e2a2195ed740e7f78d53bb321ef0210fc4a00976c62a3ad78a26",
+      "canonical": "recipes/K2_assembly.json"
+    }
+  ],
+  "references": [
+    {
+      "file": "../../../assets/64dc39479791b8e6.png",
+      "sha256": "64dc39479791b8e621a5ce8f489fb199f52a506ba220e8938a3adbe394752d9f"
+    },
+    {
+      "file": "../../../assets/6ce24873b64e2972.png",
+      "sha256": "6ce24873b64e297276482108233fe890d416658680a34d6960d6b8c09a8b45cc"
+    },
+    {
+      "file": "../../../assets/c3f127d96fa5d08f.png",
+      "sha256": "c3f127d96fa5d08f01c4f1655e5d349c5e917c446b7a3ef21f6272f35f421ab5"
+    },
+    {
+      "file": "../../../assets/31aeda1c0fb8c728.png",
+      "sha256": "31aeda1c0fb8c728e91c4da6a0e2ade0fb389ee8b9a6c0e41ee87b86958d0960"
+    },
+    {
+      "file": "../../../assets/7789e47f653cf45c.png",
+      "sha256": "7789e47f653cf45cf26d8b2e8db7b4521b934deb168f8c8c33bcdf993499d926"
+    },
+    {
+      "file": "../../../assets/df6f5be105bd416f.png",
+      "sha256": "df6f5be105bd416f7f806934866f3d7937c43be61d04a99d300cff9051799151"
+    }
+  ]
+}

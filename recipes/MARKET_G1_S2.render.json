@@ -1,0 +1,32 @@
+{
+  "stage": "s2",
+  "nr": 1,
+  "seed": 71101,
+  "frames": 277,
+  "context_frames": 0,
+  "base_recipe": "kern_v1",
+  "experimental_conditioning": "none",
+  "graph_sha256": "c0d9210124b2534ed6ee3fcb41e39b67850aabd26778d0466292419e17115c80",
+  "id": "MARKET_G1_S2",
+  "exported_graph": "../graphs/MARKET_G1_S2.api.json",
+  "source_graph_sha256": "cddd643cf01e23270561294b1090d2b9560bd01e420d9e2aa525bbdf9f21541e",
+  "dependencies": {
+    "s1": {
+      "stage": "s1",
+      "nr": 1,
+      "frames": 277,
+      "context_frames": 0,
+      "video_sha256": "7726918770badbc7e32fb1d840cd6cf584620ed6eac20afcdaff7e0ccb735ac1",
+      "latent_sha256": "a48912a6afd3244e43842b0da1c0410f2a58cdf6dda5b340041655441fce9820",
+      "shape": [
+        1,
+        24,
+        82,
+        30,
+        54
+      ],
+      "width": 864,
+      "height": 480
+    }
+  }
+}

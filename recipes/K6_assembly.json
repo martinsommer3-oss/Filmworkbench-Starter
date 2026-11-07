@@ -1,0 +1,57 @@
+{
+  "name": "K6_VIEW",
+  "stage": "S2",
+  "frames": 729,
+  "duration": 30.375,
+  "parts": [
+    {
+      "id": "K6_EXT_LOCK"
+    },
+    {
+      "id": "K6_INT_WIDE"
+    },
+    {
+      "id": "K6_EXT2"
+    }
+  ],
+  "audio_policy": "S1 original audio for every H3 segment; raw S2 audio separately available",
+  "closing_credit": {
+    "text": "MiniMax H3",
+    "start_s": 29.375,
+    "duration_s": 1,
+    "method": "small lower-centre overlay; no added frames or audio changes"
+  },
+  "media_sha256": "b84e0c1ffcedcafa042400c0f528af3db90b38b3265a6ccf36e0afcdb01ed639",
+  "source_renders": [
+    {
+      "take": "K6_EXT_LOCK",
+      "stage": "S2",
+      "sha256": "814a7111ef9e769057d5187696bad114a40a57ec71d2f7de15dc2348bc0b2043"
+    },
+    {
+      "take": "K6_EXT_LOCK",
+      "stage": "S1",
+      "sha256": "01a1290f6fba5513cd59301cb2804d099117b5b9265d3514f25a473f5da2a879"
+    },
+    {
+      "take": "K6_INT_WIDE",
+      "stage": "S2",
+      "sha256": "9aa5d0e40354edb40e33f0425bae649556ea411ee7338d8132c7b4d163fd6fbb"
+    },
+    {
+      "take": "K6_INT_WIDE",
+      "stage": "S1",
+      "sha256": "aed4b77bb40fb393c7a4dd880dea9958396751bc84b3a651093a24b1a7e42a3b"
+    },
+    {
+      "take": "K6_EXT2",
+      "stage": "S2",
+      "sha256": "910ea422366285d504be6b0ec92cf8eaf9e62831cf7b45f9c6e8befe66fe052c"
+    },
+    {
+      "take": "K6_EXT2",
+      "stage": "S1",
+      "sha256": "2e20b65f197111c2e0f168a955b0a3c843ae0d93889ffe2a450a205afb045d96"
+    }
+  ]
+}

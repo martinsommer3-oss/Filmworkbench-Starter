@@ -1,0 +1,78 @@
+{
+  "case": "K7",
+  "files": [
+    {
+      "file": "K7_END_S1.api.json",
+      "sha256": "d3ccd04660f68ca7c2dbeab61995c5077db3ae051718ff62f610244a2f4c65f7",
+      "canonical": "graphs/K7_END_S1.api.json"
+    },
+    {
+      "file": "K7_END_S1.bindings.json",
+      "sha256": "c7dc5500ddb89400906219fd70204fd0695f978bf9a51b1a1c1ccc494338e9e8",
+      "canonical": "graphs/K7_END_S1.bindings.json"
+    },
+    {
+      "file": "K7_END_S2.api.json",
+      "sha256": "ef2d140388171734236df3d83897b7af1d4a3c4aabe6c44663f8a36fc70ce371",
+      "canonical": "graphs/K7_END_S2.api.json"
+    },
+    {
+      "file": "K7_END_S2.bindings.json",
+      "sha256": "ef5a08cbece98e8826c88095ecce6b2b3eac614eb7dc7e5735ce9215c6e41166",
+      "canonical": "graphs/K7_END_S2.bindings.json"
+    },
+    {
+      "file": "K7_FOLLOW_S1.api.json",
+      "sha256": "6d1c0a68e0753fa7f2563ab4ffce8c0b851ad404c67eb28fd41779fa7ae1fbb1",
+      "canonical": "graphs/K7_FOLLOW_S1.api.json"
+    },
+    {
+      "file": "K7_FOLLOW_S1.bindings.json",
+      "sha256": "2a9035abd937a5a3356c69ccc2601cd7eba330bb45040e5ef70491ce7095c068",
+      "canonical": "graphs/K7_FOLLOW_S1.bindings.json"
+    },
+    {
+      "file": "K7_FOLLOW_S2.api.json",
+      "sha256": "9442e908c33b04a7bb2ec774a30aa1b8a37ae3125f442a099246955569fba55a",
+      "canonical": "graphs/K7_FOLLOW_S2.api.json"
+    },
+    {
+      "file": "K7_FOLLOW_S2.bindings.json",
+      "sha256": "2a9035abd937a5a3356c69ccc2601cd7eba330bb45040e5ef70491ce7095c068",
+      "canonical": "graphs/K7_FOLLOW_S2.bindings.json"
+    },
+    {
+      "file": "K7_S2_REF05_S2.api.json",
+      "sha256": "a8673b33a48f5e9e7f6d9af3d09820646a40e2149bea5b8402508fc2eafdfe34",
+      "canonical": "graphs/K7_S2_REF05_S2.api.json"
+    },
+    {
+      "file": "K7_S2_REF05_S2.bindings.json",
+      "sha256": "2a9035abd937a5a3356c69ccc2601cd7eba330bb45040e5ef70491ce7095c068",
+      "canonical": "graphs/K7_S2_REF05_S2.bindings.json"
+    },
+    {
+      "file": "K7_assembly.json",
+      "sha256": "1ccde8c69c6d2529cfddf313eca9ddbe2b5d7c3e8deb470f47914ba1ff44d45c",
+      "canonical": "recipes/K7_assembly.json"
+    }
+  ],
+  "references": [
+    {
+      "file": "../../../assets/27c3ba0ee9ddeb9b.png",
+      "sha256": "27c3ba0ee9ddeb9b8dff122a70a8d0a1b575cf083f6f2068debbfeee0c3c61c2"
+    },
+    {
+      "file": "../../../assets/31aeda1c0fb8c728.png",
+      "sha256": "31aeda1c0fb8c728e91c4da6a0e2ade0fb389ee8b9a6c0e41ee87b86958d0960"
+    },
+    {
+      "file": "../../../assets/7789e47f653cf45c.png",
+      "sha256": "7789e47f653cf45cf26d8b2e8db7b4521b934deb168f8c8c33bcdf993499d926"
+    },
+    {
+      "file": "../../../assets/30c1629196aad86b.png",
+      "sha256": "30c1629196aad86b69e5960e20887868b7c27d6bd65a49063e53cd4d44e518b8"
+    }
+  ]
+}

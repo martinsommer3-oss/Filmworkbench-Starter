@@ -1,0 +1,18 @@
+# Workflow examples
+
+Open a case for its input/workflow overview and deeper render data, or download its finished S2 video directly. All videos are on [GitHub Releases](https://github.com/martinsommer3-oss/Filmworkbench-Starter/releases/tag/v0.1.0); no YouTube or Drive account is needed. The [complete video ZIP](https://github.com/martinsommer3-oss/Filmworkbench-Starter/releases/download/v0.1.0/Filmworkbench-v0.1-examples.zip) places the MP4s beside these overviews when extracted at the repository root.
+
+| Case and source records | S2 video | Input/workflow overview |
+| --- | --- | --- |
+| [K1 — Dialogue with close-ups](K1/README.md) | [Download MP4](https://github.com/martinsommer3-oss/Filmworkbench-Starter/releases/download/v0.1.0/Filmworkbench_K1_S2.mp4) · 28.5s | [<img src="K1/overview.png" width="220" alt="K1 workflow overview">](K1/overview.png) |
+| [K2 — Reverse angle and return](K2/README.md) | [Download MP4](https://github.com/martinsommer3-oss/Filmworkbench-Starter/releases/download/v0.1.0/Filmworkbench_K2_S2.mp4) · 28.5s | [<img src="K2/overview.png" width="220" alt="K2 workflow overview">](K2/overview.png) |
+| [K3 — Leave and return to a changed state](K3/README.md) | [Download MP4](https://github.com/martinsommer3-oss/Filmworkbench-Starter/releases/download/v0.1.0/Filmworkbench_K3_S2.mp4) · 29.7s | [<img src="K3/overview.png" width="220" alt="K3 workflow overview">](K3/overview.png) |
+| [K4 — Establishing shot with an audio prelap](K4/README.md) | [Download MP4](https://github.com/martinsommer3-oss/Filmworkbench-Starter/releases/download/v0.1.0/Filmworkbench_K4_S2.mp4) · 30.4s | [<img src="K4/overview.png" width="220" alt="K4 workflow overview">](K4/overview.png) |
+| [K6 — Exterior, cockpit, exterior](K6/README.md) | [Download MP4](https://github.com/martinsommer3-oss/Filmworkbench-Starter/releases/download/v0.1.0/Filmworkbench_K6_S2.mp4) · 30.4s | [<img src="K6/overview.png" width="220" alt="K6 workflow overview">](K6/overview.png) |
+| [K7 — A known character enters an empty frame](K7/README.md) | [Download MP4](https://github.com/martinsommer3-oss/Filmworkbench-Starter/releases/download/v0.1.0/Filmworkbench_K7_S2.mp4) · 28.5s | [<img src="K7/overview.png" width="220" alt="K7 workflow overview">](K7/overview.png) |
+| [K8 — A creature emerges from a lake](K8/README.md) | [Download MP4](https://github.com/martinsommer3-oss/Filmworkbench-Starter/releases/download/v0.1.0/Filmworkbench_K8_S2.mp4) · 28.5s | [<img src="K8/overview.png" width="220" alt="K8 workflow overview">](K8/overview.png) |
+| [K9 — Open a door and move inside](K9/README.md) | [Download MP4](https://github.com/martinsommer3-oss/Filmworkbench-Starter/releases/download/v0.1.0/Filmworkbench_K9_S2.mp4) · 28.5s | [<img src="K9/overview.png" width="220" alt="K9 workflow overview">](K9/overview.png) |
+| [MARKET — Marketplace — arrival, purchase, orbit, departure](MARKET/README.md) | [Download MP4](https://github.com/martinsommer3-oss/Filmworkbench-Starter/releases/download/v0.1.0/Filmworkbench_MARKET_S2.mp4) · 49.7s | [<img src="MARKET/overview.png" width="220" alt="MARKET workflow overview">](MARKET/overview.png) |
+| [FANTASY — The Last Light — six-clip Fantasy film](FANTASY/README.md) | [Download MP4](https://github.com/martinsommer3-oss/Filmworkbench-Starter/releases/download/v0.1.0/Filmworkbench_FANTASY_S2.mp4) · 78.8s | [<img src="FANTASY/overview.png" width="220" alt="FANTASY workflow overview">](FANTASY/overview.png) |
+
+[Try the runnable dialogue starter](../docs/QUICKSTART.md). The other cases are worked production examples, not automated full-chain replay programs.

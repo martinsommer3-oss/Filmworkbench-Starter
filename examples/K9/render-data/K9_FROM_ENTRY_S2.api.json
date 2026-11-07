@@ -1,0 +1,382 @@
+{
+  "1": {
+    "class_type": "UNETLoader",
+    "inputs": {
+      "unet_name": "minimax_h3_hybrid_fl2va_ref2va_b25-49-int8.safetensors",
+      "weight_dtype": "default"
+    }
+  },
+  "2": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "clip_name": "qwen3vl_32b_minimax_h3_int8_convrot.safetensors",
+      "type": "minimax",
+      "device": "default"
+    }
+  },
+  "3": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "minimax_h3_video_vae_int8_convrot.safetensors"
+    }
+  },
+  "4": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "minimax_h3_audio_vae_fp32.safetensors"
+    }
+  },
+  "5": {
+    "class_type": "LoraLoaderModelOnly",
+    "inputs": {
+      "model": [
+        "1",
+        0
+      ],
+      "strength_model": 1.0,
+      "lora_name": "minimax_h3_DMAD_4step_full_lora_avg_rank_39_bf16.safetensors"
+    }
+  },
+  "7": {
+    "class_type": "ModelAttentionBackend",
+    "inputs": {
+      "model": [
+        "5",
+        0
+      ],
+      "attention": "comfy kitchen attention"
+    }
+  },
+  "8": {
+    "class_type": "BlockSparseAttention",
+    "inputs": {
+      "model": [
+        "7",
+        0
+      ],
+      "selection": "sla",
+      "selection.keep_percent": 10.0,
+      "start_percent": 0.2,
+      "end_percent": 1.0,
+      "dense_blocks": "",
+      "min_tokens": 12288,
+      "extra_tokens": 256,
+      "sink_conditioning": "exact_kv_and_rows",
+      "verbose": false
+    }
+  },
+  "20": {
+    "class_type": "LTXVSeparateAVLatent",
+    "inputs": {
+      "av_latent": [
+        "ld_s1",
+        0
+      ]
+    }
+  },
+  "21": {
+    "class_type": "MinimaxH3LatentUpscaler3D",
+    "inputs": {
+      "latent": [
+        "20",
+        0
+      ],
+      "model_name": "minimax_h3_latent_upscaler_3d_conv_v1_fp16.safetensors",
+      "mode": "megapixels",
+      "mode.megapixels": 2.0,
+      "align": 32,
+      "enable_temporal_chunking": true,
+      "force_unload": true,
+      "device": "cuda",
+      "precision": "fp16"
+    }
+  },
+  "22": {
+    "class_type": "H3StageLatent",
+    "inputs": {
+      "first_stage": [
+        "ld_s1",
+        0
+      ],
+      "video_latent": [
+        "21",
+        0
+      ]
+    }
+  },
+  "23": {
+    "class_type": "RandomNoise",
+    "inputs": {
+      "noise_seed": 2401
+    }
+  },
+  "24": {
+    "class_type": "KSamplerSelect",
+    "inputs": {
+      "sampler_name": "er_sde"
+    }
+  },
+  "25": {
+    "class_type": "BasicScheduler",
+    "inputs": {
+      "model": [
+        "8",
+        0
+      ],
+      "scheduler": "linear_quadratic",
+      "steps": 2,
+      "denoise": 0.4
+    }
+  },
+  "26": {
+    "class_type": "BasicGuider",
+    "inputs": {
+      "model": [
+        "8",
+        0
+      ],
+      "conditioning": [
+        "night_endguide",
+        0
+      ]
+    }
+  },
+  "27": {
+    "class_type": "SamplerCustomAdvanced",
+    "inputs": {
+      "noise": [
+        "23",
+        0
+      ],
+      "guider": [
+        "26",
+        0
+      ],
+      "sampler": [
+        "24",
+        0
+      ],
+      "sigmas": [
+        "25",
+        0
+      ],
+      "latent_image": [
+        "22",
+        0
+      ]
+    }
+  },
+  "28": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "27",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ]
+    }
+  },
+  "29": {
+    "class_type": "VAEDecodeAudio",
+    "inputs": {
+      "samples": [
+        "27",
+        0
+      ],
+      "vae": [
+        "4",
+        0
+      ]
+    }
+  },
+  "30": {
+    "class_type": "CreateVideo",
+    "inputs": {
+      "images": [
+        "tr",
+        0
+      ],
+      "audio": [
+        "tr",
+        1
+      ],
+      "fps": 24,
+      "bit_depth": 8,
+      "color_space": "sRGB",
+      "codec": "none"
+    }
+  },
+  "31": {
+    "class_type": "SaveVideo",
+    "inputs": {
+      "video": [
+        "30",
+        0
+      ],
+      "filename_prefix": "wbv2_nacht_20261105/K9_FROM_ENTRY/S2/31",
+      "format": "mp4",
+      "format.codec": "h264",
+      "format.codec.encoding": "re-encode",
+      "format.codec.encoding.crf": 17,
+      "codec": "auto"
+    }
+  },
+  "40s2": {
+    "class_type": "MiniMaxH3ReferenceToVideo",
+    "inputs": {
+      "clip": [
+        "2",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ],
+      "audio_vae": [
+        "4",
+        0
+      ],
+      "prompt": "subject_definitions:\n<Subject 1> is the same older silver-haired short-bearded man in navy work coveralls and brown boots, defined by <Picture 1> and <Picture 2>.\n<Subject 2> is the boathouse workshop shown in <Picture 3>, wooden workbenches, tools, a boat hull on trestles. It is the interior behind the grey door. The final guide shows the intended inside view.\nsummary: The man already beside the closed grey boathouse door turns to it, opens it outwards and enters the workshop, followed by the camera in one continuous shot.\nretention_analysis: Preserve the established normal-sized grey door and its rectangular frame, porthole on its right, the man's size and clothes, sunlight and workshop design. No enlarged door or portal. The same single hinged door throughout.\ndetailed_description: [Shot 1] Continue seamlessly from the preceding wide view: the man is already standing beside the CLOSED grey door, looking toward the canal. He turns toward the door on his left. He grips its handle, pulls the door OUTWARD toward the quay, taking a step back and sideways to give the door leaf room. The solid door rotates as one rigid rectangle around its existing left hinge. It remains attached to the same frame and does not pass through his body. When the opening is clear, he walks through the doorway into the workshop. The camera gently moves forward to follow behind him through the same opening, ending inside the workshop with his back visible and the boat and workbench on either side, matching the end guide. His walking is continuous and grounded; he steps over the threshold. One man and one door. Do not cut or dissolve. The camera never passes through the closed door or through the man.\noverall_soundscape: Gentle water outside, footsteps, handle click, brief wooden hinge creak; quieter indoor room tone after crossing. No dialogue.\nnon_diegetic_music: N/A",
+      "width": 1952,
+      "height": 1088,
+      "length": 396,
+      "ref_image_size": "match",
+      "ref_images.ref_image_0": [
+        "night_ref0",
+        0
+      ],
+      "ref_images.ref_image_1": [
+        "night_ref1",
+        0
+      ],
+      "ref_images.ref_image_2": [
+        "night_ref2",
+        0
+      ]
+    }
+  },
+  "lat_r2": {
+    "class_type": "MiniMaxH3MotionContextSaveLatent",
+    "inputs": {
+      "latent": [
+        "27",
+        0
+      ],
+      "filename_prefix": "wbv2_nacht_20261105/K9_FROM_ENTRY/S2/lat_r2/clip",
+      "clip_index": 2
+    }
+  },
+  "ld2": {
+    "class_type": "MiniMaxH3MotionContextLoadLatent",
+    "inputs": {
+      "latent_path": "wbv2_nacht_20261105/K7_END/S2/lat_r2",
+      "clip_index": 1,
+      "stock_format": false,
+      "folder": "output"
+    }
+  },
+  "mc2": {
+    "class_type": "MiniMaxH3MotionContext",
+    "inputs": {
+      "conditioning": [
+        "40s2",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ],
+      "latent": [
+        "22",
+        0
+      ],
+      "context_length": "56",
+      "audio_context_length": 18,
+      "context_latent": [
+        "ld2",
+        0
+      ],
+      "audio_vae": [
+        "4",
+        0
+      ]
+    }
+  },
+  "tr": {
+    "class_type": "MiniMaxH3MotionContextTrim",
+    "inputs": {
+      "images": [
+        "28",
+        0
+      ],
+      "audio": [
+        "29",
+        0
+      ],
+      "trim_frames": [
+        "mc2",
+        1
+      ],
+      "fps": 24.0,
+      "match_tail": true
+    }
+  },
+  "ld_s1": {
+    "class_type": "MiniMaxH3MotionContextLoadLatent",
+    "inputs": {
+      "latent_path": "wbv2_nacht_20261105/K9_FROM_ENTRY/S1/lat_s1",
+      "clip_index": 2,
+      "stock_format": true,
+      "folder": "output"
+    }
+  },
+  "night_ref0": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "assets/31aeda1c0fb8c728.png"
+    }
+  },
+  "night_ref1": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "assets/7789e47f653cf45c.png"
+    }
+  },
+  "night_ref2": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "assets/c079abf9e0f4cf14.png"
+    }
+  },
+  "night_end": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "assets/cdf0f9c23220e4b7.png"
+    }
+  },
+  "night_endguide": {
+    "class_type": "MiniMaxH3AddGuide",
+    "inputs": {
+      "positive": [
+        "mc2",
+        0
+      ],
+      "latent": [
+        "22",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ],
+      "image": [
+        "night_end",
+        0
+      ],
+      "frame_idx": -1
+    }
+  }
+}

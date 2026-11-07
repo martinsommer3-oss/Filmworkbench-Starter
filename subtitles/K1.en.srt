@@ -1,0 +1,19 @@
+1
+00:00:00,000 --> 00:00:02,150
+The tea is still warm.
+
+2
+00:00:03,930 --> 00:00:05,380
+Will you stay a moment?
+
+3
+00:00:11,030 --> 00:00:12,890
+Yes, the boat can wait.
+
+4
+00:00:14,375 --> 00:00:16,542
+We'll go to the lake together tomorrow.
+
+5
+00:00:17,505 --> 00:00:18,955
+Then we'll set off early.

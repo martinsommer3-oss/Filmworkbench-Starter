@@ -1,0 +1,126 @@
+{
+  "note": "Historical case dependencies plus the public-node starter adaptation. See DEPENDENCIES.md for exact source revisions and remaining archival limitations.",
+  "nodes": [
+    {
+      "class_type": "BasicGuider",
+      "project": "https://github.com/Comfy-Org/ComfyUI"
+    },
+    {
+      "class_type": "BasicScheduler",
+      "project": "https://github.com/Comfy-Org/ComfyUI"
+    },
+    {
+      "class_type": "BlockSparseAttention",
+      "project": "https://github.com/Comfy-Org/ComfyUI"
+    },
+    {
+      "class_type": "CLIPLoader",
+      "project": "https://github.com/Comfy-Org/ComfyUI"
+    },
+    {
+      "class_type": "CreateVideo",
+      "project": "https://github.com/Comfy-Org/ComfyUI"
+    },
+    {
+      "class_type": "H3ClownKeyframe",
+      "project": "https://github.com/roycho87/geiru_context_suite"
+    },
+    {
+      "class_type": "H3StageLatent",
+      "project": "https://github.com/chanon/comfyui-obvpm-timeline"
+    },
+    {
+      "class_type": "ImageScaleToTotalPixels",
+      "project": "https://github.com/Comfy-Org/ComfyUI"
+    },
+    {
+      "class_type": "KSamplerSelect",
+      "project": "https://github.com/Comfy-Org/ComfyUI"
+    },
+    {
+      "class_type": "LTXVSeparateAVLatent",
+      "project": "https://github.com/Comfy-Org/ComfyUI"
+    },
+    {
+      "class_type": "LoadAudio",
+      "project": "https://github.com/Comfy-Org/ComfyUI"
+    },
+    {
+      "class_type": "LoadImage",
+      "project": "https://github.com/Comfy-Org/ComfyUI"
+    },
+    {
+      "class_type": "LoraLoaderModelOnly",
+      "project": "https://github.com/Comfy-Org/ComfyUI"
+    },
+    {
+      "class_type": "MiniMaxH3AddGuide",
+      "project": "https://github.com/Comfy-Org/ComfyUI"
+    },
+    {
+      "class_type": "MiniMaxH3MotionContext",
+      "project": "https://github.com/NikoDemon80/ComfyUI-H3-Motion-Context"
+    },
+    {
+      "class_type": "MiniMaxH3MotionContextLoadLatent",
+      "project": "https://github.com/NikoDemon80/ComfyUI-H3-Motion-Context"
+    },
+    {
+      "class_type": "MiniMaxH3MotionContextSaveLatent",
+      "project": "https://github.com/NikoDemon80/ComfyUI-H3-Motion-Context"
+    },
+    {
+      "class_type": "MiniMaxH3MotionContextTrim",
+      "project": "https://github.com/NikoDemon80/ComfyUI-H3-Motion-Context"
+    },
+    {
+      "class_type": "MiniMaxH3ReferenceToVideo",
+      "project": "https://github.com/Comfy-Org/ComfyUI"
+    },
+    {
+      "class_type": "MiniMaxH3SigmasTail",
+      "project": "https://github.com/NikoDemon80/ComfyUI-H3-Motion-Context"
+    },
+    {
+      "class_type": "MinimaxH3LatentUpscaler3D",
+      "project": "https://github.com/LBH-123-AI/Comfyui_Minimax_h3_latent_Upscaler"
+    },
+    {
+      "class_type": "ModelAttentionBackend",
+      "project": "https://github.com/Comfy-Org/ComfyUI"
+    },
+    {
+      "class_type": "RandomNoise",
+      "project": "https://github.com/Comfy-Org/ComfyUI"
+    },
+    {
+      "class_type": "SamplerCustomAdvanced",
+      "project": "https://github.com/Comfy-Org/ComfyUI"
+    },
+    {
+      "class_type": "SaveVideo",
+      "project": "https://github.com/Comfy-Org/ComfyUI"
+    },
+    {
+      "class_type": "UNETLoader",
+      "project": "https://github.com/Comfy-Org/ComfyUI"
+    },
+    {
+      "class_type": "VAEDecode",
+      "project": "https://github.com/Comfy-Org/ComfyUI"
+    },
+    {
+      "class_type": "VAEDecodeAudio",
+      "project": "https://github.com/Comfy-Org/ComfyUI"
+    },
+    {
+      "class_type": "VAELoader",
+      "project": "https://github.com/Comfy-Org/ComfyUI"
+    },
+    {
+      "class_type": "LTXVConcatAVLatent",
+      "project": "https://github.com/Comfy-Org/ComfyUI",
+      "scope": "portable dialogue starter replaces historical H3StageLatent"
+    }
+  ]
+}

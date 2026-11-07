@@ -1,0 +1,46 @@
+{
+  "name": "Filmworkbench Starter",
+  "version": "0.1.0",
+  "repository": "https://github.com/martinsommer3-oss/Filmworkbench-Starter",
+  "release": "https://github.com/martinsommer3-oss/Filmworkbench-Starter/releases/tag/v0.1.0",
+  "human_entrypoint": "README.md",
+  "agent_entrypoint": "AGENTS.md",
+  "technical_overview": "docs/STACK.md",
+  "model_manifest": "docs/model_sources.json",
+  "node_installation": "docs/DEPENDENCIES.md",
+  "node_inventory": "docs/node_dependencies.json",
+  "validated_backend_revisions": "docs/backend_source_snapshot.json",
+  "examples_catalog": "examples/catalog.json",
+  "capabilities": {
+    "offline_inspection": true,
+    "first_dialogue_S1_S2_runner": true,
+    "full_chain_replay": false,
+    "image_generation_included": false,
+    "full_film_director_included": false
+  },
+  "starter": {
+    "entrypoint": "render_example.py",
+    "example_manifest": "examples/dialogue/example.json",
+    "provided_reference_images": 5,
+    "requires_image_generator": false,
+    "requires_chat_subscription": false,
+    "local_backend": "http://127.0.0.1:8188"
+  },
+  "commands": {
+    "offline": "python doctor.py",
+    "backend_check": "python doctor.py --online",
+    "model_plan": "python setup_models.py --comfy-root YOUR_COMFY_ROOT",
+    "model_download": "python setup_models.py --comfy-root YOUR_COMFY_ROOT --download",
+    "model_verify": "python setup_models.py --comfy-root YOUR_COMFY_ROOT --verify",
+    "render": "python render_example.py --run --comfy-root YOUR_COMFY_ROOT"
+  },
+  "verification": "docs/VALIDATION.md",
+  "hardware_tested": {
+    "GPU": "RTX 5090",
+    "VRAM_GB": 32,
+    "RAM_GB": 128,
+    "OS": "Windows",
+    "fresh_backend_installation_tested": false,
+    "lower_memory_tested": false
+  }
+}

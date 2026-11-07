@@ -1,0 +1,1849 @@
+{
+  "K1_A1_S1": {
+    "nodes": [
+      "BasicGuider",
+      "BasicScheduler",
+      "BlockSparseAttention",
+      "CLIPLoader",
+      "CreateVideo",
+      "KSamplerSelect",
+      "LoadImage",
+      "LoraLoaderModelOnly",
+      "MiniMaxH3AddGuide",
+      "MiniMaxH3MotionContextSaveLatent",
+      "MiniMaxH3MotionContextTrim",
+      "MiniMaxH3ReferenceToVideo",
+      "ModelAttentionBackend",
+      "RandomNoise",
+      "SamplerCustomAdvanced",
+      "SaveVideo",
+      "UNETLoader",
+      "VAEDecode",
+      "VAEDecodeAudio",
+      "VAELoader"
+    ],
+    "dependencies": []
+  },
+  "K1_A1_S2": {
+    "nodes": [
+      "BasicGuider",
+      "BasicScheduler",
+      "BlockSparseAttention",
+      "CLIPLoader",
+      "CreateVideo",
+      "H3StageLatent",
+      "KSamplerSelect",
+      "LTXVSeparateAVLatent",
+      "LoadImage",
+      "LoraLoaderModelOnly",
+      "MiniMaxH3AddGuide",
+      "MiniMaxH3MotionContextLoadLatent",
+      "MiniMaxH3MotionContextSaveLatent",
+      "MiniMaxH3MotionContextTrim",
+      "MiniMaxH3ReferenceToVideo",
+      "MinimaxH3LatentUpscaler3D",
+      "ModelAttentionBackend",
+      "RandomNoise",
+      "SamplerCustomAdvanced",
+      "SaveVideo",
+      "UNETLoader",
+      "VAEDecode",
+      "VAEDecodeAudio",
+      "VAELoader"
+    ],
+    "dependencies": [
+      {
+        "node": "ld_s1",
+        "selector": "wbv2_nacht_20261105/K1_A1/S1/lat_s1",
+        "clip_index": 1,
+        "producers": [
+          {
+            "graph": "K1_A1_S1",
+            "node": "lat_s1"
+          }
+        ],
+        "status": "regenerate from producer"
+      }
+    ]
+  },
+  "K1_A2_R1_S1": {
+    "nodes": [
+      "BasicGuider",
+      "BasicScheduler",
+      "BlockSparseAttention",
+      "CLIPLoader",
+      "CreateVideo",
+      "H3ClownKeyframe",
+      "KSamplerSelect",
+      "LoadImage",
+      "LoraLoaderModelOnly",
+      "MiniMaxH3MotionContext",
+      "MiniMaxH3MotionContextLoadLatent",
+      "MiniMaxH3MotionContextSaveLatent",
+      "MiniMaxH3MotionContextTrim",
+      "MiniMaxH3ReferenceToVideo",
+      "MiniMaxH3SigmasTail",
+      "ModelAttentionBackend",
+      "RandomNoise",
+      "SamplerCustomAdvanced",
+      "SaveVideo",
+      "UNETLoader",
+      "VAEDecode",
+      "VAEDecodeAudio",
+      "VAELoader"
+    ],
+    "dependencies": [
+      {
+        "node": "ld1",
+        "selector": "wbv2_nacht_20261105/K1_A1/S1/lat_s1",
+        "clip_index": 1,
+        "producers": [
+          {
+            "graph": "K1_A1_S1",
+            "node": "lat_s1"
+          }
+        ],
+        "status": "regenerate from producer"
+      },
+      {
+        "node": "ks_g1",
+        "selector": "wbv2_nacht_20261105/K1_A1/S1/lat_s1",
+        "clip_index": 1,
+        "producers": [
+          {
+            "graph": "K1_A1_S1",
+            "node": "lat_s1"
+          }
+        ],
+        "status": "regenerate from producer"
+      }
+    ]
+  },
+  "K1_A2_R1_S2": {
+    "nodes": [
+      "BasicGuider",
+      "BasicScheduler",
+      "BlockSparseAttention",
+      "CLIPLoader",
+      "CreateVideo",
+      "H3StageLatent",
+      "KSamplerSelect",
+      "LTXVSeparateAVLatent",
+      "LoadImage",
+      "LoraLoaderModelOnly",
+      "MiniMaxH3MotionContext",
+      "MiniMaxH3MotionContextLoadLatent",
+      "MiniMaxH3MotionContextSaveLatent",
+      "MiniMaxH3MotionContextTrim",
+      "MiniMaxH3ReferenceToVideo",
+      "MinimaxH3LatentUpscaler3D",
+      "ModelAttentionBackend",
+      "RandomNoise",
+      "SamplerCustomAdvanced",
+      "SaveVideo",
+      "UNETLoader",
+      "VAEDecode",
+      "VAEDecodeAudio",
+      "VAELoader"
+    ],
+    "dependencies": [
+      {
+        "node": "ld2",
+        "selector": "wbv2_nacht_20261105/K1_A1/S2/lat_r2",
+        "clip_index": 1,
+        "producers": [
+          {
+            "graph": "K1_A1_S2",
+            "node": "lat_r2"
+          }
+        ],
+        "status": "regenerate from producer"
+      },
+      {
+        "node": "ld_s1",
+        "selector": "wbv2_nacht_20261105/K1_A2_R1/S1/lat_s1",
+        "clip_index": 2,
+        "producers": [
+          {
+            "graph": "K1_A2_R1_S1",
+            "node": "lat_s1"
+          }
+        ],
+        "status": "regenerate from producer"
+      }
+    ]
+  },
+  "K1_S2_REF05_S2": {
+    "nodes": [
+      "BasicGuider",
+      "BasicScheduler",
+      "BlockSparseAttention",
+      "CLIPLoader",
+      "CreateVideo",
+      "H3StageLatent",
+      "ImageScaleToTotalPixels",
+      "KSamplerSelect",
+      "LTXVSeparateAVLatent",
+      "LoadImage",
+      "LoraLoaderModelOnly",
+      "MiniMaxH3MotionContext",
+      "MiniMaxH3MotionContextLoadLatent",
+      "MiniMaxH3MotionContextSaveLatent",
+      "MiniMaxH3MotionContextTrim",
+      "MiniMaxH3ReferenceToVideo",
+      "MinimaxH3LatentUpscaler3D",
+      "ModelAttentionBackend",
+      "RandomNoise",
+      "SamplerCustomAdvanced",
+      "SaveVideo",
+      "UNETLoader",
+      "VAEDecode",
+      "VAEDecodeAudio",
+      "VAELoader"
+    ],
+    "dependencies": [
+      {
+        "node": "ld2",
+        "selector": "wbv2_nacht_20261105/K1_A1/S2/lat_r2",
+        "clip_index": 1,
+        "producers": [
+          {
+            "graph": "K1_A1_S2",
+            "node": "lat_r2"
+          }
+        ],
+        "status": "regenerate from producer"
+      },
+      {
+        "node": "ld_s1",
+        "selector": "wbv2_nacht_20261105/K1_A2_R1/S1/lat_s1",
+        "clip_index": 2,
+        "producers": [
+          {
+            "graph": "K1_A2_R1_S1",
+            "node": "lat_s1"
+          }
+        ],
+        "status": "regenerate from producer"
+      }
+    ]
+  },
+  "K2_B2_S1": {
+    "nodes": [
+      "BasicGuider",
+      "BasicScheduler",
+      "BlockSparseAttention",
+      "CLIPLoader",
+      "CreateVideo",
+      "H3ClownKeyframe",
+      "KSamplerSelect",
+      "LoadImage",
+      "LoraLoaderModelOnly",
+      "MiniMaxH3MotionContext",
+      "MiniMaxH3MotionContextLoadLatent",
+      "MiniMaxH3MotionContextSaveLatent",
+      "MiniMaxH3MotionContextTrim",
+      "MiniMaxH3ReferenceToVideo",
+      "MiniMaxH3SigmasTail",
+      "ModelAttentionBackend",
+      "RandomNoise",
+      "SamplerCustomAdvanced",
+      "SaveVideo",
+      "UNETLoader",
+      "VAEDecode",
+      "VAEDecodeAudio",
+      "VAELoader"
+    ],
+    "dependencies": [
+      {
+        "node": "ld1",
+        "selector": "wbv2_nacht_20261105/K1_A1/S1/lat_s1",
+        "clip_index": 1,
+        "producers": [
+          {
+            "graph": "K1_A1_S1",
+            "node": "lat_s1"
+          }
+        ],
+        "status": "regenerate from producer"
+      },
+      {
+        "node": "ks_g1",
+        "selector": "wbv2_nacht_20261105/K1_A1/S1/lat_s1",
+        "clip_index": 1,
+        "producers": [
+          {
+            "graph": "K1_A1_S1",
+            "node": "lat_s1"
+          }
+        ],
+        "status": "regenerate from producer"
+      }
+    ]
+  },
+  "K2_B2_S2": {
+    "nodes": [
+      "BasicGuider",
+      "BasicScheduler",
+      "BlockSparseAttention",
+      "CLIPLoader",
+      "CreateVideo",
+      "H3StageLatent",
+      "KSamplerSelect",
+      "LTXVSeparateAVLatent",
+      "LoadImage",
+      "LoraLoaderModelOnly",
+      "MiniMaxH3MotionContext",
+      "MiniMaxH3MotionContextLoadLatent",
+      "MiniMaxH3MotionContextSaveLatent",
+      "MiniMaxH3MotionContextTrim",
+      "MiniMaxH3ReferenceToVideo",
+      "MinimaxH3LatentUpscaler3D",
+      "ModelAttentionBackend",
+      "RandomNoise",
+      "SamplerCustomAdvanced",
+      "SaveVideo",
+      "UNETLoader",
+      "VAEDecode",
+      "VAEDecodeAudio",
+      "VAELoader"
+    ],
+    "dependencies": [
+      {
+        "node": "ld2",
+        "selector": "wbv2_nacht_20261105/K1_A1/S2/lat_r2",
+        "clip_index": 1,
+        "producers": [
+          {
+            "graph": "K1_A1_S2",
+            "node": "lat_r2"
+          }
+        ],
+        "status": "regenerate from producer"
+      },
+      {
+        "node": "ld_s1",
+        "selector": "wbv2_nacht_20261105/K2_B2/S1/lat_s1",
+        "clip_index": 2,
+        "producers": [
+          {
+            "graph": "K2_B2_S1",
+            "node": "lat_s1"
+          }
+        ],
+        "status": "regenerate from producer"
+      }
+    ]
+  },
+  "K3_RETURN_S1": {
+    "nodes": [
+      "BasicGuider",
+      "BasicScheduler",
+      "BlockSparseAttention",
+      "CLIPLoader",
+      "CreateVideo",
+      "KSamplerSelect",
+      "LoadImage",
+      "LoraLoaderModelOnly",
+      "MiniMaxH3AddGuide",
+      "MiniMaxH3MotionContextSaveLatent",
+      "MiniMaxH3MotionContextTrim",
+      "MiniMaxH3ReferenceToVideo",
+      "ModelAttentionBackend",
+      "RandomNoise",
+      "SamplerCustomAdvanced",
+      "SaveVideo",
+      "UNETLoader",
+      "VAEDecode",
+      "VAEDecodeAudio",
+      "VAELoader"
+    ],
+    "dependencies": []
+  },
+  "K3_RETURN_S2": {
+    "nodes": [
+      "BasicGuider",
+      "BasicScheduler",
+      "BlockSparseAttention",
+      "CLIPLoader",
+      "CreateVideo",
+      "H3StageLatent",
+      "KSamplerSelect",
+      "LTXVSeparateAVLatent",
+      "LoadImage",
+      "LoraLoaderModelOnly",
+      "MiniMaxH3AddGuide",
+      "MiniMaxH3MotionContextLoadLatent",
+      "MiniMaxH3MotionContextSaveLatent",
+      "MiniMaxH3MotionContextTrim",
+      "MiniMaxH3ReferenceToVideo",
+      "MinimaxH3LatentUpscaler3D",
+      "ModelAttentionBackend",
+      "RandomNoise",
+      "SamplerCustomAdvanced",
+      "SaveVideo",
+      "UNETLoader",
+      "VAEDecode",
+      "VAEDecodeAudio",
+      "VAELoader"
+    ],
+    "dependencies": [
+      {
+        "node": "ld_s1",
+        "selector": "wbv2_nacht_20261105/K3_RETURN/S1/lat_s1",
+        "clip_index": 1,
+        "producers": [
+          {
+            "graph": "K3_RETURN_S1",
+            "node": "lat_s1"
+          }
+        ],
+        "status": "regenerate from producer"
+      }
+    ]
+  },
+  "K3_ROOM1_S1": {
+    "nodes": [
+      "BasicGuider",
+      "BasicScheduler",
+      "BlockSparseAttention",
+      "CLIPLoader",
+      "CreateVideo",
+      "KSamplerSelect",
+      "LoadImage",
+      "LoraLoaderModelOnly",
+      "MiniMaxH3AddGuide",
+      "MiniMaxH3MotionContextSaveLatent",
+      "MiniMaxH3MotionContextTrim",
+      "MiniMaxH3ReferenceToVideo",
+      "ModelAttentionBackend",
+      "RandomNoise",
+      "SamplerCustomAdvanced",
+      "SaveVideo",
+      "UNETLoader",
+      "VAEDecode",
+      "VAEDecodeAudio",
+      "VAELoader"
+    ],
+    "dependencies": []
+  },
+  "K3_ROOM1_S2": {
+    "nodes": [
+      "BasicGuider",
+      "BasicScheduler",
+      "BlockSparseAttention",
+      "CLIPLoader",
+      "CreateVideo",
+      "H3StageLatent",
+      "KSamplerSelect",
+      "LTXVSeparateAVLatent",
+      "LoadImage",
+      "LoraLoaderModelOnly",
+      "MiniMaxH3AddGuide",
+      "MiniMaxH3MotionContextLoadLatent",
+      "MiniMaxH3MotionContextSaveLatent",
+      "MiniMaxH3MotionContextTrim",
+      "MiniMaxH3ReferenceToVideo",
+      "MinimaxH3LatentUpscaler3D",
+      "ModelAttentionBackend",
+      "RandomNoise",
+      "SamplerCustomAdvanced",
+      "SaveVideo",
+      "UNETLoader",
+      "VAEDecode",
+      "VAEDecodeAudio",
+      "VAELoader"
+    ],
+    "dependencies": [
+      {
+        "node": "ld_s1",
+        "selector": "wbv2_nacht_20261105/K3_ROOM1/S1/lat_s1",
+        "clip_index": 1,
+        "producers": [
+          {
+            "graph": "K3_ROOM1_S1",
+            "node": "lat_s1"
+          }
+        ],
+        "status": "regenerate from producer"
+      }
+    ]
+  },
+  "K3_WORKSHOP_S1": {
+    "nodes": [
+      "BasicGuider",
+      "BasicScheduler",
+      "BlockSparseAttention",
+      "CLIPLoader",
+      "CreateVideo",
+      "KSamplerSelect",
+      "LoadImage",
+      "LoraLoaderModelOnly",
+      "MiniMaxH3AddGuide",
+      "MiniMaxH3MotionContextSaveLatent",
+      "MiniMaxH3MotionContextTrim",
+      "MiniMaxH3ReferenceToVideo",
+      "ModelAttentionBackend",
+      "RandomNoise",
+      "SamplerCustomAdvanced",
+      "SaveVideo",
+      "UNETLoader",
+      "VAEDecode",
+      "VAEDecodeAudio",
+      "VAELoader"
+    ],
+    "dependencies": []
+  },
+  "K3_WORKSHOP_S2": {
+    "nodes": [
+      "BasicGuider",
+      "BasicScheduler",
+      "BlockSparseAttention",
+      "CLIPLoader",
+      "CreateVideo",
+      "H3StageLatent",
+      "KSamplerSelect",
+      "LTXVSeparateAVLatent",
+      "LoadImage",
+      "LoraLoaderModelOnly",
+      "MiniMaxH3AddGuide",
+      "MiniMaxH3MotionContextLoadLatent",
+      "MiniMaxH3MotionContextSaveLatent",
+      "MiniMaxH3MotionContextTrim",
+      "MiniMaxH3ReferenceToVideo",
+      "MinimaxH3LatentUpscaler3D",
+      "ModelAttentionBackend",
+      "RandomNoise",
+      "SamplerCustomAdvanced",
+      "SaveVideo",
+      "UNETLoader",
+      "VAEDecode",
+      "VAEDecodeAudio",
+      "VAELoader"
+    ],
+    "dependencies": [
+      {
+        "node": "ld_s1",
+        "selector": "wbv2_nacht_20261105/K3_WORKSHOP/S1/lat_s1",
+        "clip_index": 1,
+        "producers": [
+          {
+            "graph": "K3_WORKSHOP_S1",
+            "node": "lat_s1"
+          }
+        ],
+        "status": "regenerate from producer"
+      }
+    ]
+  },
+  "K4_EXT_S1": {
+    "nodes": [
+      "BasicGuider",
+      "BasicScheduler",
+      "BlockSparseAttention",
+      "CLIPLoader",
+      "CreateVideo",
+      "KSamplerSelect",
+      "LoadImage",
+      "LoraLoaderModelOnly",
+      "MiniMaxH3AddGuide",
+      "MiniMaxH3MotionContextSaveLatent",
+      "MiniMaxH3MotionContextTrim",
+      "MiniMaxH3ReferenceToVideo",
+      "ModelAttentionBackend",
+      "RandomNoise",
+      "SamplerCustomAdvanced",
+      "SaveVideo",
+      "UNETLoader",
+      "VAEDecode",
+      "VAEDecodeAudio",
+      "VAELoader"
+    ],
+    "dependencies": []
+  },
+  "K4_EXT_S2": {
+    "nodes": [
+      "BasicGuider",
+      "BasicScheduler",
+      "BlockSparseAttention",
+      "CLIPLoader",
+      "CreateVideo",
+      "H3StageLatent",
+      "KSamplerSelect",
+      "LTXVSeparateAVLatent",
+      "LoadImage",
+      "LoraLoaderModelOnly",
+      "MiniMaxH3AddGuide",
+      "MiniMaxH3MotionContextLoadLatent",
+      "MiniMaxH3MotionContextSaveLatent",
+      "MiniMaxH3MotionContextTrim",
+      "MiniMaxH3ReferenceToVideo",
+      "MinimaxH3LatentUpscaler3D",
+      "ModelAttentionBackend",
+      "RandomNoise",
+      "SamplerCustomAdvanced",
+      "SaveVideo",
+      "UNETLoader",
+      "VAEDecode",
+      "VAEDecodeAudio",
+      "VAELoader"
+    ],
+    "dependencies": [
+      {
+        "node": "ld_s1",
+        "selector": "wbv2_nacht_20261105/K4_EXT/S1/lat_s1",
+        "clip_index": 1,
+        "producers": [
+          {
+            "graph": "K4_EXT_S1",
+            "node": "lat_s1"
+          }
+        ],
+        "status": "regenerate from producer"
+      }
+    ]
+  },
+  "K4_FRESH_S1": {
+    "nodes": [
+      "BasicGuider",
+      "BasicScheduler",
+      "BlockSparseAttention",
+      "CLIPLoader",
+      "CreateVideo",
+      "KSamplerSelect",
+      "LoadImage",
+      "LoraLoaderModelOnly",
+      "MiniMaxH3AddGuide",
+      "MiniMaxH3MotionContextSaveLatent",
+      "MiniMaxH3MotionContextTrim",
+      "MiniMaxH3ReferenceToVideo",
+      "ModelAttentionBackend",
+      "RandomNoise",
+      "SamplerCustomAdvanced",
+      "SaveVideo",
+      "UNETLoader",
+      "VAEDecode",
+      "VAEDecodeAudio",
+      "VAELoader"
+    ],
+    "dependencies": []
+  },
+  "K4_FRESH_S2": {
+    "nodes": [
+      "BasicGuider",
+      "BasicScheduler",
+      "BlockSparseAttention",
+      "CLIPLoader",
+      "CreateVideo",
+      "H3StageLatent",
+      "KSamplerSelect",
+      "LTXVSeparateAVLatent",
+      "LoadImage",
+      "LoraLoaderModelOnly",
+      "MiniMaxH3AddGuide",
+      "MiniMaxH3MotionContextLoadLatent",
+      "MiniMaxH3MotionContextSaveLatent",
+      "MiniMaxH3MotionContextTrim",
+      "MiniMaxH3ReferenceToVideo",
+      "MinimaxH3LatentUpscaler3D",
+      "ModelAttentionBackend",
+      "RandomNoise",
+      "SamplerCustomAdvanced",
+      "SaveVideo",
+      "UNETLoader",
+      "VAEDecode",
+      "VAEDecodeAudio",
+      "VAELoader"
+    ],
+    "dependencies": [
+      {
+        "node": "ld_s1",
+        "selector": "wbv2_nacht_20261105/K4_FRESH/S1/lat_s1",
+        "clip_index": 1,
+        "producers": [
+          {
+            "graph": "K4_FRESH_S1",
+            "node": "lat_s1"
+          }
+        ],
+        "status": "regenerate from producer"
+      }
+    ]
+  },
+  "K4_INT_AUDIO_S1": {
+    "nodes": [
+      "BasicGuider",
+      "BasicScheduler",
+      "BlockSparseAttention",
+      "CLIPLoader",
+      "CreateVideo",
+      "KSamplerSelect",
+      "LoadAudio",
+      "LoadImage",
+      "LoraLoaderModelOnly",
+      "MiniMaxH3AddGuide",
+      "MiniMaxH3MotionContextSaveLatent",
+      "MiniMaxH3MotionContextTrim",
+      "MiniMaxH3ReferenceToVideo",
+      "ModelAttentionBackend",
+      "RandomNoise",
+      "SamplerCustomAdvanced",
+      "SaveVideo",
+      "UNETLoader",
+      "VAEDecode",
+      "VAEDecodeAudio",
+      "VAELoader"
+    ],
+    "dependencies": []
+  },
+  "K4_INT_AUDIO_S2": {
+    "nodes": [
+      "BasicGuider",
+      "BasicScheduler",
+      "BlockSparseAttention",
+      "CLIPLoader",
+      "CreateVideo",
+      "H3StageLatent",
+      "KSamplerSelect",
+      "LTXVSeparateAVLatent",
+      "LoadAudio",
+      "LoadImage",
+      "LoraLoaderModelOnly",
+      "MiniMaxH3AddGuide",
+      "MiniMaxH3MotionContextLoadLatent",
+      "MiniMaxH3MotionContextSaveLatent",
+      "MiniMaxH3MotionContextTrim",
+      "MiniMaxH3ReferenceToVideo",
+      "MinimaxH3LatentUpscaler3D",
+      "ModelAttentionBackend",
+      "RandomNoise",
+      "SamplerCustomAdvanced",
+      "SaveVideo",
+      "UNETLoader",
+      "VAEDecode",
+      "VAEDecodeAudio",
+      "VAELoader"
+    ],
+    "dependencies": [
+      {
+        "node": "ld_s1",
+        "selector": "wbv2_nacht_20261105/K4_INT_AUDIO/S1/lat_s1",
+        "clip_index": 1,
+        "producers": [
+          {
+            "graph": "K4_INT_AUDIO_S1",
+            "node": "lat_s1"
+          }
+        ],
+        "status": "regenerate from producer"
+      }
+    ]
+  },
+  "K6_EXT2_S1": {
+    "nodes": [
+      "BasicGuider",
+      "BasicScheduler",
+      "BlockSparseAttention",
+      "CLIPLoader",
+      "CreateVideo",
+      "KSamplerSelect",
+      "LoadImage",
+      "LoraLoaderModelOnly",
+      "MiniMaxH3AddGuide",
+      "MiniMaxH3MotionContextSaveLatent",
+      "MiniMaxH3MotionContextTrim",
+      "MiniMaxH3ReferenceToVideo",
+      "ModelAttentionBackend",
+      "RandomNoise",
+      "SamplerCustomAdvanced",
+      "SaveVideo",
+      "UNETLoader",
+      "VAEDecode",
+      "VAEDecodeAudio",
+      "VAELoader"
+    ],
+    "dependencies": []
+  },
+  "K6_EXT2_S2": {
+    "nodes": [
+      "BasicGuider",
+      "BasicScheduler",
+      "BlockSparseAttention",
+      "CLIPLoader",
+      "CreateVideo",
+      "H3StageLatent",
+      "KSamplerSelect",
+      "LTXVSeparateAVLatent",
+      "LoadImage",
+      "LoraLoaderModelOnly",
+      "MiniMaxH3AddGuide",
+      "MiniMaxH3MotionContextLoadLatent",
+      "MiniMaxH3MotionContextSaveLatent",
+      "MiniMaxH3MotionContextTrim",
+      "MiniMaxH3ReferenceToVideo",
+      "MinimaxH3LatentUpscaler3D",
+      "ModelAttentionBackend",
+      "RandomNoise",
+      "SamplerCustomAdvanced",
+      "SaveVideo",
+      "UNETLoader",
+      "VAEDecode",
+      "VAEDecodeAudio",
+      "VAELoader"
+    ],
+    "dependencies": [
+      {
+        "node": "ld_s1",
+        "selector": "wbv2_nacht_20261105/K6_EXT2/S1/lat_s1",
+        "clip_index": 1,
+        "producers": [
+          {
+            "graph": "K6_EXT2_S1",
+            "node": "lat_s1"
+          }
+        ],
+        "status": "regenerate from producer"
+      }
+    ]
+  },
+  "K6_EXT_LOCK_S1": {
+    "nodes": [
+      "BasicGuider",
+      "BasicScheduler",
+      "BlockSparseAttention",
+      "CLIPLoader",
+      "CreateVideo",
+      "KSamplerSelect",
+      "LoadImage",
+      "LoraLoaderModelOnly",
+      "MiniMaxH3AddGuide",
+      "MiniMaxH3MotionContextSaveLatent",
+      "MiniMaxH3MotionContextTrim",
+      "MiniMaxH3ReferenceToVideo",
+      "ModelAttentionBackend",
+      "RandomNoise",
+      "SamplerCustomAdvanced",
+      "SaveVideo",
+      "UNETLoader",
+      "VAEDecode",
+      "VAEDecodeAudio",
+      "VAELoader"
+    ],
+    "dependencies": []
+  },
+  "K6_EXT_LOCK_S2": {
+    "nodes": [
+      "BasicGuider",
+      "BasicScheduler",
+      "BlockSparseAttention",
+      "CLIPLoader",
+      "CreateVideo",
+      "H3StageLatent",
+      "KSamplerSelect",
+      "LTXVSeparateAVLatent",
+      "LoadImage",
+      "LoraLoaderModelOnly",
+      "MiniMaxH3AddGuide",
+      "MiniMaxH3MotionContextLoadLatent",
+      "MiniMaxH3MotionContextSaveLatent",
+      "MiniMaxH3MotionContextTrim",
+      "MiniMaxH3ReferenceToVideo",
+      "MinimaxH3LatentUpscaler3D",
+      "ModelAttentionBackend",
+      "RandomNoise",
+      "SamplerCustomAdvanced",
+      "SaveVideo",
+      "UNETLoader",
+      "VAEDecode",
+      "VAEDecodeAudio",
+      "VAELoader"
+    ],
+    "dependencies": [
+      {
+        "node": "ld_s1",
+        "selector": "wbv2_nacht_20261105/K6_EXT_LOCK/S1/lat_s1",
+        "clip_index": 1,
+        "producers": [
+          {
+            "graph": "K6_EXT_LOCK_S1",
+            "node": "lat_s1"
+          }
+        ],
+        "status": "regenerate from producer"
+      }
+    ]
+  },
+  "K6_INT_WIDE_S1": {
+    "nodes": [
+      "BasicGuider",
+      "BasicScheduler",
+      "BlockSparseAttention",
+      "CLIPLoader",
+      "CreateVideo",
+      "KSamplerSelect",
+      "LoadImage",
+      "LoraLoaderModelOnly",
+      "MiniMaxH3AddGuide",
+      "MiniMaxH3MotionContextSaveLatent",
+      "MiniMaxH3MotionContextTrim",
+      "MiniMaxH3ReferenceToVideo",
+      "ModelAttentionBackend",
+      "RandomNoise",
+      "SamplerCustomAdvanced",
+      "SaveVideo",
+      "UNETLoader",
+      "VAEDecode",
+      "VAEDecodeAudio",
+      "VAELoader"
+    ],
+    "dependencies": []
+  },
+  "K6_INT_WIDE_S2": {
+    "nodes": [
+      "BasicGuider",
+      "BasicScheduler",
+      "BlockSparseAttention",
+      "CLIPLoader",
+      "CreateVideo",
+      "H3StageLatent",
+      "KSamplerSelect",
+      "LTXVSeparateAVLatent",
+      "LoadImage",
+      "LoraLoaderModelOnly",
+      "MiniMaxH3AddGuide",
+      "MiniMaxH3MotionContextLoadLatent",
+      "MiniMaxH3MotionContextSaveLatent",
+      "MiniMaxH3MotionContextTrim",
+      "MiniMaxH3ReferenceToVideo",
+      "MinimaxH3LatentUpscaler3D",
+      "ModelAttentionBackend",
+      "RandomNoise",
+      "SamplerCustomAdvanced",
+      "SaveVideo",
+      "UNETLoader",
+      "VAEDecode",
+      "VAEDecodeAudio",
+      "VAELoader"
+    ],
+    "dependencies": [
+      {
+        "node": "ld_s1",
+        "selector": "wbv2_nacht_20261105/K6_INT_WIDE/S1/lat_s1",
+        "clip_index": 1,
+        "producers": [
+          {
+            "graph": "K6_INT_WIDE_S1",
+            "node": "lat_s1"
+          }
+        ],
+        "status": "regenerate from producer"
+      }
+    ]
+  },
+  "K7_END_S1": {
+    "nodes": [
+      "BasicGuider",
+      "BasicScheduler",
+      "BlockSparseAttention",
+      "CLIPLoader",
+      "CreateVideo",
+      "KSamplerSelect",
+      "LoadImage",
+      "LoraLoaderModelOnly",
+      "MiniMaxH3AddGuide",
+      "MiniMaxH3MotionContextSaveLatent",
+      "MiniMaxH3MotionContextTrim",
+      "MiniMaxH3ReferenceToVideo",
+      "ModelAttentionBackend",
+      "RandomNoise",
+      "SamplerCustomAdvanced",
+      "SaveVideo",
+      "UNETLoader",
+      "VAEDecode",
+      "VAEDecodeAudio",
+      "VAELoader"
+    ],
+    "dependencies": []
+  },
+  "K7_END_S2": {
+    "nodes": [
+      "BasicGuider",
+      "BasicScheduler",
+      "BlockSparseAttention",
+      "CLIPLoader",
+      "CreateVideo",
+      "H3StageLatent",
+      "KSamplerSelect",
+      "LTXVSeparateAVLatent",
+      "LoadImage",
+      "LoraLoaderModelOnly",
+      "MiniMaxH3AddGuide",
+      "MiniMaxH3MotionContextLoadLatent",
+      "MiniMaxH3MotionContextSaveLatent",
+      "MiniMaxH3MotionContextTrim",
+      "MiniMaxH3ReferenceToVideo",
+      "MinimaxH3LatentUpscaler3D",
+      "ModelAttentionBackend",
+      "RandomNoise",
+      "SamplerCustomAdvanced",
+      "SaveVideo",
+      "UNETLoader",
+      "VAEDecode",
+      "VAEDecodeAudio",
+      "VAELoader"
+    ],
+    "dependencies": [
+      {
+        "node": "ld_s1",
+        "selector": "wbv2_nacht_20261105/K7_END/S1/lat_s1",
+        "clip_index": 1,
+        "producers": [
+          {
+            "graph": "K7_END_S1",
+            "node": "lat_s1"
+          }
+        ],
+        "status": "regenerate from producer"
+      }
+    ]
+  },
+  "K7_FOLLOW_S1": {
+    "nodes": [
+      "BasicGuider",
+      "BasicScheduler",
+      "BlockSparseAttention",
+      "CLIPLoader",
+      "CreateVideo",
+      "H3ClownKeyframe",
+      "KSamplerSelect",
+      "LoadImage",
+      "LoraLoaderModelOnly",
+      "MiniMaxH3MotionContext",
+      "MiniMaxH3MotionContextLoadLatent",
+      "MiniMaxH3MotionContextSaveLatent",
+      "MiniMaxH3MotionContextTrim",
+      "MiniMaxH3ReferenceToVideo",
+      "MiniMaxH3SigmasTail",
+      "ModelAttentionBackend",
+      "RandomNoise",
+      "SamplerCustomAdvanced",
+      "SaveVideo",
+      "UNETLoader",
+      "VAEDecode",
+      "VAEDecodeAudio",
+      "VAELoader"
+    ],
+    "dependencies": [
+      {
+        "node": "ld1",
+        "selector": "wbv2_nacht_20261105/K7_END/S1/lat_s1",
+        "clip_index": 1,
+        "producers": [
+          {
+            "graph": "K7_END_S1",
+            "node": "lat_s1"
+          }
+        ],
+        "status": "regenerate from producer"
+      },
+      {
+        "node": "ks_g1",
+        "selector": "wbv2_nacht_20261105/K7_END/S1/lat_s1",
+        "clip_index": 1,
+        "producers": [
+          {
+            "graph": "K7_END_S1",
+            "node": "lat_s1"
+          }
+        ],
+        "status": "regenerate from producer"
+      }
+    ]
+  },
+  "K7_FOLLOW_S2": {
+    "nodes": [
+      "BasicGuider",
+      "BasicScheduler",
+      "BlockSparseAttention",
+      "CLIPLoader",
+      "CreateVideo",
+      "H3StageLatent",
+      "KSamplerSelect",
+      "LTXVSeparateAVLatent",
+      "LoadImage",
+      "LoraLoaderModelOnly",
+      "MiniMaxH3MotionContext",
+      "MiniMaxH3MotionContextLoadLatent",
+      "MiniMaxH3MotionContextSaveLatent",
+      "MiniMaxH3MotionContextTrim",
+      "MiniMaxH3ReferenceToVideo",
+      "MinimaxH3LatentUpscaler3D",
+      "ModelAttentionBackend",
+      "RandomNoise",
+      "SamplerCustomAdvanced",
+      "SaveVideo",
+      "UNETLoader",
+      "VAEDecode",
+      "VAEDecodeAudio",
+      "VAELoader"
+    ],
+    "dependencies": [
+      {
+        "node": "ld2",
+        "selector": "wbv2_nacht_20261105/K7_END/S2/lat_r2",
+        "clip_index": 1,
+        "producers": [
+          {
+            "graph": "K7_END_S2",
+            "node": "lat_r2"
+          }
+        ],
+        "status": "regenerate from producer"
+      },
+      {
+        "node": "ld_s1",
+        "selector": "wbv2_nacht_20261105/K7_FOLLOW/S1/lat_s1",
+        "clip_index": 2,
+        "producers": [
+          {
+            "graph": "K7_FOLLOW_S1",
+            "node": "lat_s1"
+          }
+        ],
+        "status": "regenerate from producer"
+      }
+    ]
+  },
+  "K7_S2_REF05_S2": {
+    "nodes": [
+      "BasicGuider",
+      "BasicScheduler",
+      "BlockSparseAttention",
+      "CLIPLoader",
+      "CreateVideo",
+      "H3StageLatent",
+      "ImageScaleToTotalPixels",
+      "KSamplerSelect",
+      "LTXVSeparateAVLatent",
+      "LoadImage",
+      "LoraLoaderModelOnly",
+      "MiniMaxH3MotionContext",
+      "MiniMaxH3MotionContextLoadLatent",
+      "MiniMaxH3MotionContextSaveLatent",
+      "MiniMaxH3MotionContextTrim",
+      "MiniMaxH3ReferenceToVideo",
+      "MinimaxH3LatentUpscaler3D",
+      "ModelAttentionBackend",
+      "RandomNoise",
+      "SamplerCustomAdvanced",
+      "SaveVideo",
+      "UNETLoader",
+      "VAEDecode",
+      "VAEDecodeAudio",
+      "VAELoader"
+    ],
+    "dependencies": [
+      {
+        "node": "ld2",
+        "selector": "wbv2_nacht_20261105/K7_END/S2/lat_r2",
+        "clip_index": 1,
+        "producers": [
+          {
+            "graph": "K7_END_S2",
+            "node": "lat_r2"
+          }
+        ],
+        "status": "regenerate from producer"
+      },
+      {
+        "node": "ld_s1",
+        "selector": "wbv2_nacht_20261105/K7_FOLLOW/S1/lat_s1",
+        "clip_index": 2,
+        "producers": [
+          {
+            "graph": "K7_FOLLOW_S1",
+            "node": "lat_s1"
+          }
+        ],
+        "status": "regenerate from producer"
+      }
+    ]
+  },
+  "K8_FOLLOW_S1": {
+    "nodes": [
+      "BasicGuider",
+      "BasicScheduler",
+      "BlockSparseAttention",
+      "CLIPLoader",
+      "CreateVideo",
+      "H3ClownKeyframe",
+      "KSamplerSelect",
+      "LoadImage",
+      "LoraLoaderModelOnly",
+      "MiniMaxH3MotionContext",
+      "MiniMaxH3MotionContextLoadLatent",
+      "MiniMaxH3MotionContextSaveLatent",
+      "MiniMaxH3MotionContextTrim",
+      "MiniMaxH3ReferenceToVideo",
+      "MiniMaxH3SigmasTail",
+      "ModelAttentionBackend",
+      "RandomNoise",
+      "SamplerCustomAdvanced",
+      "SaveVideo",
+      "UNETLoader",
+      "VAEDecode",
+      "VAEDecodeAudio",
+      "VAELoader"
+    ],
+    "dependencies": [
+      {
+        "node": "ld1",
+        "selector": "wbv2_nacht_20261105/K8_REF/S1/lat_s1",
+        "clip_index": 1,
+        "producers": [
+          {
+            "graph": "K8_REF_S1",
+            "node": "lat_s1"
+          }
+        ],
+        "status": "regenerate from producer"
+      },
+      {
+        "node": "ks_g1",
+        "selector": "wbv2_nacht_20261105/K8_REF/S1/lat_s1",
+        "clip_index": 1,
+        "producers": [
+          {
+            "graph": "K8_REF_S1",
+            "node": "lat_s1"
+          }
+        ],
+        "status": "regenerate from producer"
+      }
+    ]
+  },
+  "K8_FOLLOW_S2": {
+    "nodes": [
+      "BasicGuider",
+      "BasicScheduler",
+      "BlockSparseAttention",
+      "CLIPLoader",
+      "CreateVideo",
+      "H3StageLatent",
+      "KSamplerSelect",
+      "LTXVSeparateAVLatent",
+      "LoadImage",
+      "LoraLoaderModelOnly",
+      "MiniMaxH3MotionContext",
+      "MiniMaxH3MotionContextLoadLatent",
+      "MiniMaxH3MotionContextSaveLatent",
+      "MiniMaxH3MotionContextTrim",
+      "MiniMaxH3ReferenceToVideo",
+      "MinimaxH3LatentUpscaler3D",
+      "ModelAttentionBackend",
+      "RandomNoise",
+      "SamplerCustomAdvanced",
+      "SaveVideo",
+      "UNETLoader",
+      "VAEDecode",
+      "VAEDecodeAudio",
+      "VAELoader"
+    ],
+    "dependencies": [
+      {
+        "node": "ld2",
+        "selector": "wbv2_nacht_20261105/K8_REF/S2/lat_r2",
+        "clip_index": 1,
+        "producers": [
+          {
+            "graph": "K8_REF_S2",
+            "node": "lat_r2"
+          }
+        ],
+        "status": "regenerate from producer"
+      },
+      {
+        "node": "ld_s1",
+        "selector": "wbv2_nacht_20261105/K8_FOLLOW/S1/lat_s1",
+        "clip_index": 2,
+        "producers": [
+          {
+            "graph": "K8_FOLLOW_S1",
+            "node": "lat_s1"
+          }
+        ],
+        "status": "regenerate from producer"
+      }
+    ]
+  },
+  "K8_REF_S1": {
+    "nodes": [
+      "BasicGuider",
+      "BasicScheduler",
+      "BlockSparseAttention",
+      "CLIPLoader",
+      "CreateVideo",
+      "KSamplerSelect",
+      "LoadImage",
+      "LoraLoaderModelOnly",
+      "MiniMaxH3AddGuide",
+      "MiniMaxH3MotionContextSaveLatent",
+      "MiniMaxH3MotionContextTrim",
+      "MiniMaxH3ReferenceToVideo",
+      "ModelAttentionBackend",
+      "RandomNoise",
+      "SamplerCustomAdvanced",
+      "SaveVideo",
+      "UNETLoader",
+      "VAEDecode",
+      "VAEDecodeAudio",
+      "VAELoader"
+    ],
+    "dependencies": []
+  },
+  "K8_REF_S2": {
+    "nodes": [
+      "BasicGuider",
+      "BasicScheduler",
+      "BlockSparseAttention",
+      "CLIPLoader",
+      "CreateVideo",
+      "H3StageLatent",
+      "KSamplerSelect",
+      "LTXVSeparateAVLatent",
+      "LoadImage",
+      "LoraLoaderModelOnly",
+      "MiniMaxH3AddGuide",
+      "MiniMaxH3MotionContextLoadLatent",
+      "MiniMaxH3MotionContextSaveLatent",
+      "MiniMaxH3MotionContextTrim",
+      "MiniMaxH3ReferenceToVideo",
+      "MinimaxH3LatentUpscaler3D",
+      "ModelAttentionBackend",
+      "RandomNoise",
+      "SamplerCustomAdvanced",
+      "SaveVideo",
+      "UNETLoader",
+      "VAEDecode",
+      "VAEDecodeAudio",
+      "VAELoader"
+    ],
+    "dependencies": [
+      {
+        "node": "ld_s1",
+        "selector": "wbv2_nacht_20261105/K8_REF/S1/lat_s1",
+        "clip_index": 1,
+        "producers": [
+          {
+            "graph": "K8_REF_S1",
+            "node": "lat_s1"
+          }
+        ],
+        "status": "regenerate from producer"
+      }
+    ]
+  },
+  "K9_FROM_ENTRY_S1": {
+    "nodes": [
+      "BasicGuider",
+      "BasicScheduler",
+      "BlockSparseAttention",
+      "CLIPLoader",
+      "CreateVideo",
+      "H3ClownKeyframe",
+      "KSamplerSelect",
+      "LoadImage",
+      "LoraLoaderModelOnly",
+      "MiniMaxH3AddGuide",
+      "MiniMaxH3MotionContext",
+      "MiniMaxH3MotionContextLoadLatent",
+      "MiniMaxH3MotionContextSaveLatent",
+      "MiniMaxH3MotionContextTrim",
+      "MiniMaxH3ReferenceToVideo",
+      "MiniMaxH3SigmasTail",
+      "ModelAttentionBackend",
+      "RandomNoise",
+      "SamplerCustomAdvanced",
+      "SaveVideo",
+      "UNETLoader",
+      "VAEDecode",
+      "VAEDecodeAudio",
+      "VAELoader"
+    ],
+    "dependencies": [
+      {
+        "node": "ld1",
+        "selector": "wbv2_nacht_20261105/K7_END/S1/lat_s1",
+        "clip_index": 1,
+        "producers": [
+          {
+            "graph": "K7_END_S1",
+            "node": "lat_s1"
+          }
+        ],
+        "status": "regenerate from producer"
+      },
+      {
+        "node": "ks_g1",
+        "selector": "wbv2_nacht_20261105/K7_END/S1/lat_s1",
+        "clip_index": 1,
+        "producers": [
+          {
+            "graph": "K7_END_S1",
+            "node": "lat_s1"
+          }
+        ],
+        "status": "regenerate from producer"
+      }
+    ]
+  },
+  "K9_FROM_ENTRY_S2": {
+    "nodes": [
+      "BasicGuider",
+      "BasicScheduler",
+      "BlockSparseAttention",
+      "CLIPLoader",
+      "CreateVideo",
+      "H3StageLatent",
+      "KSamplerSelect",
+      "LTXVSeparateAVLatent",
+      "LoadImage",
+      "LoraLoaderModelOnly",
+      "MiniMaxH3AddGuide",
+      "MiniMaxH3MotionContext",
+      "MiniMaxH3MotionContextLoadLatent",
+      "MiniMaxH3MotionContextSaveLatent",
+      "MiniMaxH3MotionContextTrim",
+      "MiniMaxH3ReferenceToVideo",
+      "MinimaxH3LatentUpscaler3D",
+      "ModelAttentionBackend",
+      "RandomNoise",
+      "SamplerCustomAdvanced",
+      "SaveVideo",
+      "UNETLoader",
+      "VAEDecode",
+      "VAEDecodeAudio",
+      "VAELoader"
+    ],
+    "dependencies": [
+      {
+        "node": "ld2",
+        "selector": "wbv2_nacht_20261105/K7_END/S2/lat_r2",
+        "clip_index": 1,
+        "producers": [
+          {
+            "graph": "K7_END_S2",
+            "node": "lat_r2"
+          }
+        ],
+        "status": "regenerate from producer"
+      },
+      {
+        "node": "ld_s1",
+        "selector": "wbv2_nacht_20261105/K9_FROM_ENTRY/S1/lat_s1",
+        "clip_index": 2,
+        "producers": [
+          {
+            "graph": "K9_FROM_ENTRY_S1",
+            "node": "lat_s1"
+          }
+        ],
+        "status": "regenerate from producer"
+      }
+    ]
+  },
+  "MARKET_G1_S1": {
+    "nodes": [
+      "BasicGuider",
+      "BasicScheduler",
+      "BlockSparseAttention",
+      "CLIPLoader",
+      "CreateVideo",
+      "KSamplerSelect",
+      "LoadImage",
+      "LoraLoaderModelOnly",
+      "MiniMaxH3AddGuide",
+      "MiniMaxH3MotionContextSaveLatent",
+      "MiniMaxH3MotionContextTrim",
+      "MiniMaxH3ReferenceToVideo",
+      "ModelAttentionBackend",
+      "RandomNoise",
+      "SamplerCustomAdvanced",
+      "SaveVideo",
+      "UNETLoader",
+      "VAEDecode",
+      "VAEDecodeAudio",
+      "VAELoader"
+    ],
+    "dependencies": []
+  },
+  "MARKET_G1_S2": {
+    "nodes": [
+      "BasicGuider",
+      "BasicScheduler",
+      "BlockSparseAttention",
+      "CLIPLoader",
+      "CreateVideo",
+      "H3StageLatent",
+      "ImageScaleToTotalPixels",
+      "KSamplerSelect",
+      "LTXVSeparateAVLatent",
+      "LoadImage",
+      "LoraLoaderModelOnly",
+      "MiniMaxH3AddGuide",
+      "MiniMaxH3MotionContextLoadLatent",
+      "MiniMaxH3MotionContextSaveLatent",
+      "MiniMaxH3MotionContextTrim",
+      "MiniMaxH3ReferenceToVideo",
+      "MinimaxH3LatentUpscaler3D",
+      "ModelAttentionBackend",
+      "RandomNoise",
+      "SamplerCustomAdvanced",
+      "SaveVideo",
+      "UNETLoader",
+      "VAEDecode",
+      "VAEDecodeAudio",
+      "VAELoader"
+    ],
+    "dependencies": [
+      {
+        "node": "ld_s1",
+        "selector": "h3_context/marktplatz0711/market_pilot_g01_s1/clip_00001.safetensors",
+        "clip_index": 1,
+        "producers": [
+          {
+            "graph": "MARKET_G1_S1",
+            "node": "lat_s1"
+          }
+        ],
+        "status": "regenerate from producer"
+      }
+    ]
+  },
+  "MARKET_G2_S1": {
+    "nodes": [
+      "BasicGuider",
+      "BasicScheduler",
+      "BlockSparseAttention",
+      "CLIPLoader",
+      "CreateVideo",
+      "H3ClownKeyframe",
+      "KSamplerSelect",
+      "LoadAudio",
+      "LoadImage",
+      "LoraLoaderModelOnly",
+      "MiniMaxH3MotionContext",
+      "MiniMaxH3MotionContextLoadLatent",
+      "MiniMaxH3MotionContextSaveLatent",
+      "MiniMaxH3MotionContextTrim",
+      "MiniMaxH3ReferenceToVideo",
+      "MiniMaxH3SigmasTail",
+      "ModelAttentionBackend",
+      "RandomNoise",
+      "SamplerCustomAdvanced",
+      "SaveVideo",
+      "UNETLoader",
+      "VAEDecode",
+      "VAEDecodeAudio",
+      "VAELoader"
+    ],
+    "dependencies": [
+      {
+        "node": "ld1",
+        "selector": "h3_context/marktplatz0711/market_pilot_g01_s1/clip_00001.safetensors",
+        "clip_index": 1,
+        "producers": [
+          {
+            "graph": "MARKET_G1_S1",
+            "node": "lat_s1"
+          }
+        ],
+        "status": "regenerate from producer"
+      },
+      {
+        "node": "ks_g1",
+        "selector": "h3_context/marktplatz0711/market_pilot_g01_s1/clip_00001.safetensors",
+        "clip_index": 1,
+        "producers": [
+          {
+            "graph": "MARKET_G1_S1",
+            "node": "lat_s1"
+          }
+        ],
+        "status": "regenerate from producer"
+      }
+    ]
+  },
+  "MARKET_G2_S2": {
+    "nodes": [
+      "BasicGuider",
+      "BasicScheduler",
+      "BlockSparseAttention",
+      "CLIPLoader",
+      "CreateVideo",
+      "H3StageLatent",
+      "ImageScaleToTotalPixels",
+      "KSamplerSelect",
+      "LTXVSeparateAVLatent",
+      "LoadAudio",
+      "LoadImage",
+      "LoraLoaderModelOnly",
+      "MiniMaxH3MotionContext",
+      "MiniMaxH3MotionContextLoadLatent",
+      "MiniMaxH3MotionContextSaveLatent",
+      "MiniMaxH3MotionContextTrim",
+      "MiniMaxH3ReferenceToVideo",
+      "MinimaxH3LatentUpscaler3D",
+      "ModelAttentionBackend",
+      "RandomNoise",
+      "SamplerCustomAdvanced",
+      "SaveVideo",
+      "UNETLoader",
+      "VAEDecode",
+      "VAEDecodeAudio",
+      "VAELoader"
+    ],
+    "dependencies": [
+      {
+        "node": "ld2",
+        "selector": "h3_context/marktplatz0711/market_final_g01_s2_s2/clip_00001.safetensors",
+        "clip_index": 1,
+        "producers": [
+          {
+            "graph": "MARKET_G1_S2",
+            "node": "lat_r2"
+          }
+        ],
+        "status": "regenerate from producer"
+      },
+      {
+        "node": "ld_s1",
+        "selector": "h3_context/marktplatz0711/market_pilot_g02_s1/clip_00002.safetensors",
+        "clip_index": 2,
+        "producers": [
+          {
+            "graph": "MARKET_G2_S1",
+            "node": "lat_s1"
+          }
+        ],
+        "status": "regenerate from producer"
+      }
+    ]
+  },
+  "MARKET_G3_S1": {
+    "nodes": [
+      "BasicGuider",
+      "BasicScheduler",
+      "BlockSparseAttention",
+      "CLIPLoader",
+      "CreateVideo",
+      "H3ClownKeyframe",
+      "KSamplerSelect",
+      "LoadImage",
+      "LoraLoaderModelOnly",
+      "MiniMaxH3MotionContext",
+      "MiniMaxH3MotionContextLoadLatent",
+      "MiniMaxH3MotionContextSaveLatent",
+      "MiniMaxH3MotionContextTrim",
+      "MiniMaxH3ReferenceToVideo",
+      "MiniMaxH3SigmasTail",
+      "ModelAttentionBackend",
+      "RandomNoise",
+      "SamplerCustomAdvanced",
+      "SaveVideo",
+      "UNETLoader",
+      "VAEDecode",
+      "VAEDecodeAudio",
+      "VAELoader"
+    ],
+    "dependencies": [
+      {
+        "node": "ld1",
+        "selector": "h3_context/marktplatz0711/market_pilot_g02_s1/clip_00002.safetensors",
+        "clip_index": 2,
+        "producers": [
+          {
+            "graph": "MARKET_G2_S1",
+            "node": "lat_s1"
+          }
+        ],
+        "status": "regenerate from producer"
+      },
+      {
+        "node": "ks_g1",
+        "selector": "h3_context/marktplatz0711/market_pilot_g01_s1/clip_00001.safetensors",
+        "clip_index": 1,
+        "producers": [
+          {
+            "graph": "MARKET_G1_S1",
+            "node": "lat_s1"
+          }
+        ],
+        "status": "regenerate from producer"
+      }
+    ]
+  },
+  "MARKET_G3_S2": {
+    "nodes": [
+      "BasicGuider",
+      "BasicScheduler",
+      "BlockSparseAttention",
+      "CLIPLoader",
+      "CreateVideo",
+      "H3StageLatent",
+      "ImageScaleToTotalPixels",
+      "KSamplerSelect",
+      "LTXVSeparateAVLatent",
+      "LoadImage",
+      "LoraLoaderModelOnly",
+      "MiniMaxH3MotionContext",
+      "MiniMaxH3MotionContextLoadLatent",
+      "MiniMaxH3MotionContextSaveLatent",
+      "MiniMaxH3MotionContextTrim",
+      "MiniMaxH3ReferenceToVideo",
+      "MinimaxH3LatentUpscaler3D",
+      "ModelAttentionBackend",
+      "RandomNoise",
+      "SamplerCustomAdvanced",
+      "SaveVideo",
+      "UNETLoader",
+      "VAEDecode",
+      "VAEDecodeAudio",
+      "VAELoader"
+    ],
+    "dependencies": [
+      {
+        "node": "ld2",
+        "selector": "h3_context/marktplatz0711/market_final_g02_s2_s2/clip_00002.safetensors",
+        "clip_index": 2,
+        "producers": [
+          {
+            "graph": "MARKET_G2_S2",
+            "node": "lat_r2"
+          }
+        ],
+        "status": "regenerate from producer"
+      },
+      {
+        "node": "ld_s1",
+        "selector": "h3_context/marktplatz0711/market_O4_s71311_s1/clip_00003.safetensors",
+        "clip_index": 3,
+        "producers": [
+          {
+            "graph": "MARKET_G3_S1",
+            "node": "lat_s1"
+          }
+        ],
+        "status": "regenerate from producer"
+      }
+    ]
+  },
+  "MARKET_G4_S1": {
+    "nodes": [
+      "BasicGuider",
+      "BasicScheduler",
+      "BlockSparseAttention",
+      "CLIPLoader",
+      "CreateVideo",
+      "H3ClownKeyframe",
+      "KSamplerSelect",
+      "LoadImage",
+      "LoraLoaderModelOnly",
+      "MiniMaxH3MotionContext",
+      "MiniMaxH3MotionContextLoadLatent",
+      "MiniMaxH3MotionContextSaveLatent",
+      "MiniMaxH3MotionContextTrim",
+      "MiniMaxH3ReferenceToVideo",
+      "MiniMaxH3SigmasTail",
+      "ModelAttentionBackend",
+      "RandomNoise",
+      "SamplerCustomAdvanced",
+      "SaveVideo",
+      "UNETLoader",
+      "VAEDecode",
+      "VAEDecodeAudio",
+      "VAELoader"
+    ],
+    "dependencies": [
+      {
+        "node": "ld1",
+        "selector": "h3_context/marktplatz0711/market_O4_s71311_s1/clip_00003.safetensors",
+        "clip_index": 3,
+        "producers": [
+          {
+            "graph": "MARKET_G3_S1",
+            "node": "lat_s1"
+          }
+        ],
+        "status": "regenerate from producer"
+      },
+      {
+        "node": "ks_g1",
+        "selector": "h3_context/marktplatz0711/market_pilot_g01_s1/clip_00001.safetensors",
+        "clip_index": 1,
+        "producers": [
+          {
+            "graph": "MARKET_G1_S1",
+            "node": "lat_s1"
+          }
+        ],
+        "status": "regenerate from producer"
+      }
+    ]
+  },
+  "MARKET_G4_S2": {
+    "nodes": [
+      "BasicGuider",
+      "BasicScheduler",
+      "BlockSparseAttention",
+      "CLIPLoader",
+      "CreateVideo",
+      "H3StageLatent",
+      "ImageScaleToTotalPixels",
+      "KSamplerSelect",
+      "LTXVSeparateAVLatent",
+      "LoadImage",
+      "LoraLoaderModelOnly",
+      "MiniMaxH3MotionContext",
+      "MiniMaxH3MotionContextLoadLatent",
+      "MiniMaxH3MotionContextSaveLatent",
+      "MiniMaxH3MotionContextTrim",
+      "MiniMaxH3ReferenceToVideo",
+      "MinimaxH3LatentUpscaler3D",
+      "ModelAttentionBackend",
+      "RandomNoise",
+      "SamplerCustomAdvanced",
+      "SaveVideo",
+      "UNETLoader",
+      "VAEDecode",
+      "VAEDecodeAudio",
+      "VAELoader"
+    ],
+    "dependencies": [
+      {
+        "node": "ld2",
+        "selector": "h3_context/marktplatz0711/market_final_g03_s2_s2/clip_00003.safetensors",
+        "clip_index": 3,
+        "producers": [
+          {
+            "graph": "MARKET_G3_S2",
+            "node": "lat_r2"
+          }
+        ],
+        "status": "regenerate from producer"
+      },
+      {
+        "node": "ld_s1",
+        "selector": "h3_context/marktplatz0711/market_fwb_c4_after_O4_s71413_s1/clip_00004.safetensors",
+        "clip_index": 4,
+        "producers": [
+          {
+            "graph": "MARKET_G4_S1",
+            "node": "lat_s1"
+          }
+        ],
+        "status": "regenerate from producer"
+      }
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "project": "ComfyUI",
+    "revision": "63be2f9b82ad0dac88a7ceaa28a9cf3154125a18",
+    "tracked_source_clean": true
+  },
+  {
+    "project": "Motion Context",
+    "revision": "518c083d11d80fa5920222ad89889924ee4401c9",
+    "tracked_source_clean": true
+  },
+  {
+    "project": "LBH Upscaler",
+    "revision": "40316cf008b2fd8663263270669eb4da23f89d2c",
+    "tracked_source_clean": true
+  }
+]

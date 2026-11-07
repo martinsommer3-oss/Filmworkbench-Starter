@@ -1,0 +1,9 @@
+__pycache__/
+runs/
+media/*.mp4
+*.safetensors
+*.pt
+.env
+.venv/
+
+examples/*/*.mp4

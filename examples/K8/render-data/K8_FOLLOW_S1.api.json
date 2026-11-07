@@ -1,0 +1,333 @@
+{
+  "1": {
+    "class_type": "UNETLoader",
+    "inputs": {
+      "unet_name": "minimax_h3_hybrid_fl2va_ref2va_b25-49-int8.safetensors",
+      "weight_dtype": "default"
+    }
+  },
+  "2": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "clip_name": "qwen3vl_32b_minimax_h3_int8_convrot.safetensors",
+      "type": "minimax",
+      "device": "default"
+    }
+  },
+  "3": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "minimax_h3_video_vae_int8_convrot.safetensors"
+    }
+  },
+  "4": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "minimax_h3_audio_vae_fp32.safetensors"
+    }
+  },
+  "11": {
+    "class_type": "RandomNoise",
+    "inputs": {
+      "noise_seed": 1803
+    }
+  },
+  "12": {
+    "class_type": "KSamplerSelect",
+    "inputs": {
+      "sampler_name": "er_sde"
+    }
+  },
+  "13": {
+    "class_type": "BasicScheduler",
+    "inputs": {
+      "model": [
+        "8t",
+        0
+      ],
+      "scheduler": "beta",
+      "steps": 8,
+      "denoise": 1.0
+    }
+  },
+  "14": {
+    "class_type": "BasicGuider",
+    "inputs": {
+      "model": [
+        "8t",
+        0
+      ],
+      "conditioning": [
+        "mc1",
+        0
+      ]
+    }
+  },
+  "15": {
+    "class_type": "SamplerCustomAdvanced",
+    "inputs": {
+      "noise": [
+        "11",
+        0
+      ],
+      "guider": [
+        "14",
+        0
+      ],
+      "sampler": [
+        "12",
+        0
+      ],
+      "sigmas": [
+        "st1",
+        0
+      ],
+      "latent_image": [
+        "ks_front",
+        0
+      ]
+    }
+  },
+  "40": {
+    "class_type": "MiniMaxH3ReferenceToVideo",
+    "inputs": {
+      "clip": [
+        "2",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ],
+      "audio_vae": [
+        "4",
+        0
+      ],
+      "prompt": "subject_definitions:\n<Subject 1> is the same sunset lake and empty wooden pier in <Picture 1>, with boathouse on left, village, church and tree-covered hills. <Subject 2> is one fictional plesiosaur-like lake creature with dark moss-green wet pebbled skin, a single slender curved long neck, small elongated reptilian head, two dark eyes and closed mouth. Only neck, head and one low rounded back emerge; its large body stays submerged. <Picture 2> defines the intended LATER surfaced creature and its location; the beginning is the empty lake in <Picture 1>.\nsummary: A single lake creature physically surfaces beyond the empty pier.\nretention_analysis: Preserve the established geometry, lighting, subject identities and materials from the images. <Picture 1> is the exact first view.\ndetailed_description: [Shot 1] Continue seamlessly from the previous take. The creature is ALREADY above water, with the same curved neck, head and rounded back, fifteen metres beyond the pier on the right. The locked wide camera and all buildings remain fixed. It gently turns its head toward screen LEFT, pauses and glides slowly one metre leftward through the water, leaving widening ripples. Its one neck and head remain continuously above water; body stays submerged, scale and proportions unchanged. Maintain the sunset light. No people appear.\n\noverall_soundscape: Water lapping, an increasing bubbling splash as the head breaks the surface, water dripping from the raised neck. Nobody speaks.\nnon_diegetic_music: N/A",
+      "width": 864,
+      "height": 480,
+      "length": 396,
+      "ref_image_size": "match",
+      "ref_images.ref_image_0": [
+        "night_ref0",
+        0
+      ],
+      "ref_images.ref_image_1": [
+        "night_ref1",
+        0
+      ]
+    }
+  },
+  "s1_dek": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "15",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ]
+    }
+  },
+  "s1_vid": {
+    "class_type": "CreateVideo",
+    "inputs": {
+      "images": [
+        "s1_tr",
+        0
+      ],
+      "audio": [
+        "s1_tr",
+        1
+      ],
+      "fps": 24,
+      "bit_depth": 8,
+      "color_space": "sRGB",
+      "codec": "none"
+    }
+  },
+  "s1_save": {
+    "class_type": "SaveVideo",
+    "inputs": {
+      "video": [
+        "s1_vid",
+        0
+      ],
+      "filename_prefix": "wbv2_nacht_20261105/K8_FOLLOW/S1/s1_save",
+      "format": "mp4",
+      "format.codec": "h264",
+      "format.codec.encoding": "re-encode",
+      "format.codec.encoding.crf": 17,
+      "codec": "auto"
+    }
+  },
+  "lat_s1": {
+    "class_type": "MiniMaxH3MotionContextSaveLatent",
+    "inputs": {
+      "latent": [
+        "15",
+        0
+      ],
+      "filename_prefix": "wbv2_nacht_20261105/K8_FOLLOW/S1/lat_s1/clip",
+      "clip_index": 2
+    }
+  },
+  "ld1": {
+    "class_type": "MiniMaxH3MotionContextLoadLatent",
+    "inputs": {
+      "latent_path": "wbv2_nacht_20261105/K8_REF/S1/lat_s1",
+      "clip_index": 1,
+      "stock_format": false,
+      "folder": "output"
+    }
+  },
+  "mc1": {
+    "class_type": "MiniMaxH3MotionContext",
+    "inputs": {
+      "conditioning": [
+        "40",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ],
+      "latent": [
+        "40",
+        1
+      ],
+      "context_length": "56",
+      "audio_context_length": 18,
+      "context_latent": [
+        "ld1",
+        0
+      ],
+      "audio_vae": [
+        "4",
+        0
+      ]
+    }
+  },
+  "st1": {
+    "class_type": "MiniMaxH3SigmasTail",
+    "inputs": {
+      "sigmas": [
+        "13",
+        0
+      ],
+      "tail_steps": 3,
+      "strength": 0.5
+    }
+  },
+  "s1_ton": {
+    "class_type": "VAEDecodeAudio",
+    "inputs": {
+      "samples": [
+        "15",
+        0
+      ],
+      "vae": [
+        "4",
+        0
+      ]
+    }
+  },
+  "s1_tr": {
+    "class_type": "MiniMaxH3MotionContextTrim",
+    "inputs": {
+      "images": [
+        "s1_dek",
+        0
+      ],
+      "audio": [
+        "s1_ton",
+        0
+      ],
+      "trim_frames": [
+        "mc1",
+        1
+      ],
+      "fps": 24.0,
+      "match_tail": true
+    }
+  },
+  "ks_g1": {
+    "class_type": "MiniMaxH3MotionContextLoadLatent",
+    "inputs": {
+      "latent_path": "wbv2_nacht_20261105/K8_REF/S1/lat_s1",
+      "clip_index": 1,
+      "stock_format": false,
+      "folder": "output"
+    }
+  },
+  "ks_front": {
+    "class_type": "H3ClownKeyframe",
+    "inputs": {
+      "latent": [
+        "40",
+        1
+      ],
+      "enabled": true,
+      "keyframe_mask": 0.0,
+      "first_shot": 1,
+      "placement": "keystone front",
+      "keyframe": [
+        "ks_g1",
+        0
+      ]
+    }
+  },
+  "5t": {
+    "class_type": "LoraLoaderModelOnly",
+    "inputs": {
+      "model": [
+        "1",
+        0
+      ],
+      "lora_name": "minimax_h3_ref2v_turbo_8step_v1.0_768p_comfyui_bf16.safetensors",
+      "strength_model": 1.0
+    }
+  },
+  "7t": {
+    "class_type": "ModelAttentionBackend",
+    "inputs": {
+      "model": [
+        "5t",
+        0
+      ],
+      "attention": "comfy kitchen attention"
+    }
+  },
+  "8t": {
+    "class_type": "BlockSparseAttention",
+    "inputs": {
+      "model": [
+        "7t",
+        0
+      ],
+      "selection": "sla",
+      "selection.keep_percent": 10.0,
+      "start_percent": 0.2,
+      "end_percent": 1.0,
+      "dense_blocks": "",
+      "min_tokens": 12288,
+      "extra_tokens": 256,
+      "sink_conditioning": "exact_kv_and_rows",
+      "verbose": false
+    }
+  },
+  "night_ref0": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "assets/faa7ef4972de8c45.png"
+    }
+  },
+  "night_ref1": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "assets/8d85d4275d8b1070.png"
+    }
+  }
+}

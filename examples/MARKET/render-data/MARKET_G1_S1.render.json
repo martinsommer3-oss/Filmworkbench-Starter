@@ -1,0 +1,14 @@
+{
+  "stage": "s1",
+  "nr": 1,
+  "seed": 71101,
+  "frames": 277,
+  "context_frames": 0,
+  "base_recipe": "kern_v1",
+  "experimental_conditioning": "none",
+  "graph_sha256": "4145d537b7d091c3776c389529d8181d446332cef69b7207c15c28560b8b747a",
+  "id": "MARKET_G1_S1",
+  "exported_graph": "../graphs/MARKET_G1_S1.api.json",
+  "source_graph_sha256": "5dc75484a4a8861f793c7f4fac10e807f210c5ce47b62ee4f2e0b9c3278ebe78",
+  "dependencies": {}
+}

@@ -1,0 +1,303 @@
+{
+  "1": {
+    "class_type": "UNETLoader",
+    "inputs": {
+      "unet_name": "minimax_h3_hybrid_fl2va_ref2va_b25-49-int8.safetensors",
+      "weight_dtype": "default"
+    }
+  },
+  "2": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "clip_name": "qwen3vl_32b_minimax_h3_int8_convrot.safetensors",
+      "type": "minimax",
+      "device": "default"
+    }
+  },
+  "3": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "minimax_h3_video_vae_int8_convrot.safetensors"
+    }
+  },
+  "4": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "minimax_h3_audio_vae_fp32.safetensors"
+    }
+  },
+  "5": {
+    "class_type": "LoraLoaderModelOnly",
+    "inputs": {
+      "model": [
+        "1",
+        0
+      ],
+      "strength_model": 1.0,
+      "lora_name": "minimax_h3_DMAD_4step_full_lora_avg_rank_39_bf16.safetensors"
+    }
+  },
+  "7": {
+    "class_type": "ModelAttentionBackend",
+    "inputs": {
+      "model": [
+        "5",
+        0
+      ],
+      "attention": "comfy kitchen attention"
+    }
+  },
+  "8": {
+    "class_type": "BlockSparseAttention",
+    "inputs": {
+      "model": [
+        "7",
+        0
+      ],
+      "selection": "sla",
+      "selection.keep_percent": 10.0,
+      "start_percent": 0.2,
+      "end_percent": 1.0,
+      "dense_blocks": "",
+      "min_tokens": 12288,
+      "extra_tokens": 256,
+      "sink_conditioning": "exact_kv_and_rows",
+      "verbose": false
+    }
+  },
+  "11": {
+    "class_type": "RandomNoise",
+    "inputs": {
+      "noise_seed": 1601
+    }
+  },
+  "12": {
+    "class_type": "KSamplerSelect",
+    "inputs": {
+      "sampler_name": "er_sde"
+    }
+  },
+  "13": {
+    "class_type": "BasicScheduler",
+    "inputs": {
+      "model": [
+        "8",
+        0
+      ],
+      "scheduler": "beta",
+      "steps": 8,
+      "denoise": 1.0
+    }
+  },
+  "14": {
+    "class_type": "BasicGuider",
+    "inputs": {
+      "model": [
+        "8",
+        0
+      ],
+      "conditioning": [
+        "night_endguide",
+        0
+      ]
+    }
+  },
+  "15": {
+    "class_type": "SamplerCustomAdvanced",
+    "inputs": {
+      "noise": [
+        "11",
+        0
+      ],
+      "guider": [
+        "14",
+        0
+      ],
+      "sampler": [
+        "12",
+        0
+      ],
+      "sigmas": [
+        "13",
+        0
+      ],
+      "latent_image": [
+        "40",
+        1
+      ]
+    }
+  },
+  "40": {
+    "class_type": "MiniMaxH3ReferenceToVideo",
+    "inputs": {
+      "clip": [
+        "2",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ],
+      "audio_vae": [
+        "4",
+        0
+      ],
+      "prompt": "subject_definitions:\n<Subject 1> is the exact off-white survey spaceship in <Picture 1>, graphite stern with two small blue engines, red hull stripe and broad dark reflective forward window divided by one mullion. <Subject 2> is the blue-white planet below right.\nsummary: A small civilian survey spaceship cruises above the planet.\nretention_analysis: Preserve the established geometry, lighting, subject identities and materials from the images. <Picture 1> is the exact first view.\ndetailed_description: Naturalistic cinematic live-action, stable exposure and coherent physical motion. [Shot 1] One uninterrupted distant exterior tracking shot. The survey ship flies slowly nose-first toward screen RIGHT while the camera tracks exactly parallel at matched speed. The camera distance stays absolutely constant: the entire ship occupies exactly forty percent of the frame width in EVERY frame. No approach, no zoom, no push-in, no change in framing or camera angle; its nose and stern keep their initial screen positions. Its cockpit glass reflects the planet and space, too dark and distant to show the crew. The planetary limb drifts slowly beneath it; small stars remain far away. Engines glow steadily, the ship keeps its exact shape.\noverall_soundscape: Very soft low cinematic spacecraft engine sound. Nobody speaks.\nnon_diegetic_music: N/A",
+      "width": 864,
+      "height": 480,
+      "length": 192,
+      "ref_image_size": "match",
+      "ref_images.ref_image_0": [
+        "night_ref0",
+        0
+      ]
+    }
+  },
+  "s1_dek": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "15",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ]
+    }
+  },
+  "s1_vid": {
+    "class_type": "CreateVideo",
+    "inputs": {
+      "images": [
+        "s1_tr",
+        0
+      ],
+      "audio": [
+        "s1_tr",
+        1
+      ],
+      "fps": 24,
+      "bit_depth": 8,
+      "color_space": "sRGB",
+      "codec": "none"
+    }
+  },
+  "s1_save": {
+    "class_type": "SaveVideo",
+    "inputs": {
+      "video": [
+        "s1_vid",
+        0
+      ],
+      "filename_prefix": "wbv2_nacht_20261105/K6_EXT_LOCK/S1/s1_save",
+      "format": "mp4",
+      "format.codec": "h264",
+      "format.codec.encoding": "re-encode",
+      "format.codec.encoding.crf": 17,
+      "codec": "auto"
+    }
+  },
+  "lat_s1": {
+    "class_type": "MiniMaxH3MotionContextSaveLatent",
+    "inputs": {
+      "latent": [
+        "15",
+        0
+      ],
+      "filename_prefix": "wbv2_nacht_20261105/K6_EXT_LOCK/S1/lat_s1/clip",
+      "clip_index": 1
+    }
+  },
+  "sl1": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "assets/d80e22e2a9300e51.png"
+    }
+  },
+  "ag1": {
+    "class_type": "MiniMaxH3AddGuide",
+    "inputs": {
+      "positive": [
+        "40",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ],
+      "latent": [
+        "40",
+        1
+      ],
+      "image": [
+        "sl1",
+        0
+      ],
+      "frame_idx": 0
+    }
+  },
+  "s1_ton": {
+    "class_type": "VAEDecodeAudio",
+    "inputs": {
+      "samples": [
+        "15",
+        0
+      ],
+      "vae": [
+        "4",
+        0
+      ]
+    }
+  },
+  "s1_tr": {
+    "class_type": "MiniMaxH3MotionContextTrim",
+    "inputs": {
+      "images": [
+        "s1_dek",
+        0
+      ],
+      "audio": [
+        "s1_ton",
+        0
+      ],
+      "trim_frames": 0,
+      "fps": 24.0,
+      "match_tail": true
+    }
+  },
+  "night_ref0": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "assets/d80e22e2a9300e51.png"
+    }
+  },
+  "night_end": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "assets/d80e22e2a9300e51.png"
+    }
+  },
+  "night_endguide": {
+    "class_type": "MiniMaxH3AddGuide",
+    "inputs": {
+      "positive": [
+        "ag1",
+        0
+      ],
+      "latent": [
+        "40",
+        1
+      ],
+      "vae": [
+        "3",
+        0
+      ],
+      "image": [
+        "night_end",
+        0
+      ],
+      "frame_idx": -1
+    }
+  }
+}

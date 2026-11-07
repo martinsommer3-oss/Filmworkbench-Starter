@@ -1,0 +1,49 @@
+{
+  "stage": "s1",
+  "nr": 4,
+  "seed": 71413,
+  "frames": 345,
+  "context_frames": 56,
+  "base_recipe": "kern_v1",
+  "experimental_conditioning": "none",
+  "graph_sha256": "b4b9b14acf53d17a9560846a03762e4cf88d7cac012ea38b5b1e1164b5d9eb0d",
+  "id": "MARKET_G4_S1",
+  "exported_graph": "../graphs/MARKET_G4_S1.api.json",
+  "source_graph_sha256": "63df5a901f4b60177c9d5fbb05e797c7e2896e91d63c861509cf6e670799ec4b",
+  "dependencies": {
+    "parent": {
+      "stage": "s1",
+      "nr": 3,
+      "frames": 345,
+      "context_frames": 56,
+      "video_sha256": "aef11cd07dee2712db5a4700850636856fa032388aed8104995ee13437d465d0",
+      "latent_sha256": "f455eeacba47ae8d695f7b59bdab180e9b84cb83c1627e7fcaeb68676c351dd9",
+      "shape": [
+        1,
+        24,
+        102,
+        30,
+        54
+      ],
+      "width": 864,
+      "height": 480
+    },
+    "keystone": {
+      "stage": "s1",
+      "nr": 1,
+      "frames": 277,
+      "context_frames": 0,
+      "video_sha256": "7726918770badbc7e32fb1d840cd6cf584620ed6eac20afcdaff7e0ccb735ac1",
+      "latent_sha256": "a48912a6afd3244e43842b0da1c0410f2a58cdf6dda5b340041655441fce9820",
+      "shape": [
+        1,
+        24,
+        82,
+        30,
+        54
+      ],
+      "width": 864,
+      "height": 480
+    }
+  }
+}

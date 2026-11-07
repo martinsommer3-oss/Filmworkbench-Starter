@@ -1,0 +1,27 @@
+{
+  "sl2": {
+    "asset": "assets/27c3ba0ee9ddeb9b.png",
+    "original_input_name": "wb_B4_k1_12be9d9905.png",
+    "sha256": "27c3ba0ee9ddeb9b8dff122a70a8d0a1b575cf083f6f2068debbfeee0c3c61c2"
+  },
+  "night_ref0": {
+    "asset": "assets/27c3ba0ee9ddeb9b.png",
+    "original_input_name": "wb_B4_k1_12be9d9905.png",
+    "sha256": "27c3ba0ee9ddeb9b8dff122a70a8d0a1b575cf083f6f2068debbfeee0c3c61c2"
+  },
+  "night_ref1": {
+    "asset": "assets/31aeda1c0fb8c728.png",
+    "original_input_name": "wb_portrait_4f849f7c21.png",
+    "sha256": "31aeda1c0fb8c728e91c4da6a0e2ade0fb389ee8b9a6c0e41ee87b86958d0960"
+  },
+  "night_ref2": {
+    "asset": "assets/7789e47f653cf45c.png",
+    "original_input_name": "wb_vollkoerper_c0a55a8f9d.png",
+    "sha256": "7789e47f653cf45cf26d8b2e8db7b4521b934deb168f8c8c33bcdf993499d926"
+  },
+  "night_end": {
+    "asset": "assets/30c1629196aad86b.png",
+    "original_input_name": "wb_bootshaus_mann_ende_044b74a4ef.png",
+    "sha256": "30c1629196aad86b69e5960e20887868b7c27d6bd65a49063e53cd4d44e518b8"
+  }
+}

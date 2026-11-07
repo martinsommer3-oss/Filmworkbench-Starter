@@ -1,0 +1,57 @@
+{
+  "name": "K3_VIEW",
+  "stage": "S2",
+  "frames": 712,
+  "duration": 29.666666666666668,
+  "parts": [
+    {
+      "id": "K3_ROOM1"
+    },
+    {
+      "id": "K3_WORKSHOP"
+    },
+    {
+      "id": "K3_RETURN"
+    }
+  ],
+  "audio_policy": "S1 original audio for every H3 segment; raw S2 audio separately available",
+  "closing_credit": {
+    "text": "MiniMax H3",
+    "start_s": 28.666666666666668,
+    "duration_s": 1,
+    "method": "small lower-centre overlay; no added frames or audio changes"
+  },
+  "media_sha256": "8fea2496f7e9400eb6e3a3563f7e17cb0d27c7c986736e22f298e2b6a25395dd",
+  "source_renders": [
+    {
+      "take": "K3_ROOM1",
+      "stage": "S2",
+      "sha256": "7f79854c8d5d832a2ae87e97a4f42ac9b527497831607666a9e66e233aacd83f"
+    },
+    {
+      "take": "K3_ROOM1",
+      "stage": "S1",
+      "sha256": "f779c8dc589d088d3bb4f6d798070a4b01c5859807c5d7002b16d4d015ab313a"
+    },
+    {
+      "take": "K3_WORKSHOP",
+      "stage": "S2",
+      "sha256": "5b0070937a460e50c1f4ac293051c51e782f03c461a97fdcba355b51b31a07a0"
+    },
+    {
+      "take": "K3_WORKSHOP",
+      "stage": "S1",
+      "sha256": "f3c956f3408332d683de68db45715629f03e15156f3219387635a0164e59f5df"
+    },
+    {
+      "take": "K3_RETURN",
+      "stage": "S2",
+      "sha256": "af677b4ac7fa0603230338b37dec2245130db474b696f535266853be55232688"
+    },
+    {
+      "take": "K3_RETURN",
+      "stage": "S1",
+      "sha256": "28d9b5418cc9d885c6b551367b5a8ef941824df26650eae828b8c1ae69c8b846"
+    }
+  ]
+}

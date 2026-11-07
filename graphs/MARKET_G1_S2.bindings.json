@@ -1,0 +1,30 @@
+{
+  "sl2": {
+    "asset": "assets/465f09b34f16d000.png",
+    "sha256": "465f09b34f16d000f7af8af38f2c3bda65767d74bb00d61e76f10dc4e7bc4762"
+  },
+  "ref0": {
+    "asset": "assets/19f5d8d99bf8cd89.png",
+    "sha256": "19f5d8d99bf8cd898ccf238739c543bb84a84f41c9684fe5952f6a74a788873c"
+  },
+  "ref1": {
+    "asset": "assets/e7a3594f523322da.png",
+    "sha256": "e7a3594f523322da39bbc943955e83b6a1685dc9b520ca1d15eef4321f628c7c"
+  },
+  "ref2": {
+    "asset": "assets/782ed79bb020fa1b.png",
+    "sha256": "782ed79bb020fa1b2847eb1c690ed54e3a0f1a47fad9f13cefca8404652ebcf5"
+  },
+  "ref3": {
+    "asset": "assets/04b6b1dccd9b71f6.png",
+    "sha256": "04b6b1dccd9b71f6ebbe876364e831a3d000215b69266f3f758bb1ec340836ce"
+  },
+  "ref4": {
+    "asset": "assets/1583209595066d64.png",
+    "sha256": "1583209595066d64652e65e798a8b9cd49266426cb53a09ed10944944c3fe42c"
+  },
+  "ref5": {
+    "asset": "assets/678956be7ebca5ec.png",
+    "sha256": "678956be7ebca5ecc539d5b5e027070033090e136ba281457ef3c17f7e5ded38"
+  }
+}

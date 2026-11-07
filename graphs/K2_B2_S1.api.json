@@ -1,0 +1,373 @@
+{
+  "1": {
+    "class_type": "UNETLoader",
+    "inputs": {
+      "unet_name": "minimax_h3_hybrid_fl2va_ref2va_b25-49-int8.safetensors",
+      "weight_dtype": "default"
+    }
+  },
+  "2": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "clip_name": "qwen3vl_32b_minimax_h3_int8_convrot.safetensors",
+      "type": "minimax",
+      "device": "default"
+    }
+  },
+  "3": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "minimax_h3_video_vae_int8_convrot.safetensors"
+    }
+  },
+  "4": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "minimax_h3_audio_vae_fp32.safetensors"
+    }
+  },
+  "11": {
+    "class_type": "RandomNoise",
+    "inputs": {
+      "noise_seed": 1102
+    }
+  },
+  "12": {
+    "class_type": "KSamplerSelect",
+    "inputs": {
+      "sampler_name": "er_sde"
+    }
+  },
+  "13": {
+    "class_type": "BasicScheduler",
+    "inputs": {
+      "model": [
+        "8t",
+        0
+      ],
+      "scheduler": "beta",
+      "steps": 8,
+      "denoise": 1.0
+    }
+  },
+  "14": {
+    "class_type": "BasicGuider",
+    "inputs": {
+      "model": [
+        "8t",
+        0
+      ],
+      "conditioning": [
+        "mc1",
+        0
+      ]
+    }
+  },
+  "15": {
+    "class_type": "SamplerCustomAdvanced",
+    "inputs": {
+      "noise": [
+        "11",
+        0
+      ],
+      "guider": [
+        "14",
+        0
+      ],
+      "sampler": [
+        "12",
+        0
+      ],
+      "sigmas": [
+        "st1",
+        0
+      ],
+      "latent_image": [
+        "ks_front",
+        0
+      ]
+    }
+  },
+  "40": {
+    "class_type": "MiniMaxH3ReferenceToVideo",
+    "inputs": {
+      "clip": [
+        "2",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ],
+      "audio_vae": [
+        "4",
+        0
+      ],
+      "prompt": "subject_definitions:\n<Subject 1> is the curly auburn-haired woman in a mustard cardigan, cream blouse, dark jeans and brown boots, defined by <Picture 2> and <Picture 3>. Her voice is a warm natural mid-pitched adult female German voice.\n<Subject 2> is the older silver-haired, short-bearded man in navy work coveralls and brown work boots, defined by <Picture 4> and <Picture 5>. His voice is a calm low-pitched slightly rough adult male German voice.\n<Subject 3> is the same living room as <Picture 1>: pale-blue plank walls, green sofa and bookshelf on the left, window left of the closed white door, white fireplace and gold sunburst mirror on the right, red rug, rectangular wooden coffee table with exactly one white teapot. Warm afternoon light. Woman at the sofa side, man at fireplace side, facing each other across the table.\nsummary: Same conversation, with a deliberate reverse angle then return to the main wide.\nretention_analysis: Preserve both people, their clothing, their positions and the room. Preserve the single white teapot on the table and the closed white door. The two people remain standing on their respective sides of the table throughout.\ndetailed_description: Naturalistic live-action cinematic image, stable late-afternoon light, clean digital image. [Shot 1] Continue the actual preceding wide view: woman on screen left by the sofa and man on screen right by the fireplace. The single white teapot stays on the table. The man says <d>[German] Morgen fahren wir zusammen zum See.</d> His lips match the words and close; she listens with her lips pressed together.\nAt 00:05.000 [Shot 2] Cut to the opposite side of the same coffee table using the empty reverse room in <Picture 6>. The woman is now on screen RIGHT beside the green sofa, the man on screen LEFT at the white fireplace. Behind them are the back-wall doorway and staircase, wooden sideboard and framed pictures, exactly as <Picture 6>. Warm window light now comes from behind the camera. Both stay on their original physical sides of the table. The woman looks at the man and says <d>[German] Dann brechen wir früh auf.</d> Her lips match then close; he listens with closed lips.\nAt 00:09.500 [Shot 3] Cut back to the ORIGINAL main wide: woman LEFT beside sofa, man RIGHT beside fireplace, window and closed white entrance door behind, single white teapot clearly visible between them. Both smile quietly at each other, holding their positions through the final seconds.\noverall_soundscape: Audible clear German dialogue, a little clothing movement when hands gesture, quiet interior. Voices belong only to the two visible people, one speaking at a time.\nnon_diegetic_music: N/A",
+      "width": 864,
+      "height": 480,
+      "length": 396,
+      "ref_image_size": "match",
+      "ref_images.ref_image_0": [
+        "night_ref0",
+        0
+      ],
+      "ref_images.ref_image_1": [
+        "night_ref1",
+        0
+      ],
+      "ref_images.ref_image_2": [
+        "night_ref2",
+        0
+      ],
+      "ref_images.ref_image_3": [
+        "night_ref3",
+        0
+      ],
+      "ref_images.ref_image_4": [
+        "night_ref4",
+        0
+      ],
+      "ref_images.ref_image_5": [
+        "night_ref5",
+        0
+      ]
+    }
+  },
+  "s1_dek": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "15",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ]
+    }
+  },
+  "s1_vid": {
+    "class_type": "CreateVideo",
+    "inputs": {
+      "images": [
+        "s1_tr",
+        0
+      ],
+      "audio": [
+        "s1_tr",
+        1
+      ],
+      "fps": 24,
+      "bit_depth": 8,
+      "color_space": "sRGB",
+      "codec": "none"
+    }
+  },
+  "s1_save": {
+    "class_type": "SaveVideo",
+    "inputs": {
+      "video": [
+        "s1_vid",
+        0
+      ],
+      "filename_prefix": "wbv2_nacht_20261105/K2_B2/S1/s1_save",
+      "format": "mp4",
+      "format.codec": "h264",
+      "format.codec.encoding": "re-encode",
+      "format.codec.encoding.crf": 17,
+      "codec": "auto"
+    }
+  },
+  "lat_s1": {
+    "class_type": "MiniMaxH3MotionContextSaveLatent",
+    "inputs": {
+      "latent": [
+        "15",
+        0
+      ],
+      "filename_prefix": "wbv2_nacht_20261105/K2_B2/S1/lat_s1/clip",
+      "clip_index": 2
+    }
+  },
+  "ld1": {
+    "class_type": "MiniMaxH3MotionContextLoadLatent",
+    "inputs": {
+      "latent_path": "wbv2_nacht_20261105/K1_A1/S1/lat_s1",
+      "clip_index": 1,
+      "stock_format": false,
+      "folder": "output"
+    }
+  },
+  "mc1": {
+    "class_type": "MiniMaxH3MotionContext",
+    "inputs": {
+      "conditioning": [
+        "40",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ],
+      "latent": [
+        "40",
+        1
+      ],
+      "context_length": "56",
+      "audio_context_length": 18,
+      "context_latent": [
+        "ld1",
+        0
+      ],
+      "audio_vae": [
+        "4",
+        0
+      ]
+    }
+  },
+  "st1": {
+    "class_type": "MiniMaxH3SigmasTail",
+    "inputs": {
+      "sigmas": [
+        "13",
+        0
+      ],
+      "tail_steps": 3,
+      "strength": 0.5
+    }
+  },
+  "s1_ton": {
+    "class_type": "VAEDecodeAudio",
+    "inputs": {
+      "samples": [
+        "15",
+        0
+      ],
+      "vae": [
+        "4",
+        0
+      ]
+    }
+  },
+  "s1_tr": {
+    "class_type": "MiniMaxH3MotionContextTrim",
+    "inputs": {
+      "images": [
+        "s1_dek",
+        0
+      ],
+      "audio": [
+        "s1_ton",
+        0
+      ],
+      "trim_frames": [
+        "mc1",
+        1
+      ],
+      "fps": 24.0,
+      "match_tail": true
+    }
+  },
+  "ks_g1": {
+    "class_type": "MiniMaxH3MotionContextLoadLatent",
+    "inputs": {
+      "latent_path": "wbv2_nacht_20261105/K1_A1/S1/lat_s1",
+      "clip_index": 1,
+      "stock_format": false,
+      "folder": "output"
+    }
+  },
+  "ks_front": {
+    "class_type": "H3ClownKeyframe",
+    "inputs": {
+      "latent": [
+        "40",
+        1
+      ],
+      "enabled": true,
+      "keyframe_mask": 0.0,
+      "first_shot": 1,
+      "placement": "keystone front",
+      "keyframe": [
+        "ks_g1",
+        0
+      ]
+    }
+  },
+  "5t": {
+    "class_type": "LoraLoaderModelOnly",
+    "inputs": {
+      "model": [
+        "1",
+        0
+      ],
+      "lora_name": "minimax_h3_ref2v_turbo_8step_v1.0_768p_comfyui_bf16.safetensors",
+      "strength_model": 1.0
+    }
+  },
+  "7t": {
+    "class_type": "ModelAttentionBackend",
+    "inputs": {
+      "model": [
+        "5t",
+        0
+      ],
+      "attention": "comfy kitchen attention"
+    }
+  },
+  "8t": {
+    "class_type": "BlockSparseAttention",
+    "inputs": {
+      "model": [
+        "7t",
+        0
+      ],
+      "selection": "sla",
+      "selection.keep_percent": 10.0,
+      "start_percent": 0.2,
+      "end_percent": 1.0,
+      "dense_blocks": "",
+      "min_tokens": 12288,
+      "extra_tokens": 256,
+      "sink_conditioning": "exact_kv_and_rows",
+      "verbose": false
+    }
+  },
+  "night_ref0": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "assets/64dc39479791b8e6.png"
+    }
+  },
+  "night_ref1": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "assets/6ce24873b64e2972.png"
+    }
+  },
+  "night_ref2": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "assets/c3f127d96fa5d08f.png"
+    }
+  },
+  "night_ref3": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "assets/31aeda1c0fb8c728.png"
+    }
+  },
+  "night_ref4": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "assets/7789e47f653cf45c.png"
+    }
+  },
+  "night_ref5": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "assets/df6f5be105bd416f.png"
+    }
+  }
+}

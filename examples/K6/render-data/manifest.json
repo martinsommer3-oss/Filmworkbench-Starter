@@ -1,0 +1,100 @@
+{
+  "case": "K6",
+  "files": [
+    {
+      "file": "K6_EXT2_S1.api.json",
+      "sha256": "a7b68f6c47242444de34eb4c06a4b8529f5526c134573948a5c8d89f420c6f53",
+      "canonical": "graphs/K6_EXT2_S1.api.json"
+    },
+    {
+      "file": "K6_EXT2_S1.bindings.json",
+      "sha256": "504fb49792534a1f9685b542a5b5973366b22adcaf2a2d96f79181a82b8057f3",
+      "canonical": "graphs/K6_EXT2_S1.bindings.json"
+    },
+    {
+      "file": "K6_EXT2_S2.api.json",
+      "sha256": "d3fd0f67dbd0008f16806c2cb7d57688f423c149d70a918d2da6548e9a5488d0",
+      "canonical": "graphs/K6_EXT2_S2.api.json"
+    },
+    {
+      "file": "K6_EXT2_S2.bindings.json",
+      "sha256": "f40ec4e4869eb75bc73c858a568204c8768f11adba45c45599e09ed57dceb773",
+      "canonical": "graphs/K6_EXT2_S2.bindings.json"
+    },
+    {
+      "file": "K6_EXT_LOCK_S1.api.json",
+      "sha256": "aa39cd8efccd77c758592afec1e25074bbd1d0534a156a7b318c8fcbacb3f84b",
+      "canonical": "graphs/K6_EXT_LOCK_S1.api.json"
+    },
+    {
+      "file": "K6_EXT_LOCK_S1.bindings.json",
+      "sha256": "b432fba27e64bb8991022ed168422d2d22943a3253f111832655ea0824b7e3b0",
+      "canonical": "graphs/K6_EXT_LOCK_S1.bindings.json"
+    },
+    {
+      "file": "K6_EXT_LOCK_S2.api.json",
+      "sha256": "885fa15e2494fdf37abdc30bf0926da0093abaded93cc1645ebc49a40e6dd408",
+      "canonical": "graphs/K6_EXT_LOCK_S2.api.json"
+    },
+    {
+      "file": "K6_EXT_LOCK_S2.bindings.json",
+      "sha256": "ce2534814910ce5c1f87eaa4615dcf565abf5f2e851f3a2c98876449bb51f5f7",
+      "canonical": "graphs/K6_EXT_LOCK_S2.bindings.json"
+    },
+    {
+      "file": "K6_INT_WIDE_S1.api.json",
+      "sha256": "89677fc4d7583c14308ba3d2ed69ba51903c53ef00d2658a9f04dd86dd3c3f7b",
+      "canonical": "graphs/K6_INT_WIDE_S1.api.json"
+    },
+    {
+      "file": "K6_INT_WIDE_S1.bindings.json",
+      "sha256": "54267707e7163c94a5f35491d6b3fae2d2369bae36a29fa4acd9b14e152cb540",
+      "canonical": "graphs/K6_INT_WIDE_S1.bindings.json"
+    },
+    {
+      "file": "K6_INT_WIDE_S2.api.json",
+      "sha256": "1781c159e48b78e014c43b0979a22c097363fae72c5afad1f2fab6d89f9eceba",
+      "canonical": "graphs/K6_INT_WIDE_S2.api.json"
+    },
+    {
+      "file": "K6_INT_WIDE_S2.bindings.json",
+      "sha256": "e5a261211fbfaeb23428dcfa582460d421e6cc15edc15262ed4ac8c502471b93",
+      "canonical": "graphs/K6_INT_WIDE_S2.bindings.json"
+    },
+    {
+      "file": "K6_assembly.json",
+      "sha256": "621e49034c53c9c802b6233baf5683b3ebfee545d313b68fbdd17c60c3155835",
+      "canonical": "recipes/K6_assembly.json"
+    }
+  ],
+  "references": [
+    {
+      "file": "../../../assets/1f1bc8581ef0576c.png",
+      "sha256": "1f1bc8581ef0576cf0549af01e47755068e3a9e6d7f482846ce2955cd2c75371"
+    },
+    {
+      "file": "../../../assets/d80e22e2a9300e51.png",
+      "sha256": "d80e22e2a9300e5163fa3a333be86cb25791940948cdb90516c4d24d0c95559e"
+    },
+    {
+      "file": "../../../assets/2489c3017c52f6bf.png",
+      "sha256": "2489c3017c52f6bfecd1f2b7e41b59e58ee62470be5de7740e605f83dbde752f"
+    },
+    {
+      "file": "../../../assets/6ce24873b64e2972.png",
+      "sha256": "6ce24873b64e297276482108233fe890d416658680a34d6960d6b8c09a8b45cc"
+    },
+    {
+      "file": "../../../assets/c3f127d96fa5d08f.png",
+      "sha256": "c3f127d96fa5d08f01c4f1655e5d349c5e917c446b7a3ef21f6272f35f421ab5"
+    },
+    {
+      "file": "../../../assets/31aeda1c0fb8c728.png",
+      "sha256": "31aeda1c0fb8c728e91c4da6a0e2ade0fb389ee8b9a6c0e41ee87b86958d0960"
+    },
+    {
+      "file": "../../../assets/7789e47f653cf45c.png",
+      "sha256": "7789e47f653cf45cf26d8b2e8db7b4521b934deb168f8c8c33bcdf993499d926"
+    }
+  ]
+}

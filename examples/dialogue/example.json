@@ -1,0 +1,15 @@
+{
+  "id": "K1_A1",
+  "scope": "first dialogue clip only, S1 then S2; no autonomous film loop",
+  "assets": {
+    "assets/64dc39479791b8e6.png": "64dc39479791b8e621a5ce8f489fb199f52a506ba220e8938a3adbe394752d9f",
+    "assets/6ce24873b64e2972.png": "6ce24873b64e297276482108233fe890d416658680a34d6960d6b8c09a8b45cc",
+    "assets/c3f127d96fa5d08f.png": "c3f127d96fa5d08f01c4f1655e5d349c5e917c446b7a3ef21f6272f35f421ab5",
+    "assets/31aeda1c0fb8c728.png": "31aeda1c0fb8c728e91c4da6a0e2ade0fb389ee8b9a6c0e41ee87b86958d0960",
+    "assets/7789e47f653cf45c.png": "7789e47f653cf45cf26d8b2e8db7b4521b934deb168f8c8c33bcdf993499d926"
+  },
+  "graphs": {
+    "S1": "examples/dialogue/S1.api.json",
+    "S2": "examples/dialogue/S2.api.json"
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "case": "K3",
+  "files": [
+    {
+      "file": "K3_RETURN_S1.api.json",
+      "sha256": "1ac0203e5f8855dff9f016e696d22bf90d3a89d8c92999cafa54fa7562917b88",
+      "canonical": "graphs/K3_RETURN_S1.api.json"
+    },
+    {
+      "file": "K3_RETURN_S1.bindings.json",
+      "sha256": "96b66b93e43624fc7fb6412aabfa4acdf9c284cc17880bd972b5dc987f7be5de",
+      "canonical": "graphs/K3_RETURN_S1.bindings.json"
+    },
+    {
+      "file": "K3_RETURN_S2.api.json",
+      "sha256": "c56c40b629c0ad71b838e28e7e38d0e1bcb375e69356bb775addc61be3f0b10b",
+      "canonical": "graphs/K3_RETURN_S2.api.json"
+    },
+    {
+      "file": "K3_RETURN_S2.bindings.json",
+      "sha256": "68c3a14eaf8ec3341d4cd87316c70e28f041f4d703b8e142fc31bee5711cb79e",
+      "canonical": "graphs/K3_RETURN_S2.bindings.json"
+    },
+    {
+      "file": "K3_ROOM1_S1.api.json",
+      "sha256": "29fb6165b6bd610ceb2a828eb52858ae26a4b9cb49b775a8e1d0837747de6648",
+      "canonical": "graphs/K3_ROOM1_S1.api.json"
+    },
+    {
+      "file": "K3_ROOM1_S1.bindings.json",
+      "sha256": "1314dd7b2015a5f8d8a5e49d68eb9b5c8083ec333dc6f53272b0bae63738f8d5",
+      "canonical": "graphs/K3_ROOM1_S1.bindings.json"
+    },
+    {
+      "file": "K3_ROOM1_S2.api.json",
+      "sha256": "90fc2ae4123a7b5f6247770126d5640eb23671482612fe4519b05b6a980c9d95",
+      "canonical": "graphs/K3_ROOM1_S2.api.json"
+    },
+    {
+      "file": "K3_ROOM1_S2.bindings.json",
+      "sha256": "54bdd4297457e49ed6ca5096de9bca85269e94418e526f41367b54f15f6b20b2",
+      "canonical": "graphs/K3_ROOM1_S2.bindings.json"
+    },
+    {
+      "file": "K3_WORKSHOP_S1.api.json",
+      "sha256": "45bb80ecafffeb7b2fc3a74369d66c5fb1bafd49dfab6f78ae35b33658424c6d",
+      "canonical": "graphs/K3_WORKSHOP_S1.api.json"
+    },
+    {
+      "file": "K3_WORKSHOP_S1.bindings.json",
+      "sha256": "23d91dc28870c8298ecf11c05ff3068ee4e7c30a43607291c6d1a1df4d87e7c7",
+      "canonical": "graphs/K3_WORKSHOP_S1.bindings.json"
+    },
+    {
+      "file": "K3_WORKSHOP_S2.api.json",
+      "sha256": "7b2b290caae15485e15b87f9f2bdde38c69f14b512f89a5443d1fbb5a023f5c8",
+      "canonical": "graphs/K3_WORKSHOP_S2.api.json"
+    },
+    {
+      "file": "K3_WORKSHOP_S2.bindings.json",
+      "sha256": "097a93814678b8378d5c6c41ad12023625314056b56f3a279793192680146c27",
+      "canonical": "graphs/K3_WORKSHOP_S2.bindings.json"
+    },
+    {
+      "file": "K3_assembly.json",
+      "sha256": "0bf204870ce467e9afbc05ed4543bebf3c857c0c9df92835b8756da05cdd5187",
+      "canonical": "recipes/K3_assembly.json"
+    }
+  ],
+  "references": [
+    {
+      "file": "../../../assets/cc24d1af5efc2a2f.png",
+      "sha256": "cc24d1af5efc2a2ffece382ea910ea93389955ee62f818fb8cba30e9faac7f6f"
+    },
+    {
+      "file": "../../../assets/6ce24873b64e2972.png",
+      "sha256": "6ce24873b64e297276482108233fe890d416658680a34d6960d6b8c09a8b45cc"
+    },
+    {
+      "file": "../../../assets/c3f127d96fa5d08f.png",
+      "sha256": "c3f127d96fa5d08f01c4f1655e5d349c5e917c446b7a3ef21f6272f35f421ab5"
+    },
+    {
+      "file": "../../../assets/31aeda1c0fb8c728.png",
+      "sha256": "31aeda1c0fb8c728e91c4da6a0e2ade0fb389ee8b9a6c0e41ee87b86958d0960"
+    },
+    {
+      "file": "../../../assets/7789e47f653cf45c.png",
+      "sha256": "7789e47f653cf45cf26d8b2e8db7b4521b934deb168f8c8c33bcdf993499d926"
+    },
+    {
+      "file": "../../../assets/64dc39479791b8e6.png",
+      "sha256": "64dc39479791b8e621a5ce8f489fb199f52a506ba220e8938a3adbe394752d9f"
+    },
+    {
+      "file": "../../../assets/c079abf9e0f4cf14.png",
+      "sha256": "c079abf9e0f4cf142076dac59c6730ed62a23a287562aeadff40af5f42ef4a19"
+    }
+  ]
+}

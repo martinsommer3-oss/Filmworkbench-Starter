@@ -1,0 +1,100 @@
+{
+  "case": "K4",
+  "files": [
+    {
+      "file": "K4_EXT_S1.api.json",
+      "sha256": "cc9a638ca68d901e6eb057964f5bc86a9ee95ab080ce3bf58c05d6bcf9b68f63",
+      "canonical": "graphs/K4_EXT_S1.api.json"
+    },
+    {
+      "file": "K4_EXT_S1.bindings.json",
+      "sha256": "cc2c5726f43131f846380368dfeaaab27abc90e40dc3ab5b62a4aceaec996ba3",
+      "canonical": "graphs/K4_EXT_S1.bindings.json"
+    },
+    {
+      "file": "K4_EXT_S2.api.json",
+      "sha256": "58515edb8a7105bab24ac5c8b4e86aa340c86586ca4c06def6cbf3fafacdddcf",
+      "canonical": "graphs/K4_EXT_S2.api.json"
+    },
+    {
+      "file": "K4_EXT_S2.bindings.json",
+      "sha256": "d210871125b17a806c2fb64243e258e9a7d968745fc3c9d73c226bbc89d7a7a0",
+      "canonical": "graphs/K4_EXT_S2.bindings.json"
+    },
+    {
+      "file": "K4_FRESH_S1.api.json",
+      "sha256": "882505ff7bfbff1c7fe5478a4449091a3e95ab7c49d2859637ed3c690863c44e",
+      "canonical": "graphs/K4_FRESH_S1.api.json"
+    },
+    {
+      "file": "K4_FRESH_S1.bindings.json",
+      "sha256": "68bfa228779e7efc96ff4b9fdb96609d1e2b390831e542a6cbf06e933cb8cc4e",
+      "canonical": "graphs/K4_FRESH_S1.bindings.json"
+    },
+    {
+      "file": "K4_FRESH_S2.api.json",
+      "sha256": "a021b31869dfcc53dd344a8bf0c9761da1206b14f2f65cd13c56e667ab0e4e4d",
+      "canonical": "graphs/K4_FRESH_S2.api.json"
+    },
+    {
+      "file": "K4_FRESH_S2.bindings.json",
+      "sha256": "f76cfaab4f763f9c7f2d738c8351b971356413bf1c113a756546f573da711dcc",
+      "canonical": "graphs/K4_FRESH_S2.bindings.json"
+    },
+    {
+      "file": "K4_INT_AUDIO_S1.api.json",
+      "sha256": "fb390e2949e8fbdbd1c4baa8c5a78e3dd82dc5a98336e4cc7d9b5edea60533d0",
+      "canonical": "graphs/K4_INT_AUDIO_S1.api.json"
+    },
+    {
+      "file": "K4_INT_AUDIO_S1.bindings.json",
+      "sha256": "6fd70463004c17c60f24d58840f3a100c66df6860f0a57c4cc1630201115e754",
+      "canonical": "graphs/K4_INT_AUDIO_S1.bindings.json"
+    },
+    {
+      "file": "K4_INT_AUDIO_S2.api.json",
+      "sha256": "1697b1ca5103095bc76455d556cd5ef79edfe97705e9c79b6307946ad9cb9661",
+      "canonical": "graphs/K4_INT_AUDIO_S2.api.json"
+    },
+    {
+      "file": "K4_INT_AUDIO_S2.bindings.json",
+      "sha256": "8f79626c04723d1f0d568eadb4f4bcbe4f8535a4541a7c367e4c5bb1fd2de3fb",
+      "canonical": "graphs/K4_INT_AUDIO_S2.bindings.json"
+    },
+    {
+      "file": "K4_assembly.json",
+      "sha256": "f928b5e25f48cf8644edd2b046d4f2249530529308dcbf768931c97644b89caa",
+      "canonical": "recipes/K4_assembly.json"
+    }
+  ],
+  "references": [
+    {
+      "file": "../../../assets/36018c2eded5a826.png",
+      "sha256": "36018c2eded5a826ab0d2995967f8d094f4f2a3829703a1ee5664bbd426768cb"
+    },
+    {
+      "file": "../../../assets/76c9b86e1d9d435a.png",
+      "sha256": "76c9b86e1d9d435abeb918385cc80a75b61377cff2ebdfd7e1fe1a64493b31ff"
+    },
+    {
+      "file": "../../../assets/6ce24873b64e2972.png",
+      "sha256": "6ce24873b64e297276482108233fe890d416658680a34d6960d6b8c09a8b45cc"
+    },
+    {
+      "file": "../../../assets/c3f127d96fa5d08f.png",
+      "sha256": "c3f127d96fa5d08f01c4f1655e5d349c5e917c446b7a3ef21f6272f35f421ab5"
+    },
+    {
+      "file": "../../../assets/31aeda1c0fb8c728.png",
+      "sha256": "31aeda1c0fb8c728e91c4da6a0e2ade0fb389ee8b9a6c0e41ee87b86958d0960"
+    },
+    {
+      "file": "../../../assets/7789e47f653cf45c.png",
+      "sha256": "7789e47f653cf45cf26d8b2e8db7b4521b934deb168f8c8c33bcdf993499d926"
+    },
+    {
+      "file": "../../../assets/64dc39479791b8e6.png",
+      "sha256": "64dc39479791b8e621a5ce8f489fb199f52a506ba220e8938a3adbe394752d9f"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "sl2": {
+    "asset": "assets/cc24d1af5efc2a2f.png",
+    "original_input_name": "wb_wohnzimmer_zustand_ist_c5e3293a9f.png",
+    "sha256": "cc24d1af5efc2a2ffece382ea910ea93389955ee62f818fb8cba30e9faac7f6f"
+  },
+  "night_ref0": {
+    "asset": "assets/cc24d1af5efc2a2f.png",
+    "original_input_name": "wb_wohnzimmer_zustand_ist_c5e3293a9f.png",
+    "sha256": "cc24d1af5efc2a2ffece382ea910ea93389955ee62f818fb8cba30e9faac7f6f"
+  },
+  "night_ref1": {
+    "asset": "assets/6ce24873b64e2972.png",
+    "original_input_name": "wb_portrait_535bfed9a3.png",
+    "sha256": "6ce24873b64e297276482108233fe890d416658680a34d6960d6b8c09a8b45cc"
+  },
+  "night_ref2": {
+    "asset": "assets/c3f127d96fa5d08f.png",
+    "original_input_name": "wb_vollkoerper_1322e3c60d.png",
+    "sha256": "c3f127d96fa5d08f01c4f1655e5d349c5e917c446b7a3ef21f6272f35f421ab5"
+  },
+  "night_ref3": {
+    "asset": "assets/31aeda1c0fb8c728.png",
+    "original_input_name": "wb_portrait_4f849f7c21.png",
+    "sha256": "31aeda1c0fb8c728e91c4da6a0e2ade0fb389ee8b9a6c0e41ee87b86958d0960"
+  },
+  "night_ref4": {
+    "asset": "assets/7789e47f653cf45c.png",
+    "original_input_name": "wb_vollkoerper_c0a55a8f9d.png",
+    "sha256": "7789e47f653cf45cf26d8b2e8db7b4521b934deb168f8c8c33bcdf993499d926"
+  }
+}

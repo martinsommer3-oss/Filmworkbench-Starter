@@ -1,0 +1,17 @@
+{
+  "sl2": {
+    "asset": "assets/d80e22e2a9300e51.png",
+    "original_input_name": "wb_raumschiff_704c7d0d75.png",
+    "sha256": "d80e22e2a9300e5163fa3a333be86cb25791940948cdb90516c4d24d0c95559e"
+  },
+  "night_ref0": {
+    "asset": "assets/d80e22e2a9300e51.png",
+    "original_input_name": "wb_raumschiff_704c7d0d75.png",
+    "sha256": "d80e22e2a9300e5163fa3a333be86cb25791940948cdb90516c4d24d0c95559e"
+  },
+  "night_end": {
+    "asset": "assets/d80e22e2a9300e51.png",
+    "original_input_name": "wb_raumschiff_704c7d0d75.png",
+    "sha256": "d80e22e2a9300e5163fa3a333be86cb25791940948cdb90516c4d24d0c95559e"
+  }
+}
