@@ -1,4 +1,8 @@
-# Validation status — 7 November 2026
+# Validation status
+
+## v0.1.2: timing, planning and ambience
+
+The existing ComfyUI 0.45.2 installation passed model and node checks for all 44 distinct public recipe graphs. CPU tests cover the cut-mark compiler, ambience bridge timing, exact assembly frames, recipe continuation and review gates. The S1 cut-timing measurement comes from two small development sets. Fresh GPU installation and an end-to-end public v0.1.2 render remain untested.
 
 ## v0.1.1: executable recipes and the three gates
 

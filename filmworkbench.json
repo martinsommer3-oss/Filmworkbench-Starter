@@ -1,8 +1,8 @@
 {
   "name": "Filmworkbench Starter",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "repository": "https://github.com/martinsommer3-oss/Filmworkbench-Starter",
-  "release": "https://github.com/martinsommer3-oss/Filmworkbench-Starter/releases/tag/v0.1.1",
+  "release": "https://github.com/martinsommer3-oss/Filmworkbench-Starter/releases/tag/v0.1.2",
   "human_entrypoint": "README.md",
   "agent_entrypoint": "AGENTS.md",
   "technical_overview": "docs/STACK.md",
@@ -52,5 +52,6 @@
   "guided_entrypoint": "docs/GUIDED_FILM.md",
   "autonomous_entrypoint": "docs/AUTONOMOUS_FILM.md",
   "gate_selection": "docs/GATES.md",
-  "editing_notes": "docs/EDIT_NOTES.md"
+  "editing_notes": "docs/EDIT_NOTES.md",
+  "planning_and_finishing": "docs/REFINEMENTS.md"
 }

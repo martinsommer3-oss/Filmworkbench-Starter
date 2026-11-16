@@ -2,11 +2,13 @@
 
 Eight H3 scene recipes plus a marketplace chain, with own reference images, two-pass rendering, approvals between stages and final film assembly. ComfyUI renders underneath; a tool-capable chat agent handles the project folder and discusses shot decisions with you.
 
-**v0.1.1** · [Download the starter](https://github.com/martinsommer3-oss/Filmworkbench-Starter/releases/tag/v0.1.1) · [Example videos and reference overviews](examples/README.md) · [Validation and limits](docs/VALIDATION.md)
+**v0.1.2** · [Download the starter](https://github.com/martinsommer3-oss/Filmworkbench-Starter/releases/tag/v0.1.2) · [Example videos and reference overviews](examples/README.md) · [Validation and limits](docs/VALIDATION.md)
+
+New here? [Watch the introduction](https://www.reddit.com/r/StableDiffusion/comments/1xqgu4e/filmworkbench_making_semiautomated_short_films/) or follow the [written quickstart](docs/QUICKSTART.md). The [planning and finishing guide](docs/REFINEMENTS.md) covers five genre profiles, continuation cut timing and optional ambience bridges.
 
 ## Start in three sentences
 
-Download the [starter ZIP](https://github.com/martinsommer3-oss/Filmworkbench-Starter/releases/download/v0.1.1/Filmworkbench-v0.1.1-starter.zip), extract it and open the folder in Codex, Claude Code or another agent with file and terminal access. Paste the prompt below; the agent checks your setup and helps prepare your film with supplied or own images. The optional [example-video ZIP](https://github.com/martinsommer3-oss/Filmworkbench-Starter/releases/download/v0.1.0/Filmworkbench-v0.1-examples.zip) adds all ten finished videos to the same folder.
+Download the [starter ZIP](https://github.com/martinsommer3-oss/Filmworkbench-Starter/releases/download/v0.1.2/Filmworkbench-v0.1.2-starter.zip), extract it and open the folder in Codex, Claude Code or another agent with file and terminal access. Paste the prompt below. The agent checks your setup and helps prepare your film with supplied or own images. The optional [example-video ZIP](https://github.com/martinsommer3-oss/Filmworkbench-Starter/releases/download/v0.1.0/Filmworkbench-v0.1-examples.zip) adds all ten finished videos to the same folder.
 
 > Read AGENTS.md and filmworkbench.json. Help me make a short film using these recipes and my pictures. Check my setup, agree the scene plan with me, and stop for my approval after each rendered stage.
 

@@ -9,9 +9,9 @@ import time
 import uuid
 import hashlib
 import re
-from fractions import Fraction
 from contextlib import contextmanager
 import render_example as runner
+import refinements
 
 ROOT = Path(__file__).resolve().parent
 CASES = ('K1','K2','K3','K4','K6','K7','K8','K9','MARKET')
@@ -57,7 +57,7 @@ def ordered(case):
 
 def init(project, cases):
     project.mkdir(parents=True, exist_ok=False)
-    plan={'version':'0.1.1','id':uuid.uuid4().hex[:12], 'review_mode':'guided',
+    plan={'version':'0.1.2','id':uuid.uuid4().hex[:12], 'review_mode':'guided',
           'limits':{'max_takes_per_stage':3,'max_render_stages':sum(len(ordered(c)) for c in cases)*2},'scenes':[]}
     for index,case in enumerate(cases):
         sid=f'{index+1:02d}_{case}'
@@ -108,6 +108,43 @@ def adapt_stage_joins(graph):
         node['inputs']={'video_latent':inputs['video_latent'],'audio_latent':[separate,1]}
     return graph
 
+def cut_compensation_enabled(scene, name):
+    enabled = scene.get('compensate_continuation_cuts', False)
+    if not isinstance(enabled, bool):
+        raise ValueError('compensate_continuation_cuts must be true or false')
+    return enabled and name.endswith('_S1')
+
+
+def bridge_selection(scene):
+    selected = scene.get('ambience_bridge_parts', [])
+    if not isinstance(selected, list) or any(not isinstance(name, str) for name in selected):
+        raise ValueError('ambience_bridge_parts must be a list of part IDs')
+    if not selected:
+        return {}
+    if len(selected) != len(set(selected)) or scene['assembly'].get('prelap'):
+        raise ValueError('Select distinct ambience bridges in a scene without prelap')
+
+    parts = scene['assembly']['parts']
+    inventory = load(ROOT/'graphs/inventory.json')
+    bridges = {}
+    for index, (previous, current) in enumerate(zip(parts, parts[1:]), start=1):
+        if current['id'] not in selected:
+            continue
+        current_s1 = current.get('audio_id', current['id']) + '_S1'
+        previous_s1 = previous.get('audio_id', previous['id']) + '_S1'
+        graph = load(ROOT/f'graphs/{current_s1}.api.json')
+        context_sources = {
+            node['inputs']['context_latent'][0] for node in graph.values()
+            if node['class_type'] == 'MiniMaxH3MotionContext'
+        }
+        for dependency in inventory[current_s1]['dependencies']:
+            if dependency['node'] in context_sources and dependency['producers'][0]['graph'] == previous_s1:
+                bridges[index] = current['id']
+    if len(bridges) != len(selected):
+        raise ValueError('Ambience bridges require a direct continuation from the preceding assembly part')
+    return bridges
+
+
 def compile_graph(project, plan, scene, name, state, attempt, model_map=None):
     for value in (plan['id'],scene['id'],name,attempt):
         if not re.fullmatch(r'[A-Za-z0-9_-]+',value):raise ValueError('Invalid project, scene or take identifier')
@@ -135,7 +172,8 @@ def compile_graph(project, plan, scene, name, state, attempt, model_map=None):
         if kind in ('SaveVideo','MiniMaxH3MotionContextSaveLatent'):
             inputs['filename_prefix']=f'{prefix}/{node}/clip'
         elif kind=='MiniMaxH3ReferenceToVideo':
-            inputs['prompt']=confined(project,scene['prompts'][name]).read_text(encoding='utf-8')
+            prompt=confined(project,scene['prompts'][name]).read_text(encoding='utf-8')
+            inputs['prompt']=refinements.compensate_cut_marks(prompt,g) if cut_compensation_enabled(scene,name) else prompt
         elif kind=='RandomNoise': inputs['noise_seed']=int(scene['seeds'][name])
     runner.apply_model_map({name:g},model_map or {})
     for node,n in g.items():
@@ -150,6 +188,8 @@ def fingerprint(project,scene,name):
              'prompt':digest(confined(project,scene['prompts'][name])),
              'seed':scene['seeds'][name],
              'assets':{b['asset']:digest(confined(project,scene['assets'][b['asset']])) for b in binding.values()}}
+    if cut_compensation_enabled(scene,name):
+        content['continuation_cut_lead_frames']=refinements.CUT_LEAD_FRAMES
     return hashlib.sha256(json.dumps(content,sort_keys=True).encode()).hexdigest()
 
 def unchanged(project,plan,state):
@@ -236,6 +276,8 @@ def next_job(project,plan,state,args):
     print('All stages accepted. Run assemble.')
 
 def check(project,plan,args):
+    for scene in plan['scenes']:
+        bridge_selection(scene)
     state={'jobs':{}};graphs={}
     for scene,name,key in jobs(plan):
         g,_=compile_graph(project,plan,scene,name,state,'preflight',runner.read_model_map(args.model_map))
@@ -308,7 +350,7 @@ def concat_media(files,target,credit=False):
         signature=(stream['width'],stream['height'],stream['avg_frame_rate'])
         if shape is not None and shape!=signature:raise ValueError('Scene sizes/frame rates differ')
         shape=signature
-        duration=int(stream['nb_frames'])/float(Fraction(stream['avg_frame_rate']))
+        duration=float(refinements.frame_duration(stream))
         inputs+=['-i',path]
         filters += [f'[{i}:v]setpts=PTS-STARTPTS[v{i}]',
                     f'[{i}:a]asetpts=PTS-STARTPTS,apad,atrim=duration={duration}[a{i}]']
@@ -325,10 +367,13 @@ def assemble(project,plan,state):
     unchanged(project,plan,state)
     if any(state['jobs'].get(key,{}).get('status')!='accepted' for _,_,key in jobs(plan)):
         raise ValueError('Accept all stages before assembly')
+    selections={scene['id']:bridge_selection(scene) for scene in plan['scenes']}
     out=project/'exports'/uuid.uuid4().hex[:8];out.mkdir(parents=True)
     scenes=[]
+    audio_bridges={}
     for scene in plan['scenes']:
         parts=[]
+        durations=[]
         for index,part in enumerate(scene['assembly']['parts']):
             v=state['jobs'][f"{scene['id']}/{part['id']}_S2"]
             a=state['jobs'][f"{scene['id']}/{part.get('audio_id',part['id'])}_S1"]
@@ -336,10 +381,15 @@ def assemble(project,plan,state):
             vs=next(s for s in probe(video)['streams'] if s['codec_type']=='video')
             ats=next(s for s in probe(audio)['streams'] if s['codec_type']=='video')
             if vs.get('nb_frames')!=ats.get('nb_frames'):raise ValueError('S1/S2 frame count mismatch')
+            durations.append(refinements.frame_duration(vs))
             target=out/f"{scene['id']}_{index}.mp4"
             ffmpeg(['-i',video,'-i',audio,'-map','0:v:0','-map','1:a:0','-c','copy',target]);parts.append(target)
         joined=out/f"{scene['id']}_joined.mp4"
         concat_media(parts,joined)
+        selected=selections[scene['id']]
+        if selected:
+            bridged=out/f"{scene['id']}_bridged.mp4"
+            joined,audio_bridges[scene['id']]=refinements.finish_ambience(joined,bridged,durations,selected)
         prelap=scene['assembly'].get('prelap')
         if prelap:
             start=float(prelap['start_s']);length=float(prelap['end_s'])-start
@@ -350,7 +400,7 @@ def assemble(project,plan,state):
         scenes.append(joined)
     final=out/'film.mp4'
     concat_media(scenes,final,credit=True)
-    write(out/'provenance.json',{'plan':plan,'jobs':state['jobs'],'sha256':digest(final),'probe':probe(final)})
+    write(out/'provenance.json',{'plan':plan,'jobs':state['jobs'],'ambience_bridges':audio_bridges,'sha256':digest(final),'probe':probe(final)})
     print(final)
     return final
 

@@ -1,6 +1,8 @@
-# Filmworkbench agent entrypoint — v0.1.1
+# Filmworkbench agent entrypoint — v0.1.2
 
 Read filmworkbench.json, docs/STACK.md and docs/GATES.md. Route a single-image/clip request directly as described there; do not turn it into a full-film assignment. For guided films read docs/GUIDED_FILM.md. For an explicitly autonomous task read docs/AUTONOMOUS_FILM.md and follow its complete loop. Models and exact hashes: docs/model_sources.json. Public node sources and pinned revisions: docs/DEPENDENCIES.md. Separate editing experience: docs/EDIT_NOTES.md; specialized edit tools are not bundled.
+
+For your own scenes, use the optional advice and settings in [Planning and finishing refinements](docs/REFINEMENTS.md). Discuss any timing adjustment before the first render. Choose ambience bridges after listening to both sides of the selected join.
 
 ## Guided filmmaking
 

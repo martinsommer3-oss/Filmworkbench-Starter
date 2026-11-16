@@ -2,6 +2,8 @@
 
 The minimal dialogue starter uses ComfyUI and two custom-node projects. The full film.py recipe runner additionally requires the public geiru_context_suite keystone node. Archived graphs remain unchanged; film.py translates their stage joins and file bindings for portable execution.
 
+The v0.1.2 backend check also passed on an existing [ComfyUI 0.45.2](https://github.com/Comfy-Org/ComfyUI/releases/tag/v0.45.2) installation. The revisions below identify the backend used for the original reproducible recipe checks. If you already use 0.45.2, check your installed nodes and model names with `python doctor.py --all --online`.
+
 | Project | Revision used for the starter check | Purpose |
 | --- | --- | --- |
 | [ComfyUI](https://github.com/Comfy-Org/ComfyUI/commit/63be2f9b82ad0dac88a7ceaa28a9cf3154125a18) | `63be2f9b82ad0dac88a7ceaa28a9cf3154125a18` (0.42.1) | H3 conditioning, sampling, attention, AV joining, video output |

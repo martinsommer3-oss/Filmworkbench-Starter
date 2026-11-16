@@ -4,7 +4,7 @@ The public project is [Filmworkbench-Starter](https://github.com/martinsommer3-o
 
 ## Downloads and browsing
 
-- [Starter ZIP](https://github.com/martinsommer3-oss/Filmworkbench-Starter/releases/download/v0.1.0/Filmworkbench-v0.1-starter.zip): code, documentation, original recipe graphs, full-resolution reference inputs and workflow overviews.
+- [Starter ZIP](https://github.com/martinsommer3-oss/Filmworkbench-Starter/releases/download/v0.1.2/Filmworkbench-v0.1.2-starter.zip) includes code, documentation, original recipe graphs, full-resolution reference inputs and workflow overviews.
 - [Examples ZIP](https://github.com/martinsommer3-oss/Filmworkbench-Starter/releases/download/v0.1.0/Filmworkbench-v0.1-examples.zip): ten selected S2 videos. Extract at the starter root; each video lands in `examples/<case>/video_S2.mp4` beside its overview.
 - [Example gallery](../examples/README.md): direct MP4 links plus per-scene overview and render-data navigation. Release videos are downloadable files; inline streaming in GitHub Markdown is not promised.
 
